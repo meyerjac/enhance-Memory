@@ -1,5 +1,6 @@
 package jacksonmeyer.com.memoryenhancement;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
     @Bind(R.id.noAdsButton)
@@ -23,12 +24,6 @@ public class MainActivity extends AppCompatActivity {
     TextView PlayButton;
     @Bind(R.id. numberOfLightbulbs)
     TextView NumberOfLightbulbs;
-
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         PlayButton.setTypeface(Rubix);
         NoAdsButton.setTypeface(Rubix);
         NumberOfLightbulbs.setTypeface(Rubix);
+
+        PlayButton.setOnClickListener(this);
 
         View decorView = getWindow().getDecorView();
 // Hide the status bar.
@@ -58,5 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 bounceAnim.setRepeatMode(Animation.REVERSE);
             }
         }, 0);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == PlayButton) {
+            Intent intent = new Intent(MainActivity.this, LevelsActivity.class);
+            startActivity(intent);
+        }
     }
 }

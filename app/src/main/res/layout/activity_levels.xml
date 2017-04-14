@@ -1,0 +1,293 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/outerLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:id="@+id/screenLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Stage 1"
+            android:textSize="30dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/myLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/screenLayout"
+        android:stretchColumns="*"
+        android:paddingBottom="20dp">
+
+        <TableRow
+            android:id="@+id/first_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+
+            <TextView
+                android:id="@+id/levelOne"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="1"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelTwo"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="2"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelThree"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="3"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelFour"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="4"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/second_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+
+            <TextView
+                android:id="@+id/levelFive"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="5"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelSix"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="6"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelSeven"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="7"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelEight"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="8"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/third_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+
+            <TextView
+                android:id="@+id/levelNine"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="9"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelTen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="10"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelEleven"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="11"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelTwelve"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="12"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourth_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+
+            <TextView
+                android:id="@+id/levelThirteen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="13"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelFourteen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="14"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelFifteen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="15"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelSixteen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="16"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/fifth_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+
+            <TextView
+                android:id="@+id/levelseventeen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="17"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelEighteen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="18"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelNineteen"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="19"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+
+            <TextView
+                android:id="@+id/levelTwenty"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:text="20"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorLightGrayish"
+                android:background="@drawable/gray_circle"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
+
+
+
+
