@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="@color/colorBackground"
+    tools:context="jacksonmeyer.com.memoryenhancement.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:text="Rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pink_background"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="25dp"
+            android:textAllCaps="true"
+            android:id="@+id/rateButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/playButton"
+            android:layout_alignStart="@+id/playButton"
+            android:layout_marginBottom="33dp" />
+
+        <TextView
+            android:text="Play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/green_background"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="25dp"
+            android:textAllCaps="true"
+            android:id="@+id/playButton"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="65dp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/music"
+            android:background="@drawable/gray_circle"
+            android:padding="10dp"
+            android:id="@+id/musicButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="39dp"
+            android:layout_marginStart="39dp" />
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:srcCompat="@drawable/graph"
+        android:background="@drawable/yellow_circle"
+        android:id="@+id/graphButton"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/cartButton"
+            android:layout_toEndOf="@+id/cartButton" />
+
+        <TextView
+            android:text="No
+Ads"
+            android:layout_width="52dp"
+            android:gravity="center"
+            android:layout_height="52dp"
+            android:textStyle="bold"
+            android:background="@drawable/green_circle"
+            android:id="@+id/noAdsButton"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/graphButton"
+            android:layout_toEndOf="@+id/graphButton" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:srcCompat="@drawable/cart"
+            android:background="@drawable/blue_circle"
+            android:id="@+id/cartButton"
+            android:layout_marginLeft="31dp"
+            android:layout_marginStart="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/musicButton"
+            android:layout_toEndOf="@+id/musicButton" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:text="1456"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:textSize="15sp"
+            android:layout_marginRight="3dp"
+            android:layout_alignTop="@+id/imageButton"
+            android:layout_toLeftOf="@+id/imageButton"
+            android:layout_toStartOf="@+id/imageButton" />
+
+    <ImageButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:srcCompat="@drawable/lightbulb5"
+        android:background="@android:color/transparent"
+        android:id="@+id/imageButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
