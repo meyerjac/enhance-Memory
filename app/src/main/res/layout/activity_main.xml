@@ -132,7 +132,7 @@ Ads"
             android:text="1456"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/numberOfLightbulbs"
             android:textSize="15sp"
             android:layout_marginRight="3dp"
             android:layout_alignTop="@+id/imageButton"
@@ -152,6 +152,18 @@ Ads"
 
 
     </RelativeLayout>
+
+    <TextView
+        android:text="Memory 5"
+        android:gravity="center"
+        android:textColor="@color/colorPinkish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp"
+        android:id="@+id/titleTextView" />
 
 
 </RelativeLayout>
