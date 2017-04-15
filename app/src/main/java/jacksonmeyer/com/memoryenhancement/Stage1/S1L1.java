@@ -55,13 +55,13 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s1_l1);
         ButterKnife.bind(this);
-        Button1.setOnClickListener(this);
-        Button2.setOnClickListener(this);
-        Button3.setOnClickListener(this);
-
 
         AnswerQuestionTextView.setVisibility(View.INVISIBLE);
         setColorsAndObjects();
+
+        Button1.setOnClickListener(this);
+        Button2.setOnClickListener(this);
+        Button3.setOnClickListener(this);
     }
 
     private void setColorsAndObjects() {
@@ -101,7 +101,6 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
         Integer randomObject = (int)(Math.random() * ((8 - 1)));
         questionObject =  susansObjects.get(randomObject);
-        Log.d("debug", questionObject);
 
         if (questionObject.equals("dress")) {
             answerColor = color1;
@@ -115,13 +114,9 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             answerColor = color5;
         } else if (questionObject.equals("car")) {
             answerColor = color6;
-        } else {
+        } else if (questionObject.equals("purse")){
             answerColor = color7;
         }
-
-        getCorrectButtonColors();
-
-
 
         QuestionTextView.setText("Susan woke up, put on her "
                 + color1 + " dress, slipped on her " + color2 + " socks, under her " + color3 + " shoes.  " +
@@ -167,9 +162,11 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void sendFailureStuff() {
+        Log.d(TAG, "fail");
     }
 
     private void sendCorrectStuff() {
+        Log.d(TAG, "success");
     }
 
 
@@ -192,6 +189,7 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
         private void askQuestion() {
 //            QuestionTextView.setVisibility(View.INVISIBLE);
+            getCorrectButtonColors();
             AnswerQuestionTextView.setText(AnswerQuestionTextView.getText() + " " +  questionObject + "?");
             AnswerQuestionTextView.setVisibility(View.VISIBLE);
 
@@ -199,46 +197,78 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void getCorrectButtonColors() {
-        Integer randomCorrectButton = (int)(Math.random() * ((4 - 1)));
+        Integer randomCorrectButton = 1 + (int)(Math.random() * ((3 - 1) + 1));
         correctButton = randomCorrectButton;
-        Log.d(TAG, correctButton.toString());
+        Log.d("debug", correctButton.toString());
+        Log.d("dev", answerColor);
+        Log.d("deb ", questionObject);
 
         if (correctButton == 1) {
             if (answerColor.equals("blue")) {
                 Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
             } else if (answerColor.equals("yellow")) {
                 Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
             } else if (answerColor.equals("pink")) {
                 Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
             } else if (answerColor.equals("green")) {
                 Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
             } else if (answerColor.equals("white")) {
                 Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
             }
 
         } else if (correctButton == 2) {
             if (answerColor.equals("blue")) {
                 Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
             } else if (answerColor.equals("yellow")) {
                 Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
             } else if (answerColor.equals("pink")) {
                 Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
             } else if (answerColor.equals("green")) {
                 Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
             } else if (answerColor.equals("white")) {
-                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
+                Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
             }
 
         } else if (correctButton == 3) {
             if (answerColor.equals("blue")) {
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
                 Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
             } else if (answerColor.equals("yellow")) {
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
                 Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
             } else if (answerColor.equals("pink")) {
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorYellowish));
                 Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
             } else if (answerColor.equals("green")) {
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorBlueish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
                 Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
             } else if (answerColor.equals("white")) {
+                Button1.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorPinkish));
+                Button2.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorGreenish));
                 Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
             }
         }
