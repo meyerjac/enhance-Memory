@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView TitleTextView;
     @Bind(R.id.noAdsButton)
     TextView NoAdsButton;
-    @Bind(R.id.rateButton)
+    @Bind(R.id.nextButton)
     TextView RateButton;
     @Bind(R.id.playButton)
     TextView PlayButton;

@@ -31,7 +31,7 @@
             android:textColor="@color/colorWhite"
             android:textSize="25dp"
             android:textAllCaps="true"
-            android:id="@+id/rateButton"
+            android:id="@+id/nextButton"
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/playButton"
             android:layout_alignStart="@+id/playButton"

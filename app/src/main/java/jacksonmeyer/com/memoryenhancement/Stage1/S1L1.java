@@ -1,8 +1,12 @@
 package jacksonmeyer.com.memoryenhancement.Stage1;
 
+import android.animation.ObjectAnimator;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -20,7 +25,9 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import jacksonmeyer.com.memoryenhancement.Constants;
 import jacksonmeyer.com.memoryenhancement.R;
+import jacksonmeyer.com.memoryenhancement.StageOneActivity;
 
 
 public class S1L1 extends AppCompatActivity implements View.OnClickListener {
@@ -38,13 +45,18 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     Button Button3;
     @Bind(R.id.buttonLayout)
     RelativeLayout ButtonLayout;
-    @Bind(R.id.continueBackRelativeLayout)
-    RelativeLayout ContinueBackRelativeLayout;
-    @Bind(R.id.checkImageView)
-    RelativeLayout CheckImageView;
-
-
-
+    @Bind(R.id.relativeLayout)
+    RelativeLayout RelativeLayout;
+    @Bind(R.id.backArrow)
+    ImageView BackArrow;
+    @Bind(R.id.next)
+    TextView Next;
+    @Bind(R.id.replay)
+    TextView Replay;
+    @Bind(R.id.numberOfLightbulbs)
+    TextView NumberOfLightbulbs;
+    @Bind(R.id. checkXImageView)
+    ImageView CheckXImageView;
 
 
 
@@ -65,19 +77,35 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     private String color6 = null;
     private String color7  = null;
 
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s1_l1);
         ButterKnife.bind(this);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(S1L1.this);
+        mEditor = mSharedPreferences.edit();
+
         AnswerQuestionTextView.setVisibility(View.INVISIBLE);
-        ContinueBackRelativeLayout.setVisibility(View.INVISIBLE);
+        RelativeLayout.setVisibility(View.INVISIBLE);
         ButtonLayout.setVisibility(View.INVISIBLE);
         setColorsAndObjects();
+
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
         Button3.setOnClickListener(this);
+        Next.setOnClickListener(this);
+        Replay.setOnClickListener(this);
+        BackArrow.setOnClickListener(this);
+
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(S1L1.this, StageOneActivity.class);
+        startActivity(intent);
     }
 
     private void setColorsAndObjects() {
@@ -167,30 +195,89 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             } else {
                 onWrongAnswerTap();
             }
-
         } else if (view == Button3) {
             if (correctButton == 3) {
                 onCorrectAnswerTap();
             } else {
                 onWrongAnswerTap();
             }
-
+        } else if (view == BackArrow){
+            Intent intent = new Intent(S1L1.this, StageOneActivity.class);
+            startActivity(intent);
+        } else if (view == Replay){
+            Intent intent = new Intent(S1L1.this, S1L1.class);
+            startActivity(intent);
+        } else if (view == Next){
+            Intent intent = new Intent(S1L1.this, S1L2.class);
+            startActivity(intent);
         }
     }
 
     private void onWrongAnswerTap() {
-        Log.d(TAG, "fail");
-    }
-
-    private void onCorrectAnswerTap() {
-        Log.d(TAG, "success");
         Button1.setEnabled(false);
         Button2.setEnabled(false);
         Button3.setEnabled(false);
+       showFailText();
+    }
+
+    private void showFailText() {
+        final Handler handler1 = new Handler();
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation fade = AnimationUtils.loadAnimation(S1L1.this, R.anim.fadeout);
+                CountdownTimerTextView.startAnimation(fade);
+                CountdownTimerTextView.startAnimation(fade);
+            }
+        }, 0);
+        final Handler handler2 = new Handler();
+        handler2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                CountdownTimerTextView.setText("Wrong");
+                Animation fade = AnimationUtils.loadAnimation(S1L1.this, R.anim.fadein);
+                CountdownTimerTextView.startAnimation(fade);
+                RelativeLayout.setVisibility(View.VISIBLE);
+                RelativeLayout.startAnimation(fade);
+
+                CheckXImageView.setImageResource(R.drawable.wrong_mark);
+                CheckXImageView.setVisibility(View.VISIBLE);
+                CheckXImageView.startAnimation(fade);
+
+
+            }
+        }, 1000);
+        final Handler handler3 = new Handler();
+        handler3.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation bounceAnim = AnimationUtils.loadAnimation(S1L1.this, R.anim.bounce);
+                CountdownTimerTextView.startAnimation(bounceAnim);
+                CountdownTimerTextView.startAnimation(bounceAnim);
+                bounceAnim.setRepeatMode(Animation.REVERSE);
+            }
+        }, 2000);
+    }
+
+    private void onCorrectAnswerTap() {
+        Button1.setEnabled(false);
+        Button2.setEnabled(false);
+        Button3.setEnabled(false);
+        String passed = "true";
+        addClearToSharedPreference(passed);
         showCheckmarkAndContinue();
     }
 
+    private void addClearToSharedPreference(String passed) {{
+            mEditor.putString(Constants.S1LEVEL1COMPLETE, passed).apply();
+        }
+    }
+
     private void showCheckmarkAndContinue() {
+
+        ObjectAnimator a = new ObjectAnimator();
+        //start location =
+
         final Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
             @Override
@@ -207,8 +294,12 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             CountdownTimerTextView.setText("Great Job!");
             Animation fade = AnimationUtils.loadAnimation(S1L1.this, R.anim.fadein);
             CountdownTimerTextView.startAnimation(fade);
-            ContinueBackRelativeLayout.setVisibility(View.VISIBLE);
-            ContinueBackRelativeLayout.startAnimation(fade);
+            RelativeLayout.setVisibility(View.VISIBLE);
+            RelativeLayout.startAnimation(fade);
+
+            CheckXImageView.setImageResource(R.drawable.check_correct);
+            CheckXImageView.startAnimation(fade);
+            CheckXImageView.setVisibility(View.VISIBLE);
 
         }
     }, 1000);
@@ -248,7 +339,6 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             AnswerQuestionTextView.setText(AnswerQuestionTextView.getText() + " " +  questionObject + "?");
             AnswerQuestionTextView.setVisibility(View.VISIBLE);
             ButtonLayout.setVisibility(View.VISIBLE);
-
         }
     }
 

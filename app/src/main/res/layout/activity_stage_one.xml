@@ -13,7 +13,7 @@
         android:layout_alignParentEnd="true">
 
         <TextView
-            android:text="1456"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/numberOfLightbulbs"

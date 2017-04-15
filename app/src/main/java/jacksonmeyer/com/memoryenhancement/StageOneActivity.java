@@ -3,7 +3,9 @@ package jacksonmeyer.com.memoryenhancement;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -81,6 +83,38 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stage_one);
         ButterKnife.bind(this);
+
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(StageOneActivity.this);
+        String passed1 = mSharedPreferences.getString(Constants.S1LEVEL1COMPLETE, null);
+        String passed2 = mSharedPreferences.getString(Constants.S1LEVEL2COMPLETE, null);
+        String passed3 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
+
+        if (passed1 == null) {
+            Log.d("onCreate: ", "1null");
+        } else if (passed1.equals("true")) {
+            Level1.setBackgroundResource(R.drawable.yellow_circle);
+            Level1.setTextColor(getResources().getColor(R.color.colorYellowish));
+        }
+
+        if (passed2 == null) {
+            Log.d("onCreate: ", "null2");
+        } else if (passed2.equals("true")) {
+            Level2.setBackgroundResource(R.drawable.yellow_circle);
+            Level2.setTextColor(getResources().getColor(R.color.colorYellowish));
+        } else {
+            Log.d("onCreate: ", "didn't make it");
+        }
+
+        if (passed3 == null) {
+            Log.d("onCreate: ", "null3");
+        } else if (passed2.equals("true")) {
+            Level3.setBackgroundResource(R.drawable.yellow_circle);
+            Level3.setTextColor(getResources().getColor(R.color.colorYellowish));
+        } else {
+            Log.d("onCreate: ", "didn't make it");
+        }
+
 
         Level1.setOnClickListener(this);
         Level2.setOnClickListener(this);
