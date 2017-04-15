@@ -7,7 +7,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,6 +36,18 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     Button Button2;
     @Bind(R.id.button3)
     Button Button3;
+    @Bind(R.id.buttonLayout)
+    RelativeLayout ButtonLayout;
+    @Bind(R.id.continueBackRelativeLayout)
+    RelativeLayout ContinueBackRelativeLayout;
+    @Bind(R.id.checkImageView)
+    RelativeLayout CheckImageView;
+
+
+
+
+
+
 
     private CountDownTimer countDownTimer;
     private final long startTime = 10 * 1000;
@@ -57,8 +72,9 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
         ButterKnife.bind(this);
 
         AnswerQuestionTextView.setVisibility(View.INVISIBLE);
+        ContinueBackRelativeLayout.setVisibility(View.INVISIBLE);
+        ButtonLayout.setVisibility(View.INVISIBLE);
         setColorsAndObjects();
-
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
         Button3.setOnClickListener(this);
@@ -138,35 +154,74 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
         if(view == Button1) {
                 if (correctButton == 1) {
-                    sendCorrectStuff();
+                    onCorrectAnswerTap();
                 } else {
-                    sendFailureStuff();
+                    onWrongAnswerTap();
                 }
         } else if (view == Button2) {
             if (correctButton == 2) {
-                sendCorrectStuff();
+                onCorrectAnswerTap();
             } else {
-                sendFailureStuff();
+                onWrongAnswerTap();
             }
 
         } else if (view == Button3) {
             if (correctButton == 3) {
-                sendCorrectStuff();
+                onCorrectAnswerTap();
             } else {
-                sendFailureStuff();
+                onWrongAnswerTap();
             }
 
         }
     }
 
-    private void sendFailureStuff() {
+    private void onWrongAnswerTap() {
         Log.d(TAG, "fail");
     }
 
-    private void sendCorrectStuff() {
+    private void onCorrectAnswerTap() {
         Log.d(TAG, "success");
+        Button1.setEnabled(false);
+        Button2.setEnabled(false);
+        Button3.setEnabled(false);
+        showCheckmarkAndContinue();
+    }
+
+    private void showCheckmarkAndContinue() {
+        final Handler handler1 = new Handler();
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation fade = AnimationUtils.loadAnimation(S1L1.this, R.anim.fadeout);
+                CountdownTimerTextView.startAnimation(fade);
+                CountdownTimerTextView.startAnimation(fade);
+            }
+        }, 0);
+    final Handler handler2 = new Handler();
+    handler2.postDelayed(new Runnable() {
+        @Override
+        public void run() {
+            CountdownTimerTextView.setText("Great Job!");
+            Animation fade = AnimationUtils.loadAnimation(S1L1.this, R.anim.fadein);
+            CountdownTimerTextView.startAnimation(fade);
+            ContinueBackRelativeLayout.setVisibility(View.VISIBLE);
+            ContinueBackRelativeLayout.startAnimation(fade);
+
+        }
+    }, 1000);
+        final Handler handler3 = new Handler();
+        handler3.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation bounceAnim = AnimationUtils.loadAnimation(S1L1.this, R.anim.bounce);
+                CountdownTimerTextView.startAnimation(bounceAnim);
+                CountdownTimerTextView.startAnimation(bounceAnim);
+                bounceAnim.setRepeatMode(Animation.REVERSE);
+            }
+        }, 2000);
     }
 
 
@@ -188,10 +243,11 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
 
         private void askQuestion() {
-//            QuestionTextView.setVisibility(View.INVISIBLE);
             getCorrectButtonColors();
+            QuestionTextView.setVisibility(View.INVISIBLE);
             AnswerQuestionTextView.setText(AnswerQuestionTextView.getText() + " " +  questionObject + "?");
             AnswerQuestionTextView.setVisibility(View.VISIBLE);
+            ButtonLayout.setVisibility(View.VISIBLE);
 
         }
     }
