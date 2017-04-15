@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == PlayButton) {
-            Intent intent = new Intent(MainActivity.this, LevelsActivity.class);
+            Intent intent = new Intent(MainActivity.this, StageOneActivity.class);
             startActivity(intent);
         }
     }

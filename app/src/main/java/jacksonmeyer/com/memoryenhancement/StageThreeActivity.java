@@ -1,15 +1,13 @@
 package jacksonmeyer.com.memoryenhancement;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class LevelsActivity extends AppCompatActivity {
+public class StageThreeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_levels);
-
-
+        setContentView(R.layout.activity_stage_three);
     }
 }

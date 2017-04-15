@@ -3,12 +3,12 @@
     <alpha
         android:fromAlpha = "1.0"
         android:toAlpha = "0.8"
-        android:duration = "40">
+        android:duration = "20">
     </alpha>
     <alpha
         android:fromAlpha = "0.8"
         android:toAlpha = "1.0"
-        android:duration = "40">
+        android:duration = "20">
     </alpha>
     <scale
         android:fromXScale = "1"
