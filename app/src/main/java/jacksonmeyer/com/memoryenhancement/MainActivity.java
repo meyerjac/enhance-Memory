@@ -48,16 +48,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
-        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
 
+        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         if (oldTotal == null) {
-            Log.d("onCreate: ", "old total was null");
             mEditor.putString(Constants.LIGHTBULB_INTEGER_COUNT, "0").apply();
             Integer oldTotalInt = 0;
-            NumberOfLightbulbs.setText(oldTotalInt);
+            NumberOfLightbulbs.setText(String.valueOf(oldTotalInt));
         } else {
-            Log.d("onCreate: ", "in else");
-            NumberOfLightbulbs.setText(oldTotal);
+            Log.d("onCreate3: ", oldTotal);
+            NumberOfLightbulbs.setText(String.valueOf(oldTotal));
         }
 
         Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
@@ -80,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run() {
                 Animation bounceAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
-                TitleTextView.startAnimation(bounceAnim);
                 TitleTextView.startAnimation(bounceAnim);
                 bounceAnim.setRepeatMode(Animation.REVERSE);
             }

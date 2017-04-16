@@ -75,6 +75,10 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.levelTwenty)
     TextView Level20;
 
+    @Bind(R.id.numberOfLightbulbs)
+    TextView NumberOfLightbulbs;
+
+
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
@@ -85,24 +89,21 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_stage_one);
         ButterKnife.bind(this);
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(StageOneActivity.this);
-        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         String passed1 = mSharedPreferences.getString(Constants.S1LEVEL1COMPLETE, null);
         String passed2 = mSharedPreferences.getString(Constants.S1LEVEL2COMPLETE, null);
         String passed3 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
 
+        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
+        NumberOfLightbulbs.setText(oldTotal);
+
         if (passed1 == null) {
-            Log.d("onCreate: ", "1null");
         } else if (passed1.equals("true")) {
             Level1.setBackgroundResource(R.drawable.yellow_circle);
             Level1.setTextColor(getResources().getColor(R.color.colorYellowish));
         }
 
         if (passed2 == null) {
-            Log.d("onCreate: ", "null2");
         } else if (passed2.equals("true")) {
             Level2.setBackgroundResource(R.drawable.yellow_circle);
             Level2.setTextColor(getResources().getColor(R.color.colorYellowish));
@@ -111,8 +112,7 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         }
 
         if (passed3 == null) {
-            Log.d("onCreate: ", "null3");
-        } else if (passed2.equals("true")) {
+        } else if (passed3.equals("true")) {
             Level3.setBackgroundResource(R.drawable.yellow_circle);
             Level3.setTextColor(getResources().getColor(R.color.colorYellowish));
         } else {

@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -63,7 +64,7 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
 
     private CountDownTimer countDownTimer;
-    private final long startTime = 10 * 1000;
+    private final long startTime = 3 * 1000;
     private final long interval = 1000;
     private String questionObject = null;
     private String answerColor = null;
@@ -90,23 +91,22 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(S1L1.this);
         mEditor = mSharedPreferences.edit();
 
+        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
+        NumberOfLightbulbs.setText(oldTotal);
+        Log.d(TAG, "onCreate: " + oldTotal);
+
         AnswerQuestionTextView.setVisibility(View.INVISIBLE);
         RelativeLayout.setVisibility(View.INVISIBLE);
         ButtonLayout.setVisibility(View.INVISIBLE);
         setColorsAndObjects();
 
+        //SETS ALL THE CLICK LISTENERS
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
         Button3.setOnClickListener(this);
         Next.setOnClickListener(this);
         Replay.setOnClickListener(this);
         BackArrow.setOnClickListener(this);
-
-    }
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(S1L1.this, StageOneActivity.class);
-        startActivity(intent);
     }
 
     private void setColorsAndObjects() {
@@ -272,15 +272,11 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void addPointsToSharedPreference(Integer questionPoints) {
-        Log.d(TAG, "addPointsToSharedPreference1: " + "got in here");
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         Integer oldTotalInt = Integer.parseInt(oldTotal);
         Integer newTotalInt = oldTotalInt + questionPoints;
-        Log.d(TAG, "addPointsToSharedPreference2: " + "got in here");
-        NumberOfLightbulbs.setText(oldTotalInt);
-        Log.d(TAG, "addPointsToSharedPreference3: " + "got in here");
+        NumberOfLightbulbs.setText(String.valueOf(newTotalInt));
         mEditor.putString(Constants.LIGHTBULB_INTEGER_COUNT, newTotalInt.toString()).apply();
-        Log.d(TAG, "addPointsToSharedPreference: " + newTotalInt);
     }
 
     private void addClearToSharedPreference(String passed) {{
@@ -289,13 +285,6 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void showCheckmarkAndContinue() {
-
-
-
-
-
-
-
         final Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
             @Override
@@ -305,8 +294,8 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
                 CountdownTimerTextView.startAnimation(fade);
             }
         }, 0);
-    final Handler handler2 = new Handler();
-    handler2.postDelayed(new Runnable() {
+        final Handler handler2 = new Handler();
+        handler2.postDelayed(new Runnable() {
         @Override
         public void run() {
             CountdownTimerTextView.setText("Great Job!");
@@ -319,8 +308,14 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             CheckXImageView.startAnimation(fade);
             CheckXImageView.setVisibility(View.VISIBLE);
 
-        }
-    }, 1000);
+                    TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
+                            -500, 0);
+                    mAnimation1.setDuration(500);
+                    mAnimation1.setFillAfter(true);
+                    AnswerQuestionTextView.startAnimation(mAnimation1);
+
+            }
+        }, 1000);
         final Handler handler3 = new Handler();
         handler3.postDelayed(new Runnable() {
             @Override
@@ -330,7 +325,7 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
                 CountdownTimerTextView.startAnimation(bounceAnim);
                 bounceAnim.setRepeatMode(Animation.REVERSE);
             }
-        }, 2000);
+        }, 1800);
     }
 
 
@@ -355,8 +350,21 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             getCorrectButtonColors();
             QuestionTextView.setVisibility(View.INVISIBLE);
             AnswerQuestionTextView.setText(AnswerQuestionTextView.getText() + " " +  questionObject + "?");
-            AnswerQuestionTextView.setVisibility(View.VISIBLE);
             ButtonLayout.setVisibility(View.VISIBLE);
+            AnswerQuestionTextView.setVisibility(View.VISIBLE);
+
+            final Handler handler2 = new Handler();
+            handler2.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
+                            0, -500);
+                    mAnimation1.setDuration(500);
+
+                    mAnimation1.setFillAfter(true);
+                    AnswerQuestionTextView.startAnimation(mAnimation1);
+                }
+            },0);
         }
     }
 
@@ -436,5 +444,10 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
                 Button3.setBackgroundColor(ContextCompat.getColor(S1L1.this, R.color.colorWhite));
             }
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(S1L1.this, StageOneActivity.class);
+        startActivity(intent);
     }
 }
