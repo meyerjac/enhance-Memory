@@ -1,6 +1,5 @@
 package jacksonmeyer.com.memoryenhancement.Stage1;
 
-import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -57,6 +56,8 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     TextView NumberOfLightbulbs;
     @Bind(R.id. checkXImageView)
     ImageView CheckXImageView;
+
+
 
 
 
@@ -264,8 +265,22 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
         Button2.setEnabled(false);
         Button3.setEnabled(false);
         String passed = "true";
+        Integer questionPoints = 10;
         addClearToSharedPreference(passed);
+        addPointsToSharedPreference(questionPoints);
         showCheckmarkAndContinue();
+    }
+
+    private void addPointsToSharedPreference(Integer questionPoints) {
+        Log.d(TAG, "addPointsToSharedPreference1: " + "got in here");
+        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
+        Integer oldTotalInt = Integer.parseInt(oldTotal);
+        Integer newTotalInt = oldTotalInt + questionPoints;
+        Log.d(TAG, "addPointsToSharedPreference2: " + "got in here");
+        NumberOfLightbulbs.setText(oldTotalInt);
+        Log.d(TAG, "addPointsToSharedPreference3: " + "got in here");
+        mEditor.putString(Constants.LIGHTBULB_INTEGER_COUNT, newTotalInt.toString()).apply();
+        Log.d(TAG, "addPointsToSharedPreference: " + newTotalInt);
     }
 
     private void addClearToSharedPreference(String passed) {{
@@ -275,8 +290,11 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
     private void showCheckmarkAndContinue() {
 
-        ObjectAnimator a = new ObjectAnimator();
-        //start location =
+
+
+
+
+
 
         final Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {

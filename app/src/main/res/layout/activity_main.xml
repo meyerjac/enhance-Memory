@@ -129,22 +129,22 @@ Ads"
         android:layout_alignParentEnd="true">
 
         <TextView
-            android:text="1456"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/numberOfLightbulbs"
             android:textSize="15sp"
             android:layout_marginRight="3dp"
-            android:layout_alignTop="@+id/imageButton"
-            android:layout_toLeftOf="@+id/imageButton"
-            android:layout_toStartOf="@+id/imageButton" />
+            android:layout_alignTop="@+id/lightbulbImage"
+            android:layout_toLeftOf="@+id/lightbulbImage"
+            android:layout_toStartOf="@+id/lightbulbImage" />
 
     <ImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:srcCompat="@drawable/lightbulb5"
         android:background="@android:color/transparent"
-        android:id="@+id/imageButton"
+        android:id="@+id/lightbulbImage"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -164,6 +164,18 @@ Ads"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="72dp"
         android:id="@+id/titleTextView" />
+
+    <TextView
+        android:text="10"
+        android:textSize="80dp"
+        android:textColor="@color/colorWhite"
+        android:rotation="60"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/animationTextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

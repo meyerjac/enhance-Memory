@@ -76,6 +76,7 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
     TextView Level20;
 
     private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
 
     @Override
@@ -84,8 +85,11 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_stage_one);
         ButterKnife.bind(this);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(StageOneActivity.this);
+        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         String passed1 = mSharedPreferences.getString(Constants.S1LEVEL1COMPLETE, null);
         String passed2 = mSharedPreferences.getString(Constants.S1LEVEL2COMPLETE, null);
         String passed3 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
@@ -202,5 +206,10 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
             Intent intent = new Intent(StageOneActivity.this, S1L20.class);
             startActivity(intent);
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

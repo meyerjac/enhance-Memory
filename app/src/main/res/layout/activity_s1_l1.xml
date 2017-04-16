@@ -26,16 +26,16 @@
             android:id="@+id/numberOfLightbulbs"
             android:textSize="15sp"
             android:layout_marginRight="3dp"
-            android:layout_alignTop="@+id/imageButton"
-            android:layout_toLeftOf="@+id/imageButton"
-            android:layout_toStartOf="@+id/imageButton" />
+            android:layout_alignTop="@+id/lightbulbImage"
+            android:layout_toLeftOf="@+id/lightbulbImage"
+            android:layout_toStartOf="@+id/lightbulbImage" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:src="@drawable/lightbulb1"
             android:background="@android:color/transparent"
-            android:id="@+id/imageButton"
+            android:id="@+id/lightbulbImage"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -172,6 +172,4 @@
         android:layout_alignTop="@+id/questionTextView"
         android:visibility="invisible"
         android:layout_centerHorizontal="true" />
-
-
 </RelativeLayout>
