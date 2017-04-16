@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -77,6 +78,10 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
 
     @Bind(R.id.numberOfLightbulbs)
     TextView NumberOfLightbulbs;
+    @Bind(R.id.backArrow)
+    ImageView BackArrow;
+
+
 
 
     private SharedPreferences mSharedPreferences;
@@ -140,12 +145,16 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         Level18.setOnClickListener(this);
         Level19.setOnClickListener(this);
         Level20.setOnClickListener(this);
+        BackArrow.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
-        if (view == Level1) {
+        if (view == BackArrow) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        } else if (view == Level1) {
             Intent intent = new Intent(StageOneActivity.this, S1L1.class);
             startActivity(intent);
         } else if (view == Level2) {

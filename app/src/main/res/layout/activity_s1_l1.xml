@@ -5,10 +5,7 @@
     android:id="@+id/activity_s1_l1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="10dp"
     tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L1">
 
     <RelativeLayout
@@ -147,6 +144,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         app:srcCompat="@drawable/arrow"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

@@ -59,10 +59,6 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     ImageView CheckXImageView;
 
 
-
-
-
-
     private CountDownTimer countDownTimer;
     private final long startTime = 3 * 1000;
     private final long interval = 1000;
@@ -245,6 +241,13 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
                 CheckXImageView.setVisibility(View.VISIBLE);
                 CheckXImageView.startAnimation(fade);
 
+                TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
+                        -500, 0);
+                mAnimation1.setDuration(500);
+                mAnimation1.setFillAfter(true);
+                AnswerQuestionTextView.startAnimation(mAnimation1);
+
+
 
             }
         }, 1000);
@@ -303,7 +306,6 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             CountdownTimerTextView.startAnimation(fade);
             RelativeLayout.setVisibility(View.VISIBLE);
             RelativeLayout.startAnimation(fade);
-
             CheckXImageView.setImageResource(R.drawable.check_correct);
             CheckXImageView.startAnimation(fade);
             CheckXImageView.setVisibility(View.VISIBLE);
