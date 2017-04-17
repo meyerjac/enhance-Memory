@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == PlayButton) {
             Intent intent = new Intent(MainActivity.this, StageOneActivity.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } if (view == NoAdsButton) {
             
         }

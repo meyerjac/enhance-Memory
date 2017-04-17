@@ -458,8 +458,8 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
 
             }
         }, 1000);
-        final Handler handler6 = new Handler();
-        handler6.postDelayed(new Runnable() {
+        final Handler handler4 = new Handler();
+        handler4.postDelayed(new Runnable() {
             @Override
             public void run() {
                 LightBulbRelativeLayout.animate().scaleX(0.8f).scaleY(0.8f).setDuration(500).start();

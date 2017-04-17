@@ -41,16 +41,6 @@
         android:layout_height="50dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/arrow"
-            android:padding="10dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/backArrow" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -61,6 +51,29 @@
             android:id="@+id/titleTextView"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow"
+            android:padding="10dp"
+            android:layout_marginRight="15dp"
+            android:id="@+id/backArrow"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/titleTextView"
+            android:layout_toStartOf="@+id/titleTextView" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow"
+            android:padding="10dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/nextArrow"
+            android:rotation="180"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/titleTextView"
+            android:layout_toEndOf="@+id/titleTextView" />
     </RelativeLayout>
 
     <TableLayout

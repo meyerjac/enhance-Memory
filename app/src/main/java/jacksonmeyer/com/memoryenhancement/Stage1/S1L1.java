@@ -48,6 +48,8 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     RelativeLayout ButtonLayout;
     @Bind(R.id.relativeLayout)
     RelativeLayout RelativeLayout;
+    @Bind(R.id.lightBulbRelativeLayout)
+    RelativeLayout LightBulbRelativeLayout;
     @Bind(R.id.backArrow)
     ImageView BackArrow;
     @Bind(R.id.next)
@@ -204,12 +206,14 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
         } else if (view == BackArrow){
             Intent intent = new Intent(S1L1.this, StageOneActivity.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.pushrightin, R.anim.pushrightout);
         } else if (view == Replay){
             Intent intent = new Intent(S1L1.this, S1L1.class);
             startActivity(intent);
         } else if (view == Next){
             Intent intent = new Intent(S1L1.this, S1L2.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         }
     }
 
@@ -271,11 +275,11 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
         Button2.setEnabled(false);
         Button3.setEnabled(false);
         String passed = "true";
-        Integer questionPoints = 10;
         addClearToSharedPreference(passed);
-        addPointsToSharedPreference(questionPoints);
         showCheckmarkAndContinue();
     }
+
+
 
     private void addPointsToSharedPreference(Integer questionPoints) {
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
@@ -313,14 +317,25 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             CheckXImageView.startAnimation(fade);
             CheckXImageView.setVisibility(View.VISIBLE);
 
-                    TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                            -500, 0);
-                    mAnimation1.setDuration(500);
-                    mAnimation1.setFillAfter(true);
-                    AnswerQuestionTextView.startAnimation(mAnimation1);
+            TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
+                    -500, 0);
+            mAnimation1.setDuration(500);
+            mAnimation1.setFillAfter(true);
+            AnswerQuestionTextView.startAnimation(mAnimation1);
+            LightBulbRelativeLayout.animate().scaleX(1.2f).scaleY(1.2f).setDuration(500).start();
 
-            }
+        }
         }, 1000);
+        final Handler handler6 = new Handler();
+        handler6.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                LightBulbRelativeLayout.animate().scaleX(0.8f).scaleY(0.8f).setDuration(500).start();
+                Integer questionPoints = 10;
+                addPointsToSharedPreference(questionPoints);
+            }
+        }, 1500);
+
         final Handler handler3 = new Handler();
         handler3.postDelayed(new Runnable() {
             @Override
