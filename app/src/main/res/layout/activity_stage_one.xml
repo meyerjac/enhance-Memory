@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout2"
+        android:id="@+id/lightBulbRelativeLayout"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
@@ -58,7 +58,7 @@
             android:textSize="30dp"
             android:textColor="@color/colorYellowish"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/textView"
+            android:id="@+id/titleTextView"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>

@@ -2,6 +2,7 @@ package jacksonmeyer.com.memoryenhancement.Stage1;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -24,6 +25,7 @@ import jacksonmeyer.com.memoryenhancement.R;
 import jacksonmeyer.com.memoryenhancement.StageOneActivity;
 
 import static jacksonmeyer.com.memoryenhancement.R.id.answer3;
+import static jacksonmeyer.com.memoryenhancement.R.id.lightBulbRelativeLayout;
 
 
 public class S1L2 extends AppCompatActivity implements View.OnClickListener {
@@ -36,6 +38,8 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
     RelativeLayout ButtonLayout;
     @Bind(R.id.relativeLayout)
     RelativeLayout RelativeLayout;
+    @Bind(lightBulbRelativeLayout)
+    RelativeLayout LightBulbRelativeLayout;
     @Bind(R.id.backArrow)
     ImageView BackArrow;
     @Bind(R.id.next)
@@ -87,6 +91,9 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
         AnswerQuestionTextView.setVisibility(View.INVISIBLE);
         RelativeLayout.setVisibility(View.INVISIBLE);
         ButtonLayout.setVisibility(View.INVISIBLE);
+
+        Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
+        NumberOfLightbulbs.setTypeface(Rubix);
 
         //SETS ALL THE CLICK LISTENERS
         Answer1.setOnClickListener(this);
@@ -304,8 +311,6 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
             startActivity(intent);
         }
 
-
-
         else {
             Log.d(TAG, "onClick: " + "wrong click");
         }
@@ -317,9 +322,7 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
         Answer2.setEnabled(false);
         Answer3.setEnabled(false);
         String passed = "true";
-        Integer questionPoints = 10;
         addClearToSharedPreference(passed);
-        addPointsToSharedPreference(questionPoints);
         showCheckmarkAndContinue();
     }
 
@@ -375,7 +378,6 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 Animation fade = AnimationUtils.loadAnimation(S1L2.this, R.anim.fadeout);
                 CountdownTimerTextView.startAnimation(fade);
-                CountdownTimerTextView.startAnimation(fade);
             }
         }, 0);
         final Handler handler2 = new Handler();
@@ -408,7 +410,6 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 Animation bounceAnim = AnimationUtils.loadAnimation(S1L2.this, R.anim.bounce);
                 CountdownTimerTextView.startAnimation(bounceAnim);
-                CountdownTimerTextView.startAnimation(bounceAnim);
                 bounceAnim.setRepeatMode(Animation.REVERSE);
             }
         }, 2000);
@@ -433,7 +434,6 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 Animation fade = AnimationUtils.loadAnimation(S1L2.this, R.anim.fadeout);
                 CountdownTimerTextView.startAnimation(fade);
-                CountdownTimerTextView.startAnimation(fade);
             }
         }, 0);
         final Handler handler2 = new Handler();
@@ -454,9 +454,19 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
                 mAnimation1.setDuration(500);
                 mAnimation1.setFillAfter(true);
                 AnswerQuestionTextView.startAnimation(mAnimation1);
+                LightBulbRelativeLayout.animate().scaleX(1.2f).scaleY(1.2f).setDuration(500).start();
 
             }
         }, 1000);
+        final Handler handler6 = new Handler();
+        handler6.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                LightBulbRelativeLayout.animate().scaleX(0.8f).scaleY(0.8f).setDuration(500).start();
+                Integer questionPoints = 10;
+                addPointsToSharedPreference(questionPoints);
+            }
+        }, 1500);
         final Handler handler3 = new Handler();
         handler3.postDelayed(new Runnable() {
             @Override

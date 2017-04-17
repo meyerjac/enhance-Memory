@@ -2,6 +2,7 @@ package jacksonmeyer.com.memoryenhancement.Stage1;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -95,6 +96,10 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
         RelativeLayout.setVisibility(View.INVISIBLE);
         ButtonLayout.setVisibility(View.INVISIBLE);
         setColorsAndObjects();
+
+
+        Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
+        NumberOfLightbulbs.setTypeface(Rubix);
 
         //SETS ALL THE CLICK LISTENERS
         Button1.setOnClickListener(this);

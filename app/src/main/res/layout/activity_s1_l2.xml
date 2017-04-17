@@ -11,7 +11,7 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
 <RelativeLayout
     android:layout_width="100dp"
     android:layout_height="wrap_content"
-    android:id="@+id/relativeLayout2"
+    android:id="@+id/lightBulbRelativeLayout"
     android:layout_alignParentTop="true"
     android:layout_alignParentRight="true"
     android:layout_alignParentEnd="true">
@@ -132,7 +132,7 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
     android:id="@+id/coundownTimerTextView"
     android:textSize="60dp"
     android:textColor="@color/colorYellowish"
-    android:layout_below="@+id/relativeLayout2"
+    android:layout_below="@+id/lightBulbRelativeLayout"
     android:layout_centerHorizontal="true" />
 
 <ImageView

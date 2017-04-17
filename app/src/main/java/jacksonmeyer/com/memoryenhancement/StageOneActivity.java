@@ -2,6 +2,7 @@ package jacksonmeyer.com.memoryenhancement;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -80,6 +81,10 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
     TextView NumberOfLightbulbs;
     @Bind(R.id.backArrow)
     ImageView BackArrow;
+    @Bind(R.id.titleTextView)
+    TextView TitleTextView;
+
+
 
 
 
@@ -107,6 +112,10 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
 
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         NumberOfLightbulbs.setText(oldTotal);
+
+        Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
+        TitleTextView.setTypeface(Rubix);
+        NumberOfLightbulbs.setTypeface(Rubix);
 
         if (passed1 == null) {
         } else if (passed1.equals("true")) {
