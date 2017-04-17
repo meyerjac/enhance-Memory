@@ -38,12 +38,12 @@
     <RelativeLayout
         android:id="@+id/screenLayout"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="75dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Stage 3"
             android:textSize="30dp"
             android:textColor="@color/colorYellowish"
@@ -74,6 +74,16 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/titleTextView"
             android:layout_toEndOf="@+id/titleTextView" />
+
+        <TextView
+            android:text="(Genius)"
+            android:textSize="20dp"
+            android:textColor="@color/colorPinkish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView" />
     </RelativeLayout>
 
     <TableLayout
@@ -82,7 +92,8 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/screenLayout"
         android:stretchColumns="*"
-        android:paddingBottom="20dp">
+        android:paddingBottom="20dp"
+        android:background="@drawable/under_construction">
 
         <TableRow
             android:id="@+id/first_row"

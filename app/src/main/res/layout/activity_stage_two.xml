@@ -74,6 +74,16 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/titleTextView"
             android:layout_toEndOf="@+id/titleTextView" />
+
+        <TextView
+            android:text="(Hard)"
+            android:textSize="20dp"
+            android:textColor="@color/colorPinkish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_below="@+id/titleTextView"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
     <TableLayout

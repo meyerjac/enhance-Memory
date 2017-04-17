@@ -38,13 +38,13 @@
     <RelativeLayout
         android:id="@+id/screenLayout"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="75dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Stage 3"
+            android:layout_height="wrap_content"
+            android:text="Stage 4"
             android:textSize="30dp"
             android:textColor="@color/colorYellowish"
             android:layout_gravity="center_horizontal"
@@ -63,17 +63,15 @@
             android:layout_toLeftOf="@+id/titleTextView"
             android:layout_toStartOf="@+id/titleTextView" />
 
-        <ImageView
+        <TextView
+            android:text="(Einstein's ONLY)"
+            android:textSize="20dp"
+            android:textColor="@color/colorPinkish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrow"
-            android:padding="10dp"
-            android:layout_marginLeft="15dp"
-            android:id="@+id/nextArrow"
-            android:rotation="180"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/titleTextView"
-            android:layout_toEndOf="@+id/titleTextView" />
+            android:layout_below="@+id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView" />
     </RelativeLayout>
 
     <TableLayout
@@ -82,7 +80,8 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/screenLayout"
         android:stretchColumns="*"
-        android:paddingBottom="20dp">
+        android:paddingBottom="20dp"
+        android:background="@drawable/under_construction">
 
         <TableRow
             android:id="@+id/first_row"
