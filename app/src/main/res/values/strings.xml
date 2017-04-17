@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">MemoryEnhancement</string>
-    <string name="s1l1_question_answer">What color was Susans</string>
-    <string name="gs">MemoryEnhancement</string>
-    <string name="a2pp_name">MemoryEnhancement</string>
-    <string name="ap3p_name">MemoryEnhancement</string>
-    <string name="app4_name">MemoryEnhancement</string>
-    <string name="app_4name">MemoryEnhancement</string>
-    <string name="app_n5ame">MemoryEnhancement</string>
+    <string name="s1l1_question">What color was Susans</string>
+    <string name="s1l2_question">What animal wasnt shown?</string>
+    <string name="s1l3_question">MemoryEnhancement</string>
+    <string name="s1l4_question">MemoryEnhancement</string>
+    <string name="s1l5_question">MemoryEnhancement</string>
+    <string name="s1l6_question">MemoryEnhancement</string>
+    <string name="s1l7_question">MemoryEnhancement</string>
+    <string name="s1l8_question">MemoryEnhancement</string>
+    <string name="s1l9_question">MemoryEnhancement</string>
+    <string name="s1l10_question">MemoryEnhancement</string>
+
+
+
 
 
 

@@ -98,6 +98,12 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         String passed1 = mSharedPreferences.getString(Constants.S1LEVEL1COMPLETE, null);
         String passed2 = mSharedPreferences.getString(Constants.S1LEVEL2COMPLETE, null);
         String passed3 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
+        String passed4 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
+        String passed5 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
+        String passed6 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
+        String passed7 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
+
+
 
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         NumberOfLightbulbs.setText(oldTotal);
@@ -124,6 +130,37 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
             Log.d("onCreate: ", "didn't make it");
         }
 
+        if (passed4 == null) {
+        } else if (passed3.equals("true")) {
+            Level4.setBackgroundResource(R.drawable.yellow_circle);
+            Level4.setTextColor(getResources().getColor(R.color.colorYellowish));
+        } else {
+            Log.d("onCreate: ", "didn't make it");
+        }
+
+        if (passed5 == null) {
+        } else if (passed3.equals("true")) {
+            Level5.setBackgroundResource(R.drawable.yellow_circle);
+            Level5.setTextColor(getResources().getColor(R.color.colorYellowish));
+        } else {
+            Log.d("onCreate: ", "didn't make it");
+        }
+
+        if (passed6 == null) {
+        } else if (passed3.equals("true")) {
+            Level6.setBackgroundResource(R.drawable.yellow_circle);
+            Level6.setTextColor(getResources().getColor(R.color.colorYellowish));
+        } else {
+            Log.d("onCreate: ", "didn't make it");
+        }
+
+        if (passed7 == null) {
+        } else if (passed3.equals("true")) {
+            Level7.setBackgroundResource(R.drawable.yellow_circle);
+            Level7.setTextColor(getResources().getColor(R.color.colorYellowish));
+        } else {
+            Log.d("onCreate: ", "didn't make it");
+        }
 
         Level1.setOnClickListener(this);
         Level2.setOnClickListener(this);

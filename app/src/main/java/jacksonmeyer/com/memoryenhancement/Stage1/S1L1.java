@@ -37,11 +37,11 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
     TextView AnswerQuestionTextView;
     @Bind(R.id.questionTextView)
     TextView QuestionTextView;
-    @Bind(R.id.button1)
+    @Bind(R.id.answer1)
     Button Button1;
-    @Bind(R.id.button2)
+    @Bind(R.id.answer2)
     Button Button2;
-    @Bind(R.id.button3)
+    @Bind(R.id.answer3)
     Button Button3;
     @Bind(R.id.buttonLayout)
     RelativeLayout ButtonLayout;
@@ -60,7 +60,7 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
 
     private CountDownTimer countDownTimer;
-    private final long startTime = 3 * 1000;
+    private final long startTime = 16 * 1000;
     private final long interval = 1000;
     private String questionObject = null;
     private String answerColor = null;
@@ -166,15 +166,13 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
 
 
         countDownTimer = new MyCountDownTimer(startTime, interval);
-        CountdownTimerTextView.setText("10");
-
         final Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
                 countDownTimer.start();
             }
-        }, 500);
+        }, 200);
     }
 
     @Override
