@@ -3,22 +3,11 @@
     <string name="s1l1_question">What color was Susans</string>
     <string name="s1l2_question">What animal wasnt shown?</string>
     <string name="s1l3_question">What Animal was in the </string>
-    <string name="s1l4_question">MemoryEnhancement</string>
+    <string name="s1l4_question">How many</string>
     <string name="s1l5_question">MemoryEnhancement</string>
     <string name="s1l6_question">MemoryEnhancement</string>
     <string name="s1l7_question">MemoryEnhancement</string>
     <string name="s1l8_question">MemoryEnhancement</string>
     <string name="s1l9_question">MemoryEnhancement</string>
     <string name="s1l10_question">MemoryEnhancement</string>
-
-
-
-
-
-
-
-
-
-
-    s1l1_question_answer
 </resources>
