@@ -454,7 +454,7 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
                 mAnimation1.setDuration(500);
                 mAnimation1.setFillAfter(true);
                 AnswerQuestionTextView.startAnimation(mAnimation1);
-                LightBulbRelativeLayout.animate().scaleX(1.4f).scaleY(1.4f).setDuration(500).start();
+                NumberOfLightbulbs.animate().scaleX(1.4f).scaleY(1.4f).setDuration(500).start();
 
             }
         }, 1000);
@@ -462,7 +462,7 @@ public class S1L2 extends AppCompatActivity implements View.OnClickListener {
         handler4.postDelayed(new Runnable() {
             @Override
             public void run() {
-                LightBulbRelativeLayout.animate().scaleX(1.0f).scaleY(1.0f).setDuration(500).start();
+                NumberOfLightbulbs.animate().scaleX(1.0f).scaleY(1.0f).setDuration(500).start();
                 Integer questionPoints = 10;
                 addPointsToSharedPreference(questionPoints);
             }
