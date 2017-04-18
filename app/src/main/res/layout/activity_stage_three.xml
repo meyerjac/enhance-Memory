@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:text="Stage 3"
             android:textSize="30dp"
-            android:textColor="@color/colorYellowish"
+            android:textColor="@color/colorBlueish"
             android:layout_gravity="center_horizontal"
             android:id="@+id/titleTextView"
             android:layout_alignParentTop="true"
@@ -55,7 +55,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrow"
+            android:src="@drawable/backblue"
             android:padding="10dp"
             android:layout_marginRight="15dp"
             android:id="@+id/backArrow"
@@ -66,8 +66,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrow"
             android:padding="10dp"
+            android:src="@drawable/backblue"
             android:layout_marginLeft="15dp"
             android:id="@+id/nextArrow"
             android:rotation="180"
@@ -83,13 +83,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleTextView"
             android:layout_centerHorizontal="true"
-            android:id="@+id/textView" />
+            android:id="@+id/geniusTextView" />
     </RelativeLayout>
 
     <TableLayout
         android:id="@+id/myLayout"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="450dp"
         android:layout_below="@+id/screenLayout"
         android:stretchColumns="*"
         android:paddingBottom="20dp"
@@ -355,4 +355,13 @@
                 android:background="@drawable/gray_circle"/>
         </TableRow>
     </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorBlueish"
+        android:id="@+id/horizLine1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

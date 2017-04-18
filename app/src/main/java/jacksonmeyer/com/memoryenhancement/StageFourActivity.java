@@ -21,6 +21,10 @@ public class StageFourActivity extends AppCompatActivity implements View.OnClick
     ImageView BackArrow;
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
+    @Bind(R.id.einsteinTextView)
+    TextView EinsteinTextView;
+
+
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -60,6 +64,7 @@ public class StageFourActivity extends AppCompatActivity implements View.OnClick
         Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
         TitleTextView.setTypeface(Rubix);
         NumberOfLightbulbs.setTypeface(Rubix);
+        EinsteinTextView.setTypeface(Rubix);
 
 //        if (passed21 == null) {
 //        } else if (passed21.equals("true")) {

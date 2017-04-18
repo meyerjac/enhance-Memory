@@ -20,6 +20,13 @@ import butterknife.ButterKnife;
 import static jacksonmeyer.com.memoryenhancement.R.id.lightbulbImage;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @Bind(lightbulbImage)
+    ImageView LightbulbImage;
+    @Bind(R.id.musicButton)
+    ImageView MusicButton;
+    @Bind(R.id.cartButton)
+    ImageView CartButton;
+
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
     @Bind(R.id.noAdsButton)
@@ -28,12 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView RateButton;
     @Bind(R.id.playButton)
     TextView PlayButton;
-    @Bind(R.id. numberOfLightbulbs)
+    @Bind(R.id.numberOfLightbulbs)
     TextView NumberOfLightbulbs;
-    @Bind(lightbulbImage)
-    ImageView LightbulbImage;
     @Bind(R.id.animationTextView)
     TextView AnimationTextView;
+
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -68,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         PlayButton.setOnClickListener(this);
         NoAdsButton.setOnClickListener(this);
+        RateButton.setOnClickListener(this);
+        CartButton.setOnClickListener(this);
+        MusicButton.setOnClickListener(this);
 //
 //        View decorView = getWindow().getDecorView();
 //// Hide the status bar.
@@ -87,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
         if (view == PlayButton) {
             Intent intent = new Intent(MainActivity.this, StageOneActivity.class);
             startActivity(intent);

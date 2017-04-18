@@ -2,7 +2,7 @@
 <resources>
     <color name="colorBackground">#303433</color>
     <color name="colorPinkish">#e93472</color>
-    <color name="colorBlueish">#FF3D6DD2</color>
+    <color name="colorBlueish">#4545CC</color>
     <color name="colorYellowish">#F3CF29</color>
     <color name="colorGreenish">#19C59E</color>
     <color name="colorLightGrayish">#AAAAAA</color>

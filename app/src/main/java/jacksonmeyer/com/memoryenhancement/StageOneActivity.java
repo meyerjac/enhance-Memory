@@ -85,6 +85,11 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
     ImageView NextArrow;
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
+    @Bind(R.id.easyTextView)
+    TextView EasyTextView;
+
+
+
 
 
     private SharedPreferences mSharedPreferences;
@@ -125,7 +130,13 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
         TitleTextView.setTypeface(Rubix);
         NumberOfLightbulbs.setTypeface(Rubix);
-
+        EasyTextView.setTypeface(Rubix);
+        Level1.setTypeface(Rubix); Level2.setTypeface(Rubix); Level3.setTypeface(Rubix); Level4.setTypeface(Rubix);
+        Level5.setTypeface(Rubix); Level6.setTypeface(Rubix); Level7.setTypeface(Rubix); Level8.setTypeface(Rubix);
+        Level9.setTypeface(Rubix); Level10.setTypeface(Rubix); Level11.setTypeface(Rubix); Level12.setTypeface(Rubix);
+        Level13.setTypeface(Rubix); Level14.setTypeface(Rubix); Level15.setTypeface(Rubix); Level16.setTypeface(Rubix);
+        Level17.setTypeface(Rubix); Level18.setTypeface(Rubix); Level19.setTypeface(Rubix); Level20.setTypeface(Rubix);
+        
         if (passed1 == null) {
         } else if (passed1.equals("true")) {
             Level1.setBackgroundResource(R.drawable.yellow_circle);

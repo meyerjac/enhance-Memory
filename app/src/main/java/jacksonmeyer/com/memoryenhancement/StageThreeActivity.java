@@ -15,46 +15,46 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class StageThreeActivity extends AppCompatActivity implements View.OnClickListener {
-//    @Bind(R.id.levelOne)
-//    TextView Level1;
-//    @Bind(R.id.levelTwo)
-//    TextView Level2;
-//    @Bind(R.id.levelThree)
-//    TextView Level3;
-//    @Bind(R.id.levelFour)
-//    TextView Level4;
-//    @Bind(R.id.levelFive)
-//    TextView Level5;
-//    @Bind(R.id.levelSix)
-//    TextView Level6;
-//    @Bind(R.id.levelSeven)
-//    TextView Level7;
-//    @Bind(R.id.levelEight)
-//    TextView Level8;
-//    @Bind(R.id.levelNine)
-//    TextView Level9;
-//    @Bind(R.id.levelTen)
-//    TextView Level10;
-//    @Bind(R.id.levelEleven)
-//    TextView Level11;
-//    @Bind(R.id.levelTwelve)
-//    TextView Level12;
-//    @Bind(R.id.levelThirteen)
-//    TextView Level13;
-//    @Bind(R.id.levelFourteen)
-//    TextView Level14;
-//    @Bind(R.id.levelFifteen)
-//    TextView Level15;
-//    @Bind(R.id.levelSixteen)
-//    TextView Level16;
-//    @Bind(R.id.levelseventeen)
-//    TextView Level17;
-//    @Bind(R.id.levelEighteen)
-//    TextView Level18;
-//    @Bind(R.id.levelNineteen)
-//    TextView Level19;
-//    @Bind(R.id.levelTwenty)
-//    TextView Level20;
+    @Bind(R.id.levelOne)
+    TextView Level1;
+    @Bind(R.id.levelTwo)
+    TextView Level2;
+    @Bind(R.id.levelThree)
+    TextView Level3;
+    @Bind(R.id.levelFour)
+    TextView Level4;
+    @Bind(R.id.levelFive)
+    TextView Level5;
+    @Bind(R.id.levelSix)
+    TextView Level6;
+    @Bind(R.id.levelSeven)
+    TextView Level7;
+    @Bind(R.id.levelEight)
+    TextView Level8;
+    @Bind(R.id.levelNine)
+    TextView Level9;
+    @Bind(R.id.levelTen)
+    TextView Level10;
+    @Bind(R.id.levelEleven)
+    TextView Level11;
+    @Bind(R.id.levelTwelve)
+    TextView Level12;
+    @Bind(R.id.levelThirteen)
+    TextView Level13;
+    @Bind(R.id.levelFourteen)
+    TextView Level14;
+    @Bind(R.id.levelFifteen)
+    TextView Level15;
+    @Bind(R.id.levelSixteen)
+    TextView Level16;
+    @Bind(R.id.levelseventeen)
+    TextView Level17;
+    @Bind(R.id.levelEighteen)
+    TextView Level18;
+    @Bind(R.id.levelNineteen)
+    TextView Level19;
+    @Bind(R.id.levelTwenty)
+    TextView Level20;
 
     @Bind(R.id.numberOfLightbulbs)
     TextView NumberOfLightbulbs;
@@ -64,6 +64,8 @@ public class StageThreeActivity extends AppCompatActivity implements View.OnClic
     ImageView NextArrow;
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
+    @Bind(R.id.geniusTextView)
+    TextView GeniusTextView;
 
 
     private SharedPreferences mSharedPreferences;
@@ -104,6 +106,7 @@ public class StageThreeActivity extends AppCompatActivity implements View.OnClic
         Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
         TitleTextView.setTypeface(Rubix);
         NumberOfLightbulbs.setTypeface(Rubix);
+        GeniusTextView.setTypeface(Rubix);
 
 //        if (passed21 == null) {
 //        } else if (passed21.equals("true")) {
