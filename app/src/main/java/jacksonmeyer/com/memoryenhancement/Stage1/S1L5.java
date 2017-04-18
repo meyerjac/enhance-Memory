@@ -147,9 +147,9 @@ public class S1L5 extends AppCompatActivity implements View.OnClickListener{
         } else {
         }
 
-        QuestionTextView.setText("Justin was going on an adventure, on his way out the door he grabbed his "
-                + color1 + " shoes, put on his " + color2 + " backpack  " +
-                "and grabbed his " + color3 + " fishing Pole!" );
+        QuestionTextView.setText("Justin went on an adventure, on his way out the door he grabbed his "
+                + color1 + " shoes, put on his " + color2 + " backpack , " +
+                "and grabbed his " + color3 + " fishing pole!" );
 
         countDownTimer = new S1L5.MyCountDownTimer(startTime, interval);
         final Handler handler1 = new Handler();
