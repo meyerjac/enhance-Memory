@@ -134,16 +134,16 @@ public class S1L6 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void startQuestion() {
-            setAnimationsAndRun();
+        setAnimationsAndRun();
     }
 
     private void setAnimationsAndRun() {
         final Animation fadeOut = AnimationUtils.loadAnimation(S1L6.this, R.anim.fadeout);
         final Animation fadeIn = AnimationUtils.loadAnimation(S1L6.this, R.anim.fadein);
 
-            Position1.setImageDrawable(getResources().getDrawable(R.drawable.sadface));
-            Position2.setImageDrawable(getResources().getDrawable(R.drawable.happyface));
-            Position3.setImageDrawable(getResources().getDrawable(R.drawable.cryface));
+        Position1.setImageDrawable(getResources().getDrawable(R.drawable.sadface));
+        Position2.setImageDrawable(getResources().getDrawable(R.drawable.happyface));
+        Position3.setImageDrawable(getResources().getDrawable(R.drawable.cryface));
 
 
 
