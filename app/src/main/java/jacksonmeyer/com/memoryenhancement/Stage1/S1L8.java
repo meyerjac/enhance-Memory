@@ -162,8 +162,8 @@ public class S1L8 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                        500, -2500);
-                mAnimation1.setDuration(1500);
+                        1000, -3000);
+                mAnimation1.setDuration(2000);
 
                 mAnimation1.setFillAfter(true);
                 Star1.startAnimation(mAnimation1);
@@ -173,9 +173,9 @@ public class S1L8 extends AppCompatActivity implements View.OnClickListener {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                TranslateAnimation mAnimation1 = new TranslateAnimation(-500, 2500,
+                TranslateAnimation mAnimation1 = new TranslateAnimation(-1000, 3000,
                         0, 0);
-                mAnimation1.setDuration(1500);
+                mAnimation1.setDuration(2000);
 
                 mAnimation1.setFillAfter(true);
                 Star2.startAnimation(mAnimation1);
@@ -185,8 +185,8 @@ public class S1L8 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                        -500, 2500);
-                mAnimation1.setDuration(1500);
+                        -1000, 3000);
+                mAnimation1.setDuration(2000);
 
                 mAnimation1.setFillAfter(true);
                 Star3.startAnimation(mAnimation1);
@@ -196,9 +196,9 @@ public class S1L8 extends AppCompatActivity implements View.OnClickListener {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                TranslateAnimation mAnimation1 = new TranslateAnimation(500, -2500,
+                TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -3000,
                         0, 0);
-                mAnimation1.setDuration(1500);
+                mAnimation1.setDuration(2000);
 
                 mAnimation1.setFillAfter(true);
                 Star4.startAnimation(mAnimation1);
@@ -268,7 +268,7 @@ public class S1L8 extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(this, StageOneActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
-            Intent intent = new Intent(this, S1L8.class);
+            Intent intent = new Intent(this, S1L9.class);
             startActivity(intent);
         } else if (view.equals(Replay)) {
             Intent intent = new Intent(this, S1L8.class);
