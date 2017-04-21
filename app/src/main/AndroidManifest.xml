@@ -66,6 +66,9 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".StageFourActivity"
             android:screenOrientation="portrait"></activity>
+
+        <service android:name=".BackgroundSoundService"
+                 android:enabled="true" />
     </application>
 
 </manifest>

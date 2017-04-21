@@ -45,11 +45,11 @@ public class S1L6 extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.answerQuestionTextView)
     TextView AnswerQuestionTextView;
 
-    @Bind(R.id.faceView1)
+    @Bind(R.id.answerStar1)
     ImageView FaceView1;
-    @Bind(R.id.faceView2)
+    @Bind(R.id.answerStar2)
     ImageView FaceView2;
-    @Bind(R.id.faceView3)
+    @Bind(R.id.answerStar3)
     ImageView FaceView3;
     @Bind(R.id.backArrow)
     ImageView BackArrow;
@@ -153,6 +153,11 @@ public class S1L6 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 FaceSampleRelativeLayout.setVisibility(View.VISIBLE);
                 FaceSampleRelativeLayout.startAnimation(fadeIn);
+                TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
+                        -200, 1200);
+                mAnimation1.setDuration(3000);
+                FaceSampleRelativeLayout.startAnimation(mAnimation1);
+                mAnimation1.setFillAfter(true);
             }
         }, 0);
         final Handler handler2 = new Handler();
@@ -161,6 +166,13 @@ public class S1L6 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 FaceSampleRelativeLayout.startAnimation(fadeOut);
                 FaceSampleRelativeLayout.setVisibility(View.INVISIBLE);
+
+            }
+        }, 3000);
+        final Handler handler3 = new Handler();
+        handler3.postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 setCorrectButtons();
 
             }
