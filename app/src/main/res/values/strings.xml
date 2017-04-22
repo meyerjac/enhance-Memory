@@ -8,6 +8,16 @@
     <string name="s1l6_question">Which face was</string>
     <string name="s1l7_question">What number was in the</string>
     <string name="s1l8_question">Which star was not shown?</string>
-    <string name="s1l9_question">MemoryEnhancement</string>
-    <string name="s1l10_question">MemoryEnhancement</string>
+    <string name="s1l9_question">Which star was not shown?</string>
+    <string name="s1l10_question">Who was the </string>
+    <string name="s1l11_question">asdf</string>
+    <string name="s1l12_question">sadf</string>
+    <string name="s1l13_question">asdf </string>
+    <string name="s1l14_question">sadf</string>
+    <string name="s1l15_question">sadf</string>
+    <string name="s1l16_question">sadfsaf</string>
+    <string name="s1l17_question">sadfsadf</string>
+    <string name="s1l18_question">sdf</string>
+    <string name="s1l19_question">asf</string>
+    <string name="s1l20_question">sadf </string>
 </resources>

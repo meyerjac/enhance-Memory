@@ -150,7 +150,7 @@
         android:id="@+id/backArrow" />
 
     <TextView
-        android:text="@string/s1l8_question"
+        android:text="@string/s1l9_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorYellowish"
