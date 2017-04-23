@@ -159,7 +159,7 @@ public class S1L7 extends AppCompatActivity implements View.OnClickListener {
                 QuestionTextView.setText(digit1 + digit2 + digit3 + "." + digit4);
                 QuestionTextView.startAnimation(fadeIn);
                 QuestionTextView.setVisibility(View.VISIBLE);
-                TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
+                TranslateAnimation mAnimation1 = new TranslateAnimation(-1500, 1500,
                         -300, 2500);
                 mAnimation1.setDuration(5000);
 
