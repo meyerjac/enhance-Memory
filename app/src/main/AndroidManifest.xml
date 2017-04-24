@@ -92,7 +92,8 @@
 
         <service
             android:name=".BackgroundSoundService"
-            android:enabled="true" />
+            android:enabled="true"
+            android:stopWithTask="true"/>/>
 
         <activity android:name=".Stage2.S2L1" />
         <activity android:name=".Stage2.S2L2" />

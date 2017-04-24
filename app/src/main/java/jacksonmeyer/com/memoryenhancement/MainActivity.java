@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -113,6 +114,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bounceAnim.setRepeatMode(Animation.REVERSE);
             }
         }, 0);
+
+        }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("debug", "onResume: " + "resume");
+
+        String musicOn = mSharedPreferences.getString(Constants.MUSIC_PLAYING, null);
+        if ((musicOn == null) || (musicOn.equals("on"))) {
+            mEditor.putString(Constants.MUSIC_PLAYING, "on").apply();
+
+            //start Background Music
+            Intent music = new Intent();
+            music.setClass(this, BackgroundSoundService.class);
+            startService(music);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("debug", "onResume: " + "resume");
+
+        Intent music = new Intent();
+        music.setClass(this, BackgroundSoundService.class);
+        stopService(music);
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        Intent music = new Intent();
+        music.setClass(this, BackgroundSoundService.class);
+        stopService(music);
+        Log.d("debug", "onDestroy: " + "destroy");
     }
 
     @Override
@@ -123,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == MusicButton) {
+
             //stop music service...stop music from playing
             MusicButton.setVisibility(View.INVISIBLE);
             NoMusicButton.setVisibility(View.VISIBLE);
