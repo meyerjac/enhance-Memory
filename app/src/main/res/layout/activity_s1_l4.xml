@@ -190,7 +190,7 @@
     <TextView
         android:text=""
         android:textSize="45dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlueish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -204,7 +204,7 @@
     <TextView
         android:text=""
         android:textSize="45dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorPinkish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -217,7 +217,7 @@
     <TextView
         android:text=""
         android:textSize="45dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorGreenish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

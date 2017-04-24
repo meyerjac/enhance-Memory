@@ -135,9 +135,9 @@ public class S1L4 extends AppCompatActivity implements View.OnClickListener {
 
     private void setFruitNumbers() {
         //random fruit numbers
-        apples = 1 + (int)(Math.random() * ((10 - 1)));
-        oranges = 1 + (int)(Math.random() * ((10 - 1)));
-        grapefruits = 1 + (int)(Math.random() * ((10 - 1)));
+        apples = 15 + (int)(Math.random() * ((5)));
+        oranges = 10 + (int)(Math.random() * ((5)));
+        grapefruits = 5 + (int)(Math.random() * ((5)));
         Log.d(TAG, "fruit " + apples + oranges + grapefruits);
     }
 
@@ -214,8 +214,8 @@ public class S1L4 extends AppCompatActivity implements View.OnClickListener {
 
     private void setCorrectButtons() {
         correctButtonNumber = 1 + (int) (Math.random() * ((4 - 1)));
-        Integer randomNumber1 = 1 + (int) (Math.random() * ((5 - 1)));
-        Integer randomNumber2 = 5 + (int) (Math.random() * ((10 - 5)));
+        Integer randomNumber1 = 10 + (int) (Math.random() * ((5 )));
+        Integer randomNumber2 = 7 + (int) (Math.random() * ((10 - 5)));
 
         if (questionObject.equals("apples")) {
             if (correctButtonNumber == 1) {
