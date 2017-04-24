@@ -134,17 +134,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        Log.d("debug", "onResume: " + "resume");
-
-        Intent music = new Intent();
-        music.setClass(this, BackgroundSoundService.class);
-        stopService(music);
-
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
 

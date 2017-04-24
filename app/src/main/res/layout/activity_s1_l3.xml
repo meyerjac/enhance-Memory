@@ -162,7 +162,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:id="@+id/animalRelativeLayout"
+        android:id="@+id/colorRelativeLayout"
         android:visibility="invisible"
         android:layout_marginBottom="43dp"
         android:layout_alignBottom="@+id/answerQuestionTextView"

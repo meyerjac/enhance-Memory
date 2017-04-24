@@ -58,7 +58,7 @@ public class S1L12 extends AppCompatActivity implements View.OnClickListener {
     @Bind(answer3)
     Button Answer3;
 
-    @Bind(R.id.shownColorImageView)
+    @Bind(R.id.colorOneImageView)
     ImageView ShownColorImageView;
 
 

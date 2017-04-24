@@ -27,7 +27,7 @@ import jacksonmeyer.com.memoryenhancement.Constants;
 import jacksonmeyer.com.memoryenhancement.R;
 import jacksonmeyer.com.memoryenhancement.StageOneActivity;
 
-import static jacksonmeyer.com.memoryenhancement.R.id.animalRelativeLayout;
+import static jacksonmeyer.com.memoryenhancement.R.id.colorRelativeLayout;
 import static jacksonmeyer.com.memoryenhancement.R.id.answer3;
 
 public class S1L3 extends AppCompatActivity implements View.OnClickListener {
@@ -36,7 +36,7 @@ public class S1L3 extends AppCompatActivity implements View.OnClickListener {
     RelativeLayout ButtonLayout;
     @Bind(R.id.relativeLayout)
     RelativeLayout RelativeLayout;
-    @Bind(animalRelativeLayout)
+    @Bind(colorRelativeLayout)
     RelativeLayout AnimalRelativeLayout;
 
     @Bind(R.id.next)
