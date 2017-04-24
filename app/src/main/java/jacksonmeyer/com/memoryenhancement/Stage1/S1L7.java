@@ -159,13 +159,25 @@ public class S1L7 extends AppCompatActivity implements View.OnClickListener {
                 QuestionTextView.setText(digit1 + digit2 + digit3 + "." + digit4);
                 QuestionTextView.startAnimation(fadeIn);
                 QuestionTextView.setVisibility(View.VISIBLE);
-                TranslateAnimation mAnimation1 = new TranslateAnimation(-1500, 1500,
-                        -300, 2500);
-                mAnimation1.setDuration(5000);
+                if (digit1.equals("8")) {
+                    TranslateAnimation mAnimation1 = new TranslateAnimation(-1500, 1500,
+                            -300, 2500);
+                    mAnimation1.setDuration(5000);
 
-                mAnimation1.setFillAfter(true);
-                QuestionTextView.startAnimation(mAnimation1);
-                setCorrectButtons();
+                    mAnimation1.setFillAfter(true);
+                    QuestionTextView.startAnimation(mAnimation1);
+                    setCorrectButtons();
+                } else {
+                    TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -1000,
+                            -300, 2500);
+                    mAnimation1.setDuration(5000);
+
+                    mAnimation1.setFillAfter(true);
+                    QuestionTextView.startAnimation(mAnimation1);
+                    setCorrectButtons();
+
+                }
+
             }
         },0);
         final Handler handler2 = new Handler();
@@ -180,19 +192,19 @@ public class S1L7 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void setCorrectButtons() {
-        if (answerDigit == "tenths") {
+        if (answerDigit.equals("tenths")) {
             Answer1.setText(digit3);
             Answer2.setText(digit4);
             Answer3.setText(digit2);
-        } else if (answerDigit == "ones") {
+        } else if (answerDigit.equals("ones")) {
             Answer1.setText(digit2);
             Answer2.setText(digit4);
             Answer3.setText(digit3);
-        } else if (answerDigit == "tens") {
+        } else if (answerDigit.equals("tens")) {
             Answer1.setText(digit1);
             Answer2.setText(digit4);
             Answer3.setText(digit2);
-        } else if (answerDigit == "hundereds") {
+        } else if (answerDigit.equals("hundereds")) {
             Answer1.setText(digit1);
             Answer2.setText(digit4);
             Answer3.setText(digit3);

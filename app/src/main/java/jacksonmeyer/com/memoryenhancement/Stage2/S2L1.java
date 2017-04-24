@@ -290,7 +290,7 @@ public class S2L1 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void addClearToSharedPreference(String passed) {{
-        mEditor.putString(Constants.S1LEVEL1COMPLETE, passed).apply();
+        mEditor.putString(Constants.S2LEVEL21COMPLETE, passed).apply();
     }
     }
 

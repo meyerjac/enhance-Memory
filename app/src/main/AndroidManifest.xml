@@ -17,104 +17,102 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".StageOneActivity"
+        <activity android:name=".StageOneActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L1"
+        <activity android:name=".Stage1.S1L1"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L2"
+        <activity android:name=".Stage1.S1L2"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L3"
+        <activity android:name=".Stage1.S1L3"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L5"
+        <activity android:name=".Stage1.S1L5"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L4"
+        <activity android:name=".Stage1.S1L4"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L6"
+        <activity android:name=".Stage1.S1L6"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L7"
+        <activity android:name=".Stage1.S1L7"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L8"
+        <activity android:name=".Stage1.S1L8"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L9"
+        <activity android:name=".Stage1.S1L9"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L10"
+        <activity android:name=".Stage1.S1L10"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L11"
+        <activity android:name=".Stage1.S1L11"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L12"
+        <activity android:name=".Stage1.S1L12"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L13"
+        <activity android:name=".Stage1.S1L13"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L14"
+        <activity android:name=".Stage1.S1L14"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L15"
+        <activity android:name=".Stage1.S1L15"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L16"
+        <activity android:name=".Stage1.S1L16"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L17"
+        <activity android:name=".Stage1.S1L17"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L18"
+        <activity android:name=".Stage1.S1L18"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L19"
+        <activity android:name=".Stage1.S1L19"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Stage1.S1L20"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".StageThreeActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".StageTwoActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".StageFourActivity"
+        <activity android:name=".Stage1.S1L20"
             android:screenOrientation="portrait" />
 
-        <service
-            android:name=".BackgroundSoundService"
+
+
+        <activity android:name=".Stage2.S2L1"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L2"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L3"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L4"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L5"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L6"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L7"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L8"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L9"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L10"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L11"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L12"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L13"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L14"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L15"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L16"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L17"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L18"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L19"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Stage2.S2L20"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".StageThreeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".StageTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".StageFourActivity"
+            android:screenOrientation="portrait" />
+        <service android:name=".BackgroundSoundService"
             android:enabled="true"
-            android:stopWithTask="true"/>/>
+            android:stopWithTask="true"/>
 
-        <activity android:name=".Stage2.S2L1" />
-        <activity android:name=".Stage2.S2L2" />
-        <activity android:name=".Stage2.S2L3" />
-        <activity android:name=".Stage2.S2L4" />
-        <activity android:name=".Stage2.S2L5" />
-        <activity android:name=".Stage2.S2L6" />
-        <activity android:name=".Stage2.S2L7" />
-        <activity android:name=".Stage2.S2L8" />
-        <activity android:name=".Stage2.S2L9" />
-        <activity android:name=".Stage2.S2L10" />
-        <activity android:name=".Stage2.S2L11" />
-        <activity android:name=".Stage2.S2L12" />
-        <activity android:name=".Stage2.S2L13" />
-        <activity android:name=".Stage2.S2L14" />
-        <activity android:name=".Stage2.S2L15" />
-        <activity android:name=".Stage2.S2L16" />
-        <activity android:name=".Stage2.S2L17" />
-        <activity android:name=".Stage2.S2L18" />
-        <activity android:name=".Stage2.S2L19" />
-        <activity android:name=".Stage2.S2L20"></activity>
+
     </application>
-
 </manifest>
