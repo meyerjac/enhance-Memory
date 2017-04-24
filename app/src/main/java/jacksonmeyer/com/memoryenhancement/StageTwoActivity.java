@@ -14,26 +14,26 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L1;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L10;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L11;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L12;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L13;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L14;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L15;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L16;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L17;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L18;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L19;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L2;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L20;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L3;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L4;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L5;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L6;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L7;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L8;
-import jacksonmeyer.com.memoryenhancement.Stage1.S1L9;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L1;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L10;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L11;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L12;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L13;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L14;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L15;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L16;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L17;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L18;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L19;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L2;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L20;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L3;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L4;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L5;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L6;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L7;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L8;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L9;
 
 public class StageTwoActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.levelOne)
@@ -99,26 +99,26 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
         ButterKnife.bind(this);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(StageTwoActivity.this);
-        String passed21 = mSharedPreferences.getString(Constants.S1LEVEL21COMPLETE, null);
-        String passed22 = mSharedPreferences.getString(Constants.S1LEVEL22COMPLETE, null);
-        String passed23 = mSharedPreferences.getString(Constants.S1LEVEL23COMPLETE, null);
-        String passed24 = mSharedPreferences.getString(Constants.S1LEVEL24COMPLETE, null);
-        String passed25 = mSharedPreferences.getString(Constants.S1LEVEL25COMPLETE, null);
-        String passed26 = mSharedPreferences.getString(Constants.S1LEVEL26COMPLETE, null);
-        String passed27 = mSharedPreferences.getString(Constants.S1LEVEL27COMPLETE, null);
-        String passed28 = mSharedPreferences.getString(Constants.S1LEVEL28COMPLETE, null);
-        String passed29= mSharedPreferences.getString(Constants.S1LEVEL29COMPLETE, null);
-        String passed30 = mSharedPreferences.getString(Constants.S1LEVEL30COMPLETE, null);
-        String passed31 = mSharedPreferences.getString(Constants.S1LEVEL31COMPLETE, null);
-        String passed32 = mSharedPreferences.getString(Constants.S1LEVEL32COMPLETE, null);
-        String passed33 = mSharedPreferences.getString(Constants.S1LEVEL33COMPLETE, null);
-        String passed34 = mSharedPreferences.getString(Constants.S1LEVEL34COMPLETE, null);
-        String passed35 = mSharedPreferences.getString(Constants.S1LEVEL35COMPLETE, null);
-        String passed36 = mSharedPreferences.getString(Constants.S1LEVEL36COMPLETE, null);
-        String passed37 = mSharedPreferences.getString(Constants.S1LEVEL37COMPLETE, null);
-        String passed38 = mSharedPreferences.getString(Constants.S1LEVEL38COMPLETE, null);
-        String passed39 = mSharedPreferences.getString(Constants.S1LEVEL39COMPLETE, null);
-        String passed40 = mSharedPreferences.getString(Constants.S1LEVEL40COMPLETE, null);
+        String passed21 = mSharedPreferences.getString(Constants.S2LEVEL21COMPLETE, null);
+        String passed22 = mSharedPreferences.getString(Constants.S2LEVEL22COMPLETE, null);
+        String passed23 = mSharedPreferences.getString(Constants.S2LEVEL23COMPLETE, null);
+        String passed24 = mSharedPreferences.getString(Constants.S2LEVEL24COMPLETE, null);
+        String passed25 = mSharedPreferences.getString(Constants.S2LEVEL25COMPLETE, null);
+        String passed26 = mSharedPreferences.getString(Constants.S2LEVEL26COMPLETE, null);
+        String passed27 = mSharedPreferences.getString(Constants.S2LEVEL27COMPLETE, null);
+        String passed28 = mSharedPreferences.getString(Constants.S2LEVEL28COMPLETE, null);
+        String passed29 = mSharedPreferences.getString(Constants.S2LEVEL29COMPLETE, null);
+        String passed30 = mSharedPreferences.getString(Constants.S2LEVEL30COMPLETE, null);
+        String passed31 = mSharedPreferences.getString(Constants.S2LEVEL31COMPLETE, null);
+        String passed32 = mSharedPreferences.getString(Constants.S2LEVEL32COMPLETE, null);
+        String passed33 = mSharedPreferences.getString(Constants.S2LEVEL33COMPLETE, null);
+        String passed34 = mSharedPreferences.getString(Constants.S2LEVEL34COMPLETE, null);
+        String passed35 = mSharedPreferences.getString(Constants.S2LEVEL35COMPLETE, null);
+        String passed36 = mSharedPreferences.getString(Constants.S2LEVEL36COMPLETE, null);
+        String passed37 = mSharedPreferences.getString(Constants.S2LEVEL37COMPLETE, null);
+        String passed38 = mSharedPreferences.getString(Constants.S2LEVEL38COMPLETE, null);
+        String passed39 = mSharedPreferences.getString(Constants.S2LEVEL39COMPLETE, null);
+        String passed40 = mSharedPreferences.getString(Constants.S2LEVEL40COMPLETE, null);
 
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         NumberOfLightbulbs.setText(oldTotal);
@@ -327,83 +327,83 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level1) {
-            Intent intent = new Intent(this, S1L1.class);
+            Intent intent = new Intent(this, S2L1.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level2) {
-            Intent intent = new Intent(this, S1L2.class);
+            Intent intent = new Intent(this, S2L2.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level3) {
-            Intent intent = new Intent(this, S1L3.class);
+            Intent intent = new Intent(this, S2L3.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level4) {
-            Intent intent = new Intent(this, S1L4.class);
+            Intent intent = new Intent(this, S2L4.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level5) {
-            Intent intent = new Intent(this, S1L5.class);
+            Intent intent = new Intent(this, S2L5.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level6) {
-            Intent intent = new Intent(this, S1L6.class);
+            Intent intent = new Intent(this, S2L6.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level7) {
-            Intent intent = new Intent(this, S1L7.class);
+            Intent intent = new Intent(this, S2L7.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level8) {
-            Intent intent = new Intent(this, S1L8.class);
+            Intent intent = new Intent(this, S2L8.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level9) {
-            Intent intent = new Intent(this, S1L9.class);
+            Intent intent = new Intent(this, S2L9.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level10) {
-            Intent intent = new Intent(this, S1L10.class);
+            Intent intent = new Intent(this, S2L10.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level11) {
-            Intent intent = new Intent(this, S1L11.class);
+            Intent intent = new Intent(this, S2L11.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level12) {
-            Intent intent = new Intent(this, S1L12.class);
+            Intent intent = new Intent(this, S2L12.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level13) {
-            Intent intent = new Intent(this, S1L13.class);
+            Intent intent = new Intent(this, S2L13.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level14) {
-            Intent intent = new Intent(this, S1L14.class);
+            Intent intent = new Intent(this, S2L14.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level15) {
-            Intent intent = new Intent(this, S1L15.class);
+            Intent intent = new Intent(this, S2L15.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level16) {
-            Intent intent = new Intent(this, S1L16.class);
+            Intent intent = new Intent(this, S2L16.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level17) {
-            Intent intent = new Intent(this, S1L17.class);
+            Intent intent = new Intent(this, S2L17.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level18) {
-            Intent intent = new Intent(this, S1L18.class);
+            Intent intent = new Intent(this, S2L18.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level19) {
-            Intent intent = new Intent(this, S1L19.class);
+            Intent intent = new Intent(this, S2L19.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level20) {
-            Intent intent = new Intent(this, S1L20.class);
+            Intent intent = new Intent(this, S2L20.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         }
