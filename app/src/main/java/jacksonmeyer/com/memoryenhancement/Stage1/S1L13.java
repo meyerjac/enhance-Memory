@@ -103,6 +103,11 @@ public class S1L13 extends AppCompatActivity implements View.OnClickListener{
         startTimer();
         setAnswerColor();
         startQuestion();
+
+        ColorOneImageView.setEnabled(false);
+        ColorTwoImageView.setEnabled(false);
+        ColorThreeImageView.setEnabled(false);
+        ColorFourImageView.setEnabled(false);
     }
 
     private void setAnswerColor() {
@@ -208,6 +213,10 @@ public class S1L13 extends AppCompatActivity implements View.OnClickListener{
     private void askQuestion() {
         AnswerQuestionTextView.setText(AnswerQuestionTextView.getText() + " " + answerColor + " square was!" );
         AnswerQuestionTextView.setVisibility(View.VISIBLE);
+        ColorOneImageView.setEnabled(true);
+        ColorTwoImageView.setEnabled(true);
+        ColorThreeImageView.setEnabled(true);
+        ColorFourImageView.setEnabled(true);
 
         final Handler handler2 = new Handler();
         handler2.postDelayed(new Runnable() {
@@ -438,10 +447,8 @@ public class S1L13 extends AppCompatActivity implements View.OnClickListener{
                 mAnimation1.setFillAfter(true);
                 AnswerQuestionTextView.startAnimation(mAnimation1);
 
-
-
             }
-        }, 1000);
+        }, 700);
         final Handler handler3 = new Handler();
         handler3.postDelayed(new Runnable() {
             @Override

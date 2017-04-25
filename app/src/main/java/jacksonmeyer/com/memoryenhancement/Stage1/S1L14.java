@@ -229,7 +229,7 @@ public class S1L14 extends AppCompatActivity implements View.OnClickListener {
                     setCorrectButtons();
 
                 }
-            },4000);
+            },3500);
         }
 
         private void setCorrectButtons() {
@@ -263,9 +263,7 @@ public class S1L14 extends AppCompatActivity implements View.OnClickListener {
                    onCorrectAnswerTap();
                }
            } else if (view == Answer3) {
-               if (answerPosition.equals("highest")) {
                    onWrongAnswerTap();
-               }
         } else if (view.equals(BackArrow)) {
                 Intent intent = new Intent(this, StageOneActivity.class);
                 startActivity(intent);
