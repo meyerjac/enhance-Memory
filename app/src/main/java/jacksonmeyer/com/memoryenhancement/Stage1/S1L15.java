@@ -3,11 +3,11 @@ package jacksonmeyer.com.memoryenhancement.Stage1;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -16,9 +16,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -61,11 +58,12 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
     ImageView ColorFourImageView;
 
     private CountDownTimer countDownTimer;
-    private final long startTime = 5 * 1000;
+    private final long startTime = 4 * 1000;
     private final long interval = 1000;
     private String TAG = "debug";
     private Integer trackNumber= 0;
     private String answerColor ="" ;
+    private String ifFirstColorClickIsGood = "no" ;
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -100,7 +98,6 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
         setTrack();
         setColors();
         startTimer();
-        setAnswerColor();
         startQuestion();
 
         ColorOneImageView.setEnabled(false);
@@ -109,18 +106,6 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
         ColorFourImageView.setEnabled(false);
     }
 
-    private void setAnswerColor() {
-        List<String> colors = new ArrayList<String>();
-        colors.add("pink");
-        colors.add("blue" );
-        colors.add("green");
-        colors.add("Yellow");
-
-        Integer arrayNumber =  (int)(Math.random() * ((4 - 1)));
-        answerColor = colors.get(arrayNumber);
-    }
-
-
     private void setTrack() {
         trackNumber = 1 + (int) (Math.random() * ((6 - 1)));
         Log.d(TAG, "setTrack: " + trackNumber);
@@ -128,27 +113,32 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
 
     private void setColors() {
         if (trackNumber == 1) {
-            ColorOneImageView.setBackgroundResource(R.color.colorPinkish);
+            answerColor = "blue";
+            ColorOneImageView.setBackgroundResource(R.color.colorBlueish);
             ColorTwoImageView.setBackgroundResource(R.color.colorGreenish);
             ColorThreeImageView.setBackgroundResource(R.color.colorBlueish);
             ColorFourImageView.setBackgroundResource(R.color.colorYellowish);
         } else if (trackNumber == 2) {
+            answerColor = "yellow";
             ColorOneImageView.setBackgroundResource(R.color.colorYellowish);
             ColorTwoImageView.setBackgroundResource(R.color.colorBlueish);
             ColorThreeImageView.setBackgroundResource(R.color.colorPinkish);
-            ColorFourImageView.setBackgroundResource(R.color.colorGreenish);
+            ColorFourImageView.setBackgroundResource(R.color.colorYellowish);
         } else if (trackNumber == 3) {
+            answerColor = "blue";
             ColorOneImageView.setBackgroundResource(R.color.colorPinkish);
             ColorTwoImageView.setBackgroundResource(R.color.colorBlueish);
-            ColorThreeImageView.setBackgroundResource(R.color.colorGreenish);
+            ColorThreeImageView.setBackgroundResource(R.color.colorBlueish);
             ColorFourImageView.setBackgroundResource(R.color.colorYellowish);
         } else if (trackNumber == 4) {
+            answerColor = "pink";
             ColorOneImageView.setBackgroundResource(R.color.colorYellowish);
             ColorTwoImageView.setBackgroundResource(R.color.colorBlueish);
-            ColorThreeImageView.setBackgroundResource(R.color.colorGreenish);
+            ColorThreeImageView.setBackgroundResource(R.color.colorPinkish);
             ColorFourImageView.setBackgroundResource(R.color.colorPinkish);
         } else if (trackNumber == 5) {
-            ColorOneImageView.setBackgroundResource(R.color.colorYellowish);
+            answerColor = "pink";
+            ColorOneImageView.setBackgroundResource(R.color.colorPinkish);
             ColorTwoImageView.setBackgroundResource(R.color.colorPinkish);
             ColorThreeImageView.setBackgroundResource(R.color.colorGreenish);
             ColorFourImageView.setBackgroundResource(R.color.colorBlueish);
@@ -193,14 +183,10 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
                 ColorTwoImageView.setBackgroundResource(R.color.colorLightGrayish);
                 ColorThreeImageView.setBackgroundResource(R.color.colorLightGrayish);
                 ColorFourImageView.setBackgroundResource(R.color.colorLightGrayish);
-            }
-        },4800);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+
                 showButtons();
             }
-        },5000);
+        },3500);
     }
 
     private void showButtons() {
@@ -210,7 +196,6 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void askQuestion() {
-        AnswerQuestionTextView.setText(AnswerQuestionTextView.getText() + " " + answerColor + " square was!" );
         AnswerQuestionTextView.setVisibility(View.VISIBLE);
         ColorOneImageView.setEnabled(true);
         ColorTwoImageView.setEnabled(true);
@@ -222,176 +207,116 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                        0, -400);
-                mAnimation1.setDuration(200);
-                mAnimation1.setFillAfter(true);
+                        0, -300);
+                mAnimation1.setDuration(400);
                 AnswerQuestionTextView.startAnimation(mAnimation1);
-            }
-        },0);
-        handler2.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                TranslateAnimation mAnimation2 = new TranslateAnimation(0, 0,
-                        0, -2000);
-                mAnimation2.setDuration(10000);
-                mAnimation2.setFillAfter(true);
-
-                ColorOneImageView.startAnimation(mAnimation2);
-                ColorFourImageView.startAnimation(mAnimation2);
-
-                TranslateAnimation mAnimation3 = new TranslateAnimation(0, 0,
-                        0, 2000);
-                mAnimation3.setDuration(10000);
-                mAnimation3.setFillAfter(true);
-                ColorTwoImageView.startAnimation(mAnimation3);
-                ColorThreeImageView.startAnimation(mAnimation3);
+                mAnimation1.setFillAfter(true);
             }
         },100);
     }
 
 
 
-    //inefienct click funnel
+    //inefficient click funnel
     @Override
     public void onClick(View view) {
         view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
         if (view == ColorOneImageView) {
             if (trackNumber == 1) {
-                if (answerColor.equals("pink")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 2) {
-                if (answerColor.equals("yellow")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 3) {
-                if (answerColor.equals("pink")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             } else if (trackNumber == 4) {
-                if (answerColor.equals("yellow")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             } else if (trackNumber == 5) {
-                if (answerColor.equals("yellow")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             }
         } else if (view == ColorTwoImageView) {
             if (trackNumber == 1) {
-                if (answerColor.equals("green")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             } else if (trackNumber == 2) {
-                if (answerColor.equals("blue")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             } else if (trackNumber == 3) {
-                if (answerColor.equals("blue")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 4) {
-                if (answerColor.equals("blue")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             } else if (trackNumber == 5) {
-                if (answerColor.equals("pink")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             }
         } else if (view == ColorThreeImageView) {
             if (trackNumber == 1) {
-                if (answerColor.equals("blue")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 2) {
-                if (answerColor.equals("pink")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+              onWrongAnswerTap();
             } else if (trackNumber == 3) {
-                if (answerColor.equals("green")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 4) {
-                if (answerColor.equals("green")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 5) {
-                if (answerColor.equals("green")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             }
-        } else if (view == ColorFourImageView) {
+        }else if (view == ColorFourImageView) {
             if (trackNumber == 1) {
-                if (answerColor.equals("yellow")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             } else if (trackNumber == 2) {
-                if (answerColor.equals("green")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 3) {
-                if (answerColor.equals("yellow")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
-                }
+                onWrongAnswerTap();
             } else if (trackNumber == 4) {
-                if (answerColor.equals("pink")) {
+                if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
                 } else {
-                    onWrongAnswerTap();
-                }
-            } else if (trackNumber == 5) {
-                if (answerColor.equals("blue")) {
-                    onCorrectAnswerTap();
-                } else {
-                    onWrongAnswerTap();
+                    ifFirstColorClickIsGood = "yes";
                 }
             }
+            } else if (trackNumber == 5) {
+              onWrongAnswerTap();
         } else if (view.equals(BackArrow)) {
             Intent intent = new Intent(this, StageOneActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
-            Intent intent = new Intent(this, S1L14.class);
+            Intent intent = new Intent(this, S1L16.class);
             startActivity(intent);
         } else if (view.equals(Replay)) {
-            Intent intent = new Intent(this, S1L13.class);
+            Intent intent = new Intent(this, S1L15.class);
             startActivity(intent);
         } else {
             Log.d(TAG, "onClick: " + "wrong click");
@@ -436,12 +361,17 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
 
     //show what happens if the person answers the qustion wrong
     private void showFailText() {
+        final Animation fade = AnimationUtils.loadAnimation(S1L15.this, R.anim.fadein);
+        final Animation fadeOut = AnimationUtils.loadAnimation(S1L15.this, R.anim.fadeout);
+
         final Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Animation fade = AnimationUtils.loadAnimation(S1L15.this, R.anim.fadeout);
                 CountdownTimerTextView.startAnimation(fade);
+                ColorRelativeLayout.startAnimation(fadeOut);
+                ColorRelativeLayout.setVisibility(View.INVISIBLE);
             }
         }, 0);
         final Handler handler2 = new Handler();
@@ -449,26 +379,21 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 CountdownTimerTextView.setText("Wrong");
-                Animation fade = AnimationUtils.loadAnimation(S1L15.this, R.anim.fadein);
-                Animation fadeOut = AnimationUtils.loadAnimation(S1L15.this, R.anim.fadeout);
                 CountdownTimerTextView.startAnimation(fade);
-                ColorRelativeLayout.startAnimation(fadeOut);
-                ColorRelativeLayout.setVisibility(View.INVISIBLE);
                 RelativeLayout.setVisibility(View.VISIBLE);
                 RelativeLayout.startAnimation(fade);
-
                 CheckXImageView.setImageResource(R.drawable.wrong_mark);
                 CheckXImageView.setVisibility(View.VISIBLE);
                 CheckXImageView.startAnimation(fade);
 
                 TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                        -500, 0);
+                        -300, 0);
                 mAnimation1.setDuration(500);
                 mAnimation1.setFillAfter(true);
                 AnswerQuestionTextView.startAnimation(mAnimation1);
 
             }
-        }, 700);
+        }, 500);
         final Handler handler3 = new Handler();
         handler3.postDelayed(new Runnable() {
             @Override
@@ -518,7 +443,7 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
                 CheckXImageView.setVisibility(View.VISIBLE);
 
                 TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                        -500, 0);
+                        -300, 0);
                 mAnimation1.setDuration(500);
                 mAnimation1.setFillAfter(true);
                 AnswerQuestionTextView.startAnimation(mAnimation1);
