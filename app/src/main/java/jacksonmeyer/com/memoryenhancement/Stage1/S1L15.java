@@ -45,7 +45,7 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
     TextView Replay;
     @Bind(R.id.numberOfLightbulbs)
     TextView NumberOfLightbulbs;
-    @Bind(R.id. checkXImageView)
+    @Bind(R.id.checkXImageView)
     ImageView CheckXImageView;
 
     @Bind(R.id.colorOneImageView)
