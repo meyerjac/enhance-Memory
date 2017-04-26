@@ -172,11 +172,11 @@
         android:layout_marginTop="19dp" />
 
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/colorOneImageView"
         android:visibility="invisible"
-        android:layout_below="@+id/checkXImageView"
+        android:layout_above="@+id/answerQuestionTextView"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
 

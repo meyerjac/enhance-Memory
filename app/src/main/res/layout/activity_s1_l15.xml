@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L15">
+    tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L18">
 
     <RelativeLayout
         android:layout_width="100dp"
@@ -36,6 +36,54 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:text=""
+        android:textSize="30dp"
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coundownTimerTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:id="@+id/questionTextView" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/buttonLayout">
+
+        <Button
+            android:text=""
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/answer1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text=""
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/answer1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/answer2" />
+
+        <Button
+            android:text=""
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/answer3" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -85,15 +133,14 @@
     </RelativeLayout>
 
     <TextView
-        android:text="5"
+        android:text="16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/coundownTimerTextView"
-        android:textSize="60dp"
+        android:id="@+id/countdownTimerTextView"
+        android:textSize="40dp"
         android:textColor="@color/colorYellowish"
         android:layout_below="@+id/lightBulbRelativeLayout"
         android:layout_centerHorizontal="true" />
-
 
     <ImageView
         android:layout_width="wrap_content"
@@ -105,91 +152,25 @@
         android:layout_alignParentStart="true"
         android:id="@+id/backArrow" />
 
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/check_correct"
+        android:src="@drawable/arrow"
         android:id="@+id/checkXImageView"
+        android:layout_alignTop="@+id/questionTextView"
         android:visibility="invisible"
-        android:layout_below="@+id/coundownTimerTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="@string/s1l15_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorYellowish"
-        android:textSize="30dp"
+        android:textSize="28dp"
         android:gravity="center"
         android:id="@+id/answerQuestionTextView"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/colorRelativeLayout"
-        android:visibility="invisible"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/buttonLayout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <TableRow
-            android:id="@+id/second_row"
-            android:layout_width="fill_parent"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
-            <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorThreeImageView"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorFourImageView"
-                android:visibility="invisible" />
-            </TableRow>
-
-        <TableRow
-            android:id="@+id/first_row"
-            android:layout_width="fill_parent"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
-
-            <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorTwoImageView"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorOneImageView"
-                android:visibility="invisible"
-                android:layout_marginRight="13dp"
-                android:layout_marginEnd="13dp" />
-        </TableRow>
-    </RelativeLayout>
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp" />
 </RelativeLayout>
-

@@ -273,7 +273,7 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
                     ifFirstColorClickIsGood = "yes";
                 }
             } else if (trackNumber == 2) {
-              onWrongAnswerTap();
+                onWrongAnswerTap();
             } else if (trackNumber == 3) {
                 if (ifFirstColorClickIsGood.equals("yes")) {
                     onCorrectAnswerTap();
@@ -289,7 +289,7 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
             } else if (trackNumber == 5) {
                 onWrongAnswerTap();
             }
-        }else if (view == ColorFourImageView) {
+        } else if (view == ColorFourImageView) {
             if (trackNumber == 1) {
                 onWrongAnswerTap();
             } else if (trackNumber == 2) {
@@ -306,23 +306,23 @@ public class S1L15 extends AppCompatActivity implements View.OnClickListener {
                 } else {
                     ifFirstColorClickIsGood = "yes";
                 }
-            }
             } else if (trackNumber == 5) {
-              onWrongAnswerTap();
-        } else if (view.equals(BackArrow)) {
-            Intent intent = new Intent(this, StageOneActivity.class);
-            startActivity(intent);
-        } else if (view.equals(Next)) {
-            Intent intent = new Intent(this, S1L16.class);
-            startActivity(intent);
-        } else if (view.equals(Replay)) {
-            Intent intent = new Intent(this, S1L15.class);
-            startActivity(intent);
-        } else {
-            Log.d(TAG, "onClick: " + "wrong click");
-        }
+                onWrongAnswerTap();
+            }
+            } else if (view.equals(BackArrow)) {
+                Intent intent = new Intent(S1L15.this, StageOneActivity.class);
+                startActivity(intent);
+            } else if (view.equals(Next)) {
+                Intent intent = new Intent(S1L15.this, S1L16.class);
+                startActivity(intent);
+            } else if (view.equals(Replay)) {
+                Intent intent = new Intent(S1L15.this, S1L15.class);
+                startActivity(intent);
+            } else {
+                Log.d(TAG, "onClick: " + "wrong click");
+            }
 
-    }
+        }
 
 
     private void onCorrectAnswerTap() {
