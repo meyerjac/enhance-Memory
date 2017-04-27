@@ -38,7 +38,7 @@ public class S1L13 extends AppCompatActivity implements View.OnClickListener{
     android.widget.RelativeLayout RelativeLayout;
     @Bind(lightBulbRelativeLayout)
     RelativeLayout LightBulbRelativeLayout;
-    @Bind(R.id.colorRelativeLayout)
+    @Bind(R.id.clothingRelativeLayout)
     RelativeLayout ColorRelativeLayout;
 
     @Bind(R.id.backArrow)
@@ -56,7 +56,7 @@ public class S1L13 extends AppCompatActivity implements View.OnClickListener{
     ImageView ColorOneImageView;
     @Bind(R.id.colorTwoImageView)
     ImageView ColorTwoImageView;
-    @Bind(R.id.colorThreeImageView)
+    @Bind(R.id.clothingOneImageView)
     ImageView ColorThreeImageView;
     @Bind(R.id.colorFourImageView)
     ImageView ColorFourImageView;

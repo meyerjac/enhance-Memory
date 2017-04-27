@@ -130,7 +130,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:id="@+id/colorRelativeLayout"
+        android:id="@+id/clothingRelativeLayout"
         android:visibility="invisible"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -150,7 +150,7 @@
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorThreeImageView"
+                android:id="@+id/clothingOneImageView"
                 android:visibility="invisible" />
 
             <ImageView
