@@ -85,7 +85,7 @@
     </RelativeLayout>
 
     <TextView
-        android:text="50"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/coundownTimerTextView"
@@ -117,7 +117,7 @@
         android:layout_marginTop="19dp" />
 
     <TextView
-        android:text="@string/s1l13_question"
+        android:text="@string/s1l19_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorYellowish"
@@ -128,7 +128,7 @@
         android:layout_centerHorizontal="true" />
 
     <RelativeLayout
-        android:layout_width="80dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/clothingRelativeLayout"
         android:visibility="invisible"
@@ -141,7 +141,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="right"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
@@ -150,7 +150,6 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
                 android:id="@+id/clothingOneImageView"
                 android:visibility="invisible" />
         </TableRow>
@@ -160,16 +159,16 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="right"
             android:layout_below="@id/first_row">
 
             <ImageView
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
                 android:id="@+id/clothingTwoImageView"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                />
         </TableRow>
 
         <TableRow
@@ -177,31 +176,74 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:layout_below="@id/second_row">
+            android:gravity="right"
+            android:layout_below="@+id/second_row"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
             <ImageView
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
                 android:id="@+id/clothingThreeImageView"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                />
         </TableRow>
 
         <TableRow
             android:id="@+id/Fourth_row"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:layout_weight="1"
             android:layout_below="@id/third_row">
+
             <ImageView
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/solid_blue_circle"
                 android:id="@+id/clothingFourImageView"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+               />
         </TableRow>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"
+        android:id="@+id/buttonLayout">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/answer1"
+            android:src="@drawable/rainy"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/sunny"
+            android:layout_alignTop="@+id/answer1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/answer2" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/thunderstorms"
+            android:id="@+id/answer3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 </RelativeLayout>
