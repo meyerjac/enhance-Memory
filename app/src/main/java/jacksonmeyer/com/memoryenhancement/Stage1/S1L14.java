@@ -182,12 +182,8 @@ public class S1L14 extends AppCompatActivity implements View.OnClickListener {
                     TranslateAnimation mAnimation2 = new TranslateAnimation(500, -1800,
                             0, 0);
                     mAnimation2.setDuration(5000);
-                    mAnimation2.setFillAfter(true);
                     QuestionTextView2.startAnimation(mAnimation2);
-
-
                     mAnimation2.setFillAfter(true);
-                    QuestionTextView2.startAnimation(mAnimation2);
                 }
             },0);
             handler1.postDelayed(new Runnable() {
@@ -213,19 +209,12 @@ public class S1L14 extends AppCompatActivity implements View.OnClickListener {
                     mAnimation2.setFillAfter(true);
                     QuestionTextView4.startAnimation(mAnimation2);
 
-
-                    mAnimation2.setFillAfter(true);
-                    QuestionTextView4.startAnimation(mAnimation2);
-
                 }
             },3000);
             final Handler handler2 = new Handler();
             handler2.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    QuestionTextView.startAnimation(fadeOut);
-                    QuestionTextView.setVisibility(View.INVISIBLE);
-
                     setCorrectButtons();
 
                 }
