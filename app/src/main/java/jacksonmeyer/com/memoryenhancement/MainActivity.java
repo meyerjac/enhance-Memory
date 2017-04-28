@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SharedPreferences.Editor mEditor;
     private boolean mIsBound = false;
     private BackgroundSoundService mServ;
-    private String proUnlocked = "";
 
 
     @Override
@@ -61,13 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         String musicOn = mSharedPreferences.getString(Constants.MUSIC_PLAYING, null);
-        proUnlocked = mSharedPreferences.getString(Constants.PRO_UNLOCKED, null);
-        Log.d("onCreate: ", String.valueOf(proUnlocked));
-
-        //manage whether or not a level has been unlocked
-        if (proUnlocked ==  null)  {
-            mEditor.putString(Constants.PRO_UNLOCKED, "no").apply();
-        }
 
 
         //GET THE LIGHTBULB COUNT

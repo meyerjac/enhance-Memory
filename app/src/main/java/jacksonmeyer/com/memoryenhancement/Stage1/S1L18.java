@@ -373,16 +373,40 @@ public class S1L18 extends AppCompatActivity implements View.OnClickListener {
 
         if (correctButton == 1) {
             Button1.setText("peppers");
-            Button2.setText(ingredient4);
-            Button3.setText(ingredient2);
+            if (!(ingredient4.equals(ingredient2))) {
+                Button2.setText(ingredient4);
+                Button3.setText(ingredient2);
+            } else if(!(ingredient4.equals(ingredient3)))  {
+                    Button2.setText(ingredient4);
+                    Button3.setText(ingredient3);
+            } else {
+                Button2.setText(ingredient4);
+                Button3.setText(ingredient1);
+            }
         } else if (correctButton == 2) {
-            Button1.setText(ingredient2);
             Button2.setText("onions");
-            Button3.setText(ingredient1);
+            if (!(ingredient1.equals(ingredient2))) {
+                Button1.setText(ingredient2);
+                Button3.setText(ingredient1);
+            } else if(!(ingredient1.equals(ingredient3)))  {
+                Button1.setText(ingredient1);
+                Button3.setText(ingredient3);
+            } else {
+                Button1.setText(ingredient1);
+                Button3.setText(ingredient4);
+            }
         } else {
-            Button1.setText(ingredient1);
-            Button2.setText(ingredient3);
             Button3.setText("onions");
+            if (!(ingredient1.equals(ingredient3))) {
+                Button1.setText(ingredient1);
+                Button2.setText(ingredient3);
+            } else if(!(ingredient1.equals(ingredient2)))  {
+                Button1.setText(ingredient1);
+                Button2.setText(ingredient2);
+            } else {
+                Button1.setText(ingredient1);
+                Button2.setText(ingredient4);
+            }
         }
     }
 

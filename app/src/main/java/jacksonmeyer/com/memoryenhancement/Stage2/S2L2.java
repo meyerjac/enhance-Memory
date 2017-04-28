@@ -23,7 +23,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import jacksonmeyer.com.memoryenhancement.Constants;
 import jacksonmeyer.com.memoryenhancement.R;
-import jacksonmeyer.com.memoryenhancement.StageOneActivity;
 import jacksonmeyer.com.memoryenhancement.StageTwoActivity;
 
 import static jacksonmeyer.com.memoryenhancement.R.id.answer3;
@@ -151,9 +150,6 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void setAnimationsAndRun() {
-        final Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
-        final Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
-
         if (numberTrack == 1) {
             Image1.setImageDrawable(getResources().getDrawable(R.drawable.s2_rooster));
             Image2.setImageDrawable(getResources().getDrawable(R.drawable.s2elephant));
@@ -198,6 +194,8 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
+                Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
                 Image1.setVisibility(View.VISIBLE);
                 Image1.startAnimation(fadeIn);
 
@@ -206,6 +204,8 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
+                Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
                 Image1.setVisibility(View.INVISIBLE);
                 Image1.startAnimation(fadeOut);
                 Image2.startAnimation(fadeIn);
@@ -215,6 +215,8 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
+                Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
                 Image2.setVisibility(View.INVISIBLE);
                 Image2.startAnimation(fadeOut);
                 Image3.startAnimation(fadeIn);
@@ -224,6 +226,8 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
+                Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
                 Image3.setVisibility(View.INVISIBLE);
                 Image3.startAnimation(fadeOut);
                 Image4.startAnimation(fadeIn);
@@ -233,6 +237,8 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
+                Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
                 Image4.setVisibility(View.INVISIBLE);
                 Image4.startAnimation(fadeOut);
                 Image5.startAnimation(fadeIn);
@@ -242,6 +248,8 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
+                Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
                 Image5.setVisibility(View.INVISIBLE);
                 Image5.startAnimation(fadeOut);
                 Image6.startAnimation(fadeIn);
@@ -251,27 +259,18 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Image5.setVisibility(View.INVISIBLE);
-                Image5.startAnimation(fadeOut);
-                Image6.startAnimation(fadeIn);
-                Image6.setVisibility(View.VISIBLE);
+                Animation fadeOut = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadeout);
+                Animation fadeIn = AnimationUtils.loadAnimation(S2L2.this, R.anim.fadein);
+                Image6.setVisibility(View.INVISIBLE);
+                Image6.startAnimation(fadeOut);
             }
         },6000);
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Image6.setVisibility(View.INVISIBLE);
-                Image6.startAnimation(fadeOut);
-
-            }
-        },7000);
-
-        handler1.postDelayed(new Runnable() {
-            @Override
-            public void run() {
                 setCorrectButtons();
             }
-        },7500);
+        },7000);
     }
 
     private void setCorrectButtons() {
@@ -349,7 +348,7 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
                 onWrongAnswerTap();
             }
         } else if (view.equals(BackArrow)) {
-            Intent intent = new Intent(this, StageTwoActivity.class);
+            Intent intent = new Intent(S2L2.this, StageTwoActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
             Intent intent = new Intent(this, S2L3.class);
@@ -530,7 +529,7 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(S2L2.this, StageOneActivity.class);
+        Intent intent = new Intent(S2L2.this, StageTwoActivity.class);
         startActivity(intent);
     }
 }

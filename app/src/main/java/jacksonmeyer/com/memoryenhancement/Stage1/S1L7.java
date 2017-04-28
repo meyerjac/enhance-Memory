@@ -150,19 +150,19 @@ public class S1L7 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void startQuestion() {
-        final Animation fadeOut = AnimationUtils.loadAnimation(S1L7.this, R.anim.fadeout);
-        final Animation fadeIn = AnimationUtils.loadAnimation(S1L7.this, R.anim.fadein);
         final Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Animation fadeIn = AnimationUtils.loadAnimation(S1L7.this, R.anim.fadein);
+
                 QuestionTextView.setText(digit1 + digit2 + digit3 + "." + digit4);
                 QuestionTextView.startAnimation(fadeIn);
                 QuestionTextView.setVisibility(View.VISIBLE);
                 if (digit1.equals("8")) {
                     TranslateAnimation mAnimation1 = new TranslateAnimation(-1500, 1500,
                             -300, 2500);
-                    mAnimation1.setDuration(5000);
+                    mAnimation1.setDuration(4000);
 
                     mAnimation1.setFillAfter(true);
                     QuestionTextView.startAnimation(mAnimation1);
@@ -170,25 +170,13 @@ public class S1L7 extends AppCompatActivity implements View.OnClickListener {
                 } else {
                     TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -1000,
                             -300, 2500);
-                    mAnimation1.setDuration(5000);
-
+                    mAnimation1.setDuration(4000);
                     mAnimation1.setFillAfter(true);
                     QuestionTextView.startAnimation(mAnimation1);
                     setCorrectButtons();
-
                 }
-
             }
         },0);
-        final Handler handler2 = new Handler();
-        handler2.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                QuestionTextView.startAnimation(fadeOut);
-                QuestionTextView.setVisibility(View.INVISIBLE);
-
-            }
-        },4000);
     }
 
     private void setCorrectButtons() {

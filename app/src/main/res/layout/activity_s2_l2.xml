@@ -113,7 +113,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="16"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/coundownTimerTextView"
@@ -198,6 +198,7 @@
             android:layout_width="0dip"
             android:layout_height="50dp"
             android:id="@+id/answer1"
+            android:textSize="15dp"
             android:textColor="@color/colorBackground"
             android:background="@color/colorBlueish"
             android:layout_alignParentBottom="true"
@@ -208,6 +209,7 @@
             android:text=""
             android:layout_width="0dip"
             android:layout_height="50dp"
+            android:textSize="15dp"
             android:textColor="@color/colorBackground"
             android:background="@color/colorPinkish"
             android:layout_alignTop="@+id/answer1"
@@ -218,6 +220,7 @@
             android:text=""
             android:layout_width="0dip"
             android:layout_height="50dp"
+            android:textSize="15dp"
             android:textColor="@color/colorBackground"
             android:background="@color/colorWhite"
             android:layout_alignParentBottom="true"
@@ -229,6 +232,7 @@
             android:text=""
             android:layout_width="0dip"
             android:layout_height="50dp"
+            android:textSize="15dp"
             android:textColor="@color/colorBackground"
             android:background="@color/colorGreenish"
             android:layout_alignParentBottom="true"

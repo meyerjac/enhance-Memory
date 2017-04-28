@@ -65,7 +65,7 @@ public class S2L1 extends AppCompatActivity implements View.OnClickListener {
 
 
     private CountDownTimer countDownTimer;
-    private final long startTime = 16 * 1000;
+    private final long startTime = 10 * 1000;
     private final long interval = 1000;
     private String questionObject = null;
     private String answerColor = null;

@@ -154,21 +154,12 @@ public class S1L6 extends AppCompatActivity implements View.OnClickListener {
                 FaceSampleRelativeLayout.setVisibility(View.VISIBLE);
                 FaceSampleRelativeLayout.startAnimation(fadeIn);
                 TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                        -200, 1200);
-                mAnimation1.setDuration(3000);
+                        -200, 2200);
+                mAnimation1.setDuration(5000);
                 FaceSampleRelativeLayout.startAnimation(mAnimation1);
                 mAnimation1.setFillAfter(true);
             }
         }, 0);
-        final Handler handler2 = new Handler();
-        handler2.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                FaceSampleRelativeLayout.startAnimation(fadeOut);
-                FaceSampleRelativeLayout.setVisibility(View.INVISIBLE);
-
-            }
-        }, 3000);
         final Handler handler3 = new Handler();
         handler3.postDelayed(new Runnable() {
             @Override

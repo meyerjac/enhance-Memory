@@ -159,7 +159,6 @@ public class S1L14 extends AppCompatActivity implements View.OnClickListener {
         }
 
         private void startQuestion() {
-            final Animation fadeOut = AnimationUtils.loadAnimation(S1L14.this, R.anim.fadeout);
             final Animation fadeIn = AnimationUtils.loadAnimation(S1L14.this, R.anim.fadein);
             final Handler handler1 = new Handler();
             handler1.postDelayed(new Runnable() {

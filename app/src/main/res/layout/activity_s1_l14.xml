@@ -126,16 +126,6 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:text="5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/coundownTimerTextView"
-        android:textSize="40dp"
-        android:textColor="@color/colorYellowish"
-        android:layout_below="@+id/lightBulbRelativeLayout"
-        android:layout_centerHorizontal="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -219,4 +209,14 @@
         android:layout_alignBottom="@+id/questionTextView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/coundownTimerTextView"
+        android:textSize="40dp"
+        android:textColor="@color/colorYellowish"
+        android:layout_below="@+id/lightBulbRelativeLayout"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
