@@ -88,6 +88,7 @@ public class Constants {
     public static final String S4LEVEL80COMPLETE = "stage4level80complete";
     public static final String LIGHTBULB_INTEGER_COUNT = "LIGHTBULB_INTEGER_COUNT";
     public static final String MUSIC_PLAYING = "MUSIC PLAYING";
+    public static final String PRO_UNLOCKED = "PRO_UNLOCKED";
 }
 
 

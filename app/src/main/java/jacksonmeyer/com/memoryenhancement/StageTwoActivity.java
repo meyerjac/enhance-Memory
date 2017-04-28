@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,7 +27,6 @@ import jacksonmeyer.com.memoryenhancement.Stage2.S2L17;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L18;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L19;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L2;
-import jacksonmeyer.com.memoryenhancement.Stage2.S2L20;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L3;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L4;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L5;
@@ -91,6 +91,7 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+    private String proUnlocked = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +128,12 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
         TitleTextView.setTypeface(Rubix);
         NumberOfLightbulbs.setTypeface(Rubix);
         HardTextView.setTypeface(Rubix);
+
+        //CHECK TO SEE IF THEY ARE PRO
+        proUnlocked = mSharedPreferences.getString(Constants.PRO_UNLOCKED, null);
+        Log.d("onCreate: ", String.valueOf(proUnlocked));
+
+        //manage whether or not a level has been unlocked
         Level1.setTypeface(Rubix); Level2.setTypeface(Rubix); Level3.setTypeface(Rubix); Level4.setTypeface(Rubix);
         Level5.setTypeface(Rubix); Level6.setTypeface(Rubix); Level7.setTypeface(Rubix); Level8.setTypeface(Rubix);
         Level9.setTypeface(Rubix); Level10.setTypeface(Rubix); Level11.setTypeface(Rubix); Level12.setTypeface(Rubix);
@@ -347,65 +354,125 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level6) {
-            Intent intent = new Intent(this, S2L6.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L6.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level7) {
-            Intent intent = new Intent(this, S2L7.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L7.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level8) {
-            Intent intent = new Intent(this, S2L8.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L8.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level9) {
-            Intent intent = new Intent(this, S2L9.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L9.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level10) {
-            Intent intent = new Intent(this, S2L10.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L10.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level11) {
-            Intent intent = new Intent(this, S2L11.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L11.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level12) {
-            Intent intent = new Intent(this, S2L12.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L12.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level13) {
-            Intent intent = new Intent(this, S2L13.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L13.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level14) {
-            Intent intent = new Intent(this, S2L14.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L14.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level15) {
-            Intent intent = new Intent(this, S2L15.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L15.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level16) {
-            Intent intent = new Intent(this, S2L16.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L16.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level17) {
-            Intent intent = new Intent(this, S2L17.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L17.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level18) {
-            Intent intent = new Intent(this, S2L18.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L18.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level19) {
-            Intent intent = new Intent(this, S2L19.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L19.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         } else if (view == Level20) {
-            Intent intent = new Intent(this, S2L20.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (proUnlocked.equals("no"))  {
+                Toast.makeText(this, "unclock Pro, and get access to every Level", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, S2L10.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            }
         }
     }
     @Override

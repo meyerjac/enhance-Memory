@@ -64,7 +64,7 @@
             android:layout_toStartOf="@+id/titleTextView" />
 
         <TextView
-            android:text="(Einstein's ONLY)"
+            android:text="(Einstein's ONLY) - 100pts each"
             android:textSize="20dp"
             android:textColor="@color/colorPinkish"
             android:layout_width="wrap_content"

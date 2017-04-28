@@ -76,7 +76,7 @@
             android:layout_toEndOf="@+id/titleTextView" />
 
         <TextView
-            android:text="(Easy)"
+            android:text="(Easy) - 10pts each"
             android:textSize="20dp"
             android:textColor="@color/colorPinkish"
             android:layout_width="wrap_content"
