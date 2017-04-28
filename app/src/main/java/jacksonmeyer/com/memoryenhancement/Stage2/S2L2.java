@@ -510,7 +510,7 @@ public class S2L2 extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void run() {
                 NumberOfLightbulbs.animate().scaleX(1.0f).scaleY(1.0f).setDuration(500).start();
-                Integer questionPoints = 10;
+                Integer questionPoints = 25;
                 addPointsToSharedPreference(questionPoints);
             }
         }, 1500);

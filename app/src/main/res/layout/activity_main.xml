@@ -90,12 +90,13 @@
     </RelativeLayout>
 
     <TextView
-        android:text="Memory 5"
+        android:text="memory
+ MASTER"
         android:gravity="center"
         android:textColor="@color/colorPinkish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:layout_above="@+id/relativeLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="72dp"
