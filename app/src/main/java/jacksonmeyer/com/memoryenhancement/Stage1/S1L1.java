@@ -151,7 +151,7 @@ public class S1L1 extends AppCompatActivity implements View.OnClickListener {
             answerColor = color4;
         }
 
-        QuestionTextView.setText("Betty Crocker woke up, put on her "
+        QuestionTextView.setText("Jason woke up, put on her "
                 + color1 + " dress, slipped on her " + color2 + " shoes,  " +
                 "ran out of her " + color3 + " house into her " + color4 + " car" );
 
