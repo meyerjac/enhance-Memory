@@ -281,7 +281,7 @@ public class S2L3 extends AppCompatActivity implements View.OnClickListener {
             } else if (answerPosition.equals("lower right")) {
                 Answer1.setText("Elephant");
                 Answer2.setText("Rooster");
-                Answer3.setText("Hummingbird");
+                Answer3.setText("bird");
                 Answer4.setText("Tiger");
             } else if (answerPosition.equals("middle left")) {
                 Answer1.setText("Jellyfish");
@@ -313,7 +313,7 @@ public class S2L3 extends AppCompatActivity implements View.OnClickListener {
                 Answer4.setText("Whale");
             } else if (answerPosition.equals("lower right")) {
                 Answer1.setText("Whale");
-                Answer2.setText("Hummingbird");
+                Answer2.setText("bird");
                 Answer3.setText("Turtle");
                 Answer4.setText("Whale");
             } else if (answerPosition.equals("middle left")) {
@@ -341,7 +341,7 @@ public class S2L3 extends AppCompatActivity implements View.OnClickListener {
                 Answer4.setText("Whale");
             } else if (answerPosition.equals("lower left")) {
                 Answer1.setText("Turtle");
-                Answer2.setText("Hummingbird");
+                Answer2.setText("bird");
                 Answer3.setText("Whale");
                 Answer4.setText("Rooster");
             } else if (answerPosition.equals("lower right")) {
@@ -388,7 +388,7 @@ public class S2L3 extends AppCompatActivity implements View.OnClickListener {
                 Answer3.setText("Turtle");
                 Answer4.setText("Whale");
             } else if (answerPosition.equals("middle right")) {
-                Answer1.setText("Hummingbird");
+                Answer1.setText("bird");
                 Answer2.setText("Rooster");
                 Answer3.setText("Turtle");
                 Answer4.setText("Jellyfish");

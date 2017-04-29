@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
+    @Bind(R.id.titleTextView2)
+    TextView TitleTextView2;
     @Bind(R.id.noAdsButton)
     TextView NoAdsButton;
     @Bind(R.id.nextButton)
@@ -108,6 +110,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bounceAnim.setRepeatMode(Animation.REVERSE);
             }
         }, 0);
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation bounceAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
+                TitleTextView2.startAnimation(bounceAnim);
+                bounceAnim.setRepeatMode(Animation.REVERSE);
+            }
+        }, 250);
 
         }
 
