@@ -60,8 +60,6 @@ public class StageThreeActivity extends AppCompatActivity implements View.OnClic
     TextView NumberOfLightbulbs;
     @Bind(R.id.backArrow)
     ImageView BackArrow;
-    @Bind(R.id.nextArrow)
-    ImageView NextArrow;
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
     @Bind(R.id.geniusTextView)
@@ -289,7 +287,6 @@ public class StageThreeActivity extends AppCompatActivity implements View.OnClic
 //        Level19.setOnClickListener(this);
 //        Level20.setOnClickListener(this);
         BackArrow.setOnClickListener(this);
-        NextArrow.setOnClickListener(this);
     }
 
     @Override
@@ -299,10 +296,6 @@ public class StageThreeActivity extends AppCompatActivity implements View.OnClic
             Intent intent = new Intent(this, StageTwoActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushrightin, R.anim.pushrightout);
-        } else if (view == NextArrow) {
-            Intent intent = new Intent(this, StageFourActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         }
 //        } else if (view == Level1) {
 //            Intent intent = new Intent(StageOneActivity.this, S1L1.class);
