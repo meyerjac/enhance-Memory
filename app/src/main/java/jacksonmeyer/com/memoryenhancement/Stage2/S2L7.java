@@ -151,7 +151,7 @@ public class S2L7 extends AppCompatActivity implements View.OnClickListener {
         for(int i = 0; i <= 5; i ++) {
             Log.d(TAG, numbers.toString());
             if (i == 0) {
-                Integer randomNum =  (int)(Math.random() * (arrayLength - 1));
+                Integer randomNum =  1 + (int)(Math.random() * (arrayLength - 2));
                 digit1 = numbers.get(randomNum);
                 numbers.remove(numbers.get(randomNum));
                 arrayLength -= 1;
