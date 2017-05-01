@@ -200,7 +200,6 @@
                 android:layout_alignParentEnd="true"
                 android:id="@+id/answer4" />
 
-
         </TableRow>
     </TableLayout>
 </RelativeLayout>
