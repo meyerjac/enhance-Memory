@@ -65,7 +65,7 @@
             android:id="@+id/answer1"
             android:textSize="16dp"
             android:textColor="@color/colorGreenish"
-            android:background="@drawable/green_circle"
+            android:background="@drawable/pink_background"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -75,8 +75,8 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:textSize="16dp"
-            android:textColor="@color/colorGreenish"
-            android:background="@drawable/green_circle"
+            android:textColor="@color/colorPinkish"
+            android:background="@drawable/green_background"
             android:layout_alignTop="@+id/answer1"
             android:layout_centerHorizontal="true"
             android:id="@+id/answer2" />
@@ -87,7 +87,7 @@
             android:layout_height="50dp"
             android:textSize="16dp"
             android:textColor="@color/colorGreenish"
-            android:background="@drawable/green_circle"
+            android:background="@drawable/pink_background"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
