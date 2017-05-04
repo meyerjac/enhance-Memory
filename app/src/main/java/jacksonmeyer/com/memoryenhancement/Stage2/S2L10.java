@@ -69,6 +69,7 @@ public class S2L10 extends AppCompatActivity implements View.OnClickListener {
     private String TAG = "debug";
     private Integer trackNumber = 0;
 
+
     private String person1 = "";
     private String person2 = "";
     private String person3  = "";
@@ -78,6 +79,7 @@ public class S2L10 extends AppCompatActivity implements View.OnClickListener {
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -351,13 +353,14 @@ public class S2L10 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    private void onWrongAnswerTap() {
-        Button1.setEnabled(false);
-        Button2.setEnabled(false);
-        Button3.setEnabled(false);
-        Button4.setEnabled(false);
-        showFailText();
-    }
+    //when the user selects the weong number/face and it triggers the wrong path
+  private void onWrongAnswerTap() {
+      Button1.setEnabled(false);
+      Button2.setEnabled(false);
+      Button3.setEnabled(false);
+      Button4.setEnabled(false);
+      showFailText();
+  }
 
     private void showFailText() {
         final Handler handler1 = new Handler();
@@ -417,7 +420,7 @@ public class S2L10 extends AppCompatActivity implements View.OnClickListener {
 
 
 
-    private void addPointsToSharedPreference(Integer questionPoints) {
+ private void addPointsToSharedPreference(Integer questionPoints) {
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         Integer oldTotalInt = Integer.parseInt(oldTotal);
         Integer newTotalInt = oldTotalInt + questionPoints;

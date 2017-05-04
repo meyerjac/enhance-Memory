@@ -414,5 +414,6 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.pushrightin, R.anim.pushrightout);
     }
 }
