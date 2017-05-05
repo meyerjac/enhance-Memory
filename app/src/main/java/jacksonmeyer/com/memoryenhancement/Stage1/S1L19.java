@@ -50,7 +50,7 @@ public class S1L19 extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.checkXImageView)
     ImageView CheckXImageView;
 
-    @Bind(R.id.clothingOneImageView)
+    @Bind(R.id.colorOneImageView)
     ImageView ClothingOneImageView;
     @Bind(R.id.clothingTwoImageView)
     ImageView ClothingTwoImageView;

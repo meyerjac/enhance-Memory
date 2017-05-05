@@ -150,7 +150,7 @@
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/solid_blue_circle"
-                android:id="@+id/clothingOneImageView"
+                android:id="@+id/colorOneImageView"
                 android:visibility="invisible" />
 
             <ImageView

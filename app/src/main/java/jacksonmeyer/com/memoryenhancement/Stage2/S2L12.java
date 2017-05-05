@@ -61,15 +61,13 @@ public class S2L12 extends AppCompatActivity implements View.OnClickListener {
     Button Answer3;
     @Bind(answer4)
     Button Answer4;
-
     @Bind(R.id.colorOneImageView)
     ImageView ShownColorImageView;
 
-
+    private String TAG = "debug";
     private CountDownTimer countDownTimer;
     private final long startTime = 6 * 1000;
     private final long interval = 1000;
-    private String TAG = "debug";
     private ArrayList assignedColorPattern = new ArrayList();
     private ArrayList guessedColorPattern = new ArrayList();
 
@@ -81,6 +79,8 @@ public class S2L12 extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s2_l12);
         ButterKnife.bind(this);
+
+
 
         //get shared preferences data, just the number of Lightbulbs earned and displayed
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(S2L12.this);
@@ -96,6 +96,14 @@ public class S2L12 extends AppCompatActivity implements View.OnClickListener {
         Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
         NumberOfLightbulbs.setTypeface(Rubix);
 
+        setClickListerners();
+        setSequence();
+        startTimer();
+        startQuestion();
+
+    }
+
+    private void setClickListerners() {
         //SETS ALL THE CLICK LISTENERS
         Answer1.setOnClickListener(this);
         Answer2.setOnClickListener(this);
@@ -104,11 +112,6 @@ public class S2L12 extends AppCompatActivity implements View.OnClickListener {
         Next.setOnClickListener(this);
         Replay.setOnClickListener(this);
         BackArrow.setOnClickListener(this);
-
-        setSequence();
-        startTimer();
-        startQuestion();
-
     }
 
     private void setSequence() {

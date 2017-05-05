@@ -56,7 +56,7 @@ public class S1L13 extends AppCompatActivity implements View.OnClickListener{
     ImageView ColorOneImageView;
     @Bind(R.id.colorTwoImageView)
     ImageView ColorTwoImageView;
-    @Bind(R.id.clothingOneImageView)
+    @Bind(R.id.colorThreeImageView)
     ImageView ColorThreeImageView;
     @Bind(R.id.colorFourImageView)
     ImageView ColorFourImageView;
