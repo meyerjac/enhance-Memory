@@ -44,6 +44,8 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
     TableRow SecondRow;
     @Bind(R.id.third_row)
     TableRow ThirdRow;
+    @Bind(R.id.fourth_row)
+    TableRow FourthRow;
 
 
     @Bind(R.id.backArrow)
@@ -84,15 +86,24 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.colorTwelveImageView)
     ImageView ColorTwelveImageView;
 
+    @Bind(R.id.th)
+    ImageView ColorThImageView;
+    @Bind(R.id.fo)
+    ImageView ColorFoImageView;
+    @Bind(R.id.fi)
+    ImageView ColorFiImageView;
+    @Bind(R.id.si)
+    ImageView ColorSiImageView;
+
+
     private CountDownTimer countDownTimer;
-    private final long startTime = 4 * 1000;
+    private final long startTime = 3 * 1000;
     private final long interval = 1000;
     private String TAG = "debug";
     private Integer trackNumber= 0;
-    private Integer numberOfClicks= 0;
+    private Integer numberOfWrongClicks = 0;
+    private Integer numberOfRightClicks = 0;
     private String answerColor ="" ;
-    private String ifFirstColorClickIsGood = "no" ;
-    private String ifSecondColorClickIsGood = "no" ;
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -128,6 +139,10 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
         ColorTenImageView.setOnClickListener(this);
         ColorElevenImageView.setOnClickListener(this);
         ColorTwelveImageView.setOnClickListener(this);
+        ColorFoImageView.setOnClickListener(this);
+        ColorFiImageView.setOnClickListener(this);
+        ColorSiImageView.setOnClickListener(this);
+        ColorThImageView.setOnClickListener(this);
         Next.setOnClickListener(this);
         Replay.setOnClickListener(this);
         BackArrow.setOnClickListener(this);
@@ -149,6 +164,10 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
         ColorTenImageView.setEnabled(false);
         ColorElevenImageView.setEnabled(false);
         ColorTwelveImageView.setEnabled(false);
+        ColorFoImageView.setEnabled(false);
+        ColorFiImageView.setEnabled(false);
+        ColorSiImageView.setEnabled(false);
+        ColorThImageView.setEnabled(false);
     }
 
     private void setTrack() {
@@ -166,11 +185,15 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
             ColorFiveImageView.setBackgroundResource(R.color.colorWhite);
             ColorSixImageView.setBackgroundResource(R.color.colorPinkish);
             ColorSevenImageView.setBackgroundResource(R.color.colorBlueish);
-            ColorEightImageView.setBackgroundResource(R.color.colorYellowish);
+            ColorEightImageView.setBackgroundResource(R.color.color3);
             ColorNineImageView.setBackgroundResource(R.color.colorRed);
             ColorTenImageView.setBackgroundResource(R.color.colorGreenish);
             ColorElevenImageView.setBackgroundResource(R.color.colorWhite);
             ColorTwelveImageView.setBackgroundResource(R.color.colorYellowish);
+            ColorThImageView.setBackgroundResource(R.color.color1);
+            ColorFoImageView.setBackgroundResource(R.color.color2);
+            ColorFiImageView.setBackgroundResource(R.color.colorYellowish);
+            ColorSiImageView.setBackgroundResource(R.color.color3);
         } else if (trackNumber == 2) {
             answerColor = "yellow";
             ColorOneImageView.setBackgroundResource(R.color.colorYellowish);
@@ -185,6 +208,10 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
             ColorTenImageView.setBackgroundResource(R.color.colorRed);
             ColorElevenImageView.setBackgroundResource(R.color.colorYellowish);
             ColorTwelveImageView.setBackgroundResource(R.color.colorBlueish);
+            ColorThImageView.setBackgroundResource(R.color.color3);
+            ColorFoImageView.setBackgroundResource(R.color.color2);
+            ColorFiImageView.setBackgroundResource(R.color.color1);
+            ColorSiImageView.setBackgroundResource(R.color.color3);
         } else if (trackNumber == 3) {
             answerColor = "blue";
             ColorOneImageView.setBackgroundResource(R.color.colorPinkish);
@@ -199,6 +226,10 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
             ColorTenImageView.setBackgroundResource(R.color.colorRed);
             ColorElevenImageView.setBackgroundResource(R.color.colorPinkish);
             ColorTwelveImageView.setBackgroundResource(R.color.colorYellowish);
+            ColorThImageView.setBackgroundResource(R.color.color4);
+            ColorFoImageView.setBackgroundResource(R.color.color4);
+            ColorFiImageView.setBackgroundResource(R.color.color2);
+            ColorSiImageView.setBackgroundResource(R.color.color3);
         } else if (trackNumber == 4) {
             answerColor = "green";
             ColorOneImageView.setBackgroundResource(R.color.colorGreenish);
@@ -213,6 +244,10 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
             ColorTenImageView.setBackgroundResource(R.color.colorRed);
             ColorElevenImageView.setBackgroundResource(R.color.colorGreenish);
             ColorTwelveImageView.setBackgroundResource(R.color.colorYellowish);
+            ColorThImageView.setBackgroundResource(R.color.color3);
+            ColorFoImageView.setBackgroundResource(R.color.color3);
+            ColorFiImageView.setBackgroundResource(R.color.color4);
+            ColorSiImageView.setBackgroundResource(R.color.color4);
         } else if (trackNumber == 5) {
             answerColor = "white";
             ColorOneImageView.setBackgroundResource(R.color.colorPinkish);
@@ -227,6 +262,10 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
             ColorTenImageView.setBackgroundResource(R.color.colorGreenish);
             ColorElevenImageView.setBackgroundResource(R.color.colorRed);
             ColorTwelveImageView.setBackgroundResource(R.color.colorWhite);
+            ColorThImageView.setBackgroundResource(R.color.color1);
+            ColorFoImageView.setBackgroundResource(R.color.color2);
+            ColorFiImageView.setBackgroundResource(R.color.color3);
+            ColorSiImageView.setBackgroundResource(R.color.color3);
         } else {
 
         }
@@ -256,21 +295,28 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
                 FirstRow.setVisibility(View.VISIBLE);
 
             }
-        },0);
+        },400);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 SecondRow.setVisibility(View.VISIBLE);
 
             }
-        },1000);
+        },900);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 ThirdRow.setVisibility(View.VISIBLE);
 
             }
-        },2000);
+        },1400);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                FourthRow.setVisibility(View.VISIBLE);
+
+            }
+        },1900);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -286,10 +332,14 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
                 ColorTenImageView.setBackgroundResource(R.color.colorLightGrayish);
                 ColorElevenImageView.setBackgroundResource(R.color.colorLightGrayish);
                 ColorTwelveImageView.setBackgroundResource(R.color.colorLightGrayish);
+                ColorThImageView.setBackgroundResource(R.color.colorLightGrayish);
+                ColorFoImageView.setBackgroundResource(R.color.colorLightGrayish);
+                ColorFiImageView.setBackgroundResource(R.color.colorLightGrayish);
+                ColorSiImageView.setBackgroundResource(R.color.colorLightGrayish);
 
                 showButtons();
             }
-        },3500);
+        },2400);
     }
 
     private void showButtons() {
@@ -312,6 +362,11 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
         ColorTenImageView.setEnabled(true);
         ColorElevenImageView.setEnabled(true);
         ColorTwelveImageView.setEnabled(true);
+        ColorThImageView.setEnabled(true);
+        ColorFoImageView.setEnabled(true);
+        ColorFiImageView.setEnabled(true);
+        ColorSiImageView.setEnabled(true);
+
 
         final Handler handler2 = new Handler();
         handler2.postDelayed(new Runnable() {
@@ -333,252 +388,234 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
         view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
         if (view == ColorOneImageView) {
-            numberOfClicks += 1;
-            if (trackNumber == 1) {
-                if (numberOfClicks == 3) {
-                    onWrongAnswerTap();
-                }
-            } else if (trackNumber == 2) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
+            if ((trackNumber == 2) || (trackNumber == 4)) {
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
                     } else {
-                        ifSecondColorClickIsGood = "yes";
+                        onCorrectAnswerTap();
                     }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
+                    //keep tapping
                 }
-            } else if (trackNumber == 3) {
-                if (numberOfClicks == 3) {
+            } else {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                     onWrongAnswerTap();
-                }
-            } else if (trackNumber == 4) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
-                    } else {
-                        ifSecondColorClickIsGood = "yes";
-                    }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            } else if (trackNumber == 5) {
-                if (numberOfClicks == 3) {
-                    onWrongAnswerTap();
+                    //keep tapping
                 }
             }
         } else if (view == ColorTwoImageView) {
-            numberOfClicks += 1;
             if (trackNumber == 3) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
                     } else {
-                        ifSecondColorClickIsGood = "yes";
+                        onCorrectAnswerTap();
                     }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
+                    //keep tapping
                 }
             } else {
-                if (numberOfClicks == 3) {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                     onWrongAnswerTap();
+                } else {
+                    //keep tapping
                 }
             }
         } else if (view == ColorThreeImageView) {
-            numberOfClicks += 1;
-            if (trackNumber == 1) {
-                if (numberOfClicks == 3) {
-                    onWrongAnswerTap();
-                }
-            } else if (trackNumber == 2) {
-                if (numberOfClicks == 3) {
-                    onWrongAnswerTap();
-                }
-            } else if (trackNumber == 3) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
-                    } else {
-                        ifSecondColorClickIsGood = "yes";
-                    }
-                } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            } else if (trackNumber == 4) {
-                if (numberOfClicks == 3) {
-                    onWrongAnswerTap();
-                }
-            } else if (trackNumber == 5) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
-                    } else {
-                        ifSecondColorClickIsGood = "yes";
-                    }
-                } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            }
+             if ((trackNumber == 3) || (trackNumber == 5)) {
+                 numberOfRightClicks += 1;
+                 if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                     if (numberOfWrongClicks > 0) {
+                         onWrongAnswerTap();
+                     } else {
+                         onCorrectAnswerTap();
+                     }
+                 } else {
+                     //keep tapping
+                 }
+            } else {
+                 numberOfWrongClicks += 1;
+                 if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                     onWrongAnswerTap();
+                 } else {
+                     //keep tapping
+                 }
+             }
         } else if (view == ColorFourImageView) {
-            numberOfClicks += 1;
-            if (trackNumber == 1) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
+            if ((trackNumber == 1) || (trackNumber == 2)) {
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
                     } else {
-                        ifSecondColorClickIsGood = "yes";
+                        onCorrectAnswerTap();
                     }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            } else if (trackNumber == 2) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
-                    } else {
-                        ifSecondColorClickIsGood = "yes";
-                    }
-                } else {
-                    ifFirstColorClickIsGood = "yes";
+                    //keep tapping
                 }
             } else {
-                if (numberOfClicks == 3) {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                     onWrongAnswerTap();
+                } else {
+                    //keep tapping
                 }
             }
         } else if (view == ColorFiveImageView) {
-            numberOfClicks += 1;
-
-            if (numberOfClicks == 3) {
+            numberOfWrongClicks += 1;
+            if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                 onWrongAnswerTap();
+            } else {
+                //keep tapping
             }
+
         } else if (view == ColorSixImageView) {
-            numberOfClicks += 1;
-            if (trackNumber == 4) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
+            if ((trackNumber == 4) || (trackNumber == 5)) {
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
                     } else {
-                        ifSecondColorClickIsGood = "yes";
+                        onCorrectAnswerTap();
                     }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            } else if (trackNumber == 5) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifFirstColorClickIsGood.equals("yes")) {
-                        if (ifSecondColorClickIsGood.equals("yes")) {
-                            onCorrectAnswerTap();
-                        } else {
-                            ifSecondColorClickIsGood = "yes";
-                        }
-                    } else {
-                        ifFirstColorClickIsGood = "yes";
-                    }
+                    //keep tapping
                 }
             } else {
-                if (numberOfClicks == 3) {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                     onWrongAnswerTap();
+                } else {
+                    //keep tapping
                 }
             }
         } else if (view == ColorSevenImageView) {
-            numberOfClicks += 1;
-
-            if (numberOfClicks == 3) {
+            numberOfWrongClicks += 1;
+            if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                 onWrongAnswerTap();
+            } else {
+                //keep tapping
             }
         } else if (view == ColorEightImageView) {
-            numberOfClicks += 1;
-            if (trackNumber == 1) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
+            if (trackNumber == 3) {
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
                     } else {
-                        ifSecondColorClickIsGood = "yes";
+                        onCorrectAnswerTap();
                     }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            } else if (trackNumber == 3) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
-                    } else {
-                        ifSecondColorClickIsGood = "yes";
-                    }
-                } else {
-                    ifFirstColorClickIsGood = "yes";
+                    //keep tapping
                 }
             } else {
-                if (numberOfClicks == 3) {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                     onWrongAnswerTap();
+                } else {
+                    //keep tapping
                 }
             }
         } else if (view == ColorNineImageView) {
-            numberOfClicks += 1;
-
-            if (numberOfClicks == 3) {
+            numberOfWrongClicks += 1;
+            if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                 onWrongAnswerTap();
+            } else {
+                //keep tapping
             }
         } else if (view == ColorTenImageView) {
-            numberOfClicks += 1;
-
-            if (numberOfClicks == 3) {
+            numberOfWrongClicks += 1;
+            if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                 onWrongAnswerTap();
+            } else {
+                //keep tapping
             }
         } else if (view == ColorElevenImageView) {
-            numberOfClicks += 1;
-            if (trackNumber == 2) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
+            if ((trackNumber == 2) || (trackNumber == 4)) {
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
                     } else {
-                        ifSecondColorClickIsGood = "yes";
+                        onCorrectAnswerTap();
                     }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            } else if (trackNumber == 4) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
-                    } else {
-                        ifSecondColorClickIsGood = "yes";
-                    }
-                } else {
-                    ifFirstColorClickIsGood = "yes";
+                    //keep tapping
                 }
             } else {
-                if (numberOfClicks == 3) {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                     onWrongAnswerTap();
+                } else {
+                    //keep tapping
                 }
             }
         } else if (view == ColorTwelveImageView) {
-            numberOfClicks += 1;
-            if (trackNumber == 1) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
+            if ((trackNumber == 1) || (trackNumber == 5)) {
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
                     } else {
-                        ifSecondColorClickIsGood = "yes";
+                        onCorrectAnswerTap();
                     }
                 } else {
-                    ifFirstColorClickIsGood = "yes";
-                }
-            } else if  (trackNumber == 5) {
-                if (ifFirstColorClickIsGood.equals("yes")) {
-                    if (ifSecondColorClickIsGood.equals("yes")) {
-                        onCorrectAnswerTap();
-                    } else {
-                        ifSecondColorClickIsGood = "yes";
-                    }
-                } else {
-                    ifFirstColorClickIsGood = "yes";
+                    //keep tapping
                 }
             } else {
-                if (numberOfClicks == 3) {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
                     onWrongAnswerTap();
+                } else {
+                    //keep tapping
                 }
+            }
+        } else if (view == ColorThImageView) {
+            numberOfWrongClicks += 1;
+            if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                onWrongAnswerTap();
+            } else {
+                //keep tapping
+            }
+        } else if (view == ColorFoImageView) {
+            numberOfWrongClicks += 1;
+            if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                onWrongAnswerTap();
+            } else {
+                //keep tapping
+            }
+        } else if (view == ColorFiImageView) {
+            if (trackNumber == 1) {
+                numberOfRightClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    if (numberOfWrongClicks > 0) {
+                        onWrongAnswerTap();
+                    } else {
+                        onCorrectAnswerTap();
+                    }
+                } else {
+                    //keep tapping
+                }
+            } else {
+                numberOfWrongClicks += 1;
+                if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                    onWrongAnswerTap();
+                } else {
+                    //keep tapping
+                }
+            }
+        } else if (view == ColorSiImageView) {
+            numberOfWrongClicks += 1;
+            if ((numberOfRightClicks + numberOfWrongClicks) == 3) {
+                onWrongAnswerTap();
+            } else {
+                //keep tapping
             }
         } else if (view.equals(BackArrow)) {
             Intent intent = new Intent(S2L15.this, StageTwoActivity.class);
@@ -615,6 +652,10 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
         ColorTenImageView.setEnabled(false);
         ColorElevenImageView.setEnabled(false);
         ColorTwelveImageView.setEnabled(false);
+        ColorThImageView.setEnabled(false);
+        ColorFoImageView.setEnabled(false);
+        ColorFiImageView.setEnabled(false);
+        ColorSiImageView.setEnabled(false);
     }
 
     private void onWrongAnswerTap() {
@@ -693,7 +734,7 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void addClearToSharedPreference(String passed) {
-        mEditor.putString(Constants.S1LEVEL15COMPLETE, passed).apply();
+        mEditor.putString(Constants.S2LEVEL35COMPLETE, passed).apply();
     }
 
     private void showCheckmarkAndContinue() {
@@ -735,7 +776,7 @@ public class S2L15 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 NumberOfLightbulbs.animate().scaleX(1.0f).scaleY(1.0f).setDuration(500).start();
-                Integer questionPoints = 10;
+                Integer questionPoints = 25;
                 addPointsToSharedPreference(questionPoints);
             }
         }, 1500);

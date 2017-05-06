@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/coundownTimerTextView"
-        android:textSize="60dp"
+        android:textSize="40dp"
         android:textColor="@color/colorYellowish"
         android:layout_below="@+id/lightBulbRelativeLayout"
         android:layout_centerHorizontal="true" />
@@ -129,7 +129,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:id="@+id/clothingRelativeLayout"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -267,6 +267,49 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/solid_blue_circle"
                 android:id="@+id/colorTwelveImageView"
+                android:layout_marginRight="13dp"
+                android:layout_marginEnd="13dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourth_row"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:layout_below="@+id/third_row"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:id="@+id/th"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:id="@+id/fo"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:id="@+id/fi"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/solid_blue_circle"
+                android:id="@+id/si"
                 android:layout_marginRight="13dp"
                 android:layout_marginEnd="13dp" />
         </TableRow>

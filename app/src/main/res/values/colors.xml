@@ -8,4 +8,8 @@
     <color name="colorLightGrayish">#AAAAAA</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorRed">#DD0000</color>
+    <color name="color1">#324564</color>
+    <color name="color2">#AA4545</color>
+    <color name="color3">#FF99d3</color>
+    <color name="color4">#ad99ad</color>
 </resources>
