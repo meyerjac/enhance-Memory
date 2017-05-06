@@ -158,7 +158,7 @@
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorFourImageView"
+                android:id="@+id/colorTwoImageView"
                 android:visibility="invisible" />
         </TableRow>
 
@@ -177,7 +177,7 @@
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorTwoImageView"
+                android:id="@+id/colorThreeImageView"
                 android:visibility="invisible" />
 
             <ImageView
@@ -185,7 +185,7 @@
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/solid_blue_circle"
-                android:id="@+id/colorOneImageView"
+                android:id="@+id/colorFourImageView"
                 android:visibility="invisible"
                 android:layout_marginRight="13dp"
                 android:layout_marginEnd="13dp" />
