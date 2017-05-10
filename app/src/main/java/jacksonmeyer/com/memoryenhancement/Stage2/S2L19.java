@@ -15,6 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -37,7 +38,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.clothingRelativeLayout)
     RelativeLayout ClothingRelativeLayout;
     @Bind(R.id.buttonLayout)
-    RelativeLayout ButtonLayout;
+    TableLayout ButtonLayout;
 
     @Bind(R.id.backArrow)
     ImageView BackArrow;
@@ -58,15 +59,21 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
     ImageView ClothingThreeImageView;
     @Bind(R.id.clothingFourImageView)
     ImageView ClothingFourImageView;
+    @Bind(R.id.clothingFiveImageView)
+    ImageView ClothingFiveImageView;
+    @Bind(R.id.clothingSixImageView)
+    ImageView ClothingSixImageView;
     @Bind(R.id.answer1)
     ImageView Answer1;
     @Bind(R.id.answer2)
     ImageView Answer2;
     @Bind(R.id.answer3)
     ImageView Answer3;
+    @Bind(R.id.answer4)
+    ImageView Answer4;
 
     private CountDownTimer countDownTimer;
-    private final long startTime = 5 * 1000;
+    private final long startTime = 7 * 1000;
     private final long interval = 1000;
     private String TAG = "debug";
     private Integer trackNumber= 0;
@@ -78,7 +85,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_s1_l19);
+        setContentView(R.layout.activity_s2_l19);
         ButterKnife.bind(this);
 
         //get shared preferences data, just the number of Lightbulbs earned and displayed
@@ -97,6 +104,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
         Answer1.setOnClickListener(this);
         Answer2.setOnClickListener(this);
         Answer3.setOnClickListener(this);
+        Answer4.setOnClickListener(this);
         Next.setOnClickListener(this);
         Replay.setOnClickListener(this);
         BackArrow.setOnClickListener(this);
@@ -118,36 +126,50 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
             ClothingThreeImageView.setImageResource(R.drawable.panties);
             ClothingTwoImageView.setImageResource(R.drawable.hat);
             ClothingFourImageView.setImageResource(R.drawable.shirt);
+            ClothingFiveImageView.setImageResource(R.drawable.pants);
+            ClothingSixImageView.setImageResource(R.drawable.gloves);
         } else if (trackNumber == 2) {
             ClothingOneImageView.setImageResource(R.drawable.hat);
             ClothingThreeImageView.setImageResource(R.drawable.panties);
             ClothingTwoImageView.setImageResource(R.drawable.pants);
             ClothingFourImageView.setImageResource(R.drawable.shirt);
+            ClothingFiveImageView.setImageResource(R.drawable.bra);
+            ClothingSixImageView.setImageResource(R.drawable.sock);
         } else if (trackNumber == 3) {
             ClothingOneImageView.setImageResource(R.drawable.gloves);
             ClothingThreeImageView.setImageResource(R.drawable.panties);
             ClothingTwoImageView.setImageResource(R.drawable.pants);
             ClothingFourImageView.setImageResource(R.drawable.sock);
+            ClothingFiveImageView.setImageResource(R.drawable.bra);
+            ClothingSixImageView.setImageResource(R.drawable.hat);
         } else if (trackNumber == 4) {
             ClothingOneImageView.setImageResource(R.drawable.sock);
             ClothingThreeImageView.setImageResource(R.drawable.panties);
             ClothingTwoImageView.setImageResource(R.drawable.gloves);
             ClothingFourImageView.setImageResource(R.drawable.shirt);
+            ClothingFiveImageView.setImageResource(R.drawable.pants);
+            ClothingSixImageView.setImageResource(R.drawable.shoe);
         } else if (trackNumber == 5) {
             ClothingOneImageView.setImageResource(R.drawable.shirt);
             ClothingThreeImageView.setImageResource(R.drawable.gloves);
             ClothingTwoImageView.setImageResource(R.drawable.sock);
             ClothingFourImageView.setImageResource(R.drawable.hat);
+            ClothingFiveImageView.setImageResource(R.drawable.pants);
+            ClothingSixImageView.setImageResource(R.drawable.shoe);
         } else if (trackNumber == 6) {
             ClothingOneImageView.setImageResource(R.drawable.sock);
             ClothingThreeImageView.setImageResource(R.drawable.pants);
             ClothingTwoImageView.setImageResource(R.drawable.shirt);
             ClothingFourImageView.setImageResource(R.drawable.hat);
+            ClothingFiveImageView.setImageResource(R.drawable.panties);
+            ClothingSixImageView.setImageResource(R.drawable.gloves);
         } else if (trackNumber == 7) {
             ClothingOneImageView.setImageResource(R.drawable.pants);
             ClothingThreeImageView.setImageResource(R.drawable.panties);
             ClothingTwoImageView.setImageResource(R.drawable.gloves);
             ClothingFourImageView.setImageResource(R.drawable.hat);
+            ClothingFiveImageView.setImageResource(R.drawable.shirt);
+            ClothingSixImageView.setImageResource(R.drawable.shoe);
         }
     }
     private void startTimer() {
@@ -174,7 +196,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -2000,
                         0, 0);
-                mAnimation1.setDuration(3000);
+                mAnimation1.setDuration(2500);
                 mAnimation1.setFillAfter(true);
                 ClothingOneImageView.startAnimation(mAnimation1);
 
@@ -185,7 +207,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -2000,
                         0, 0);
-                mAnimation1.setDuration(3000);
+                mAnimation1.setDuration(2500);
                 mAnimation1.setFillAfter(true);
                 ClothingTwoImageView.startAnimation(mAnimation1);
 
@@ -196,7 +218,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -2000,
                         0, 0);
-                mAnimation1.setDuration(3000);
+                mAnimation1.setDuration(2500);
                 mAnimation1.setFillAfter(true);
                 ClothingThreeImageView.startAnimation(mAnimation1);
 
@@ -207,7 +229,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -2000,
                         0, 0);
-                mAnimation1.setDuration(3000);
+                mAnimation1.setDuration(2500);
                 mAnimation1.setFillAfter(true);
                 ClothingFourImageView.startAnimation(mAnimation1);
 
@@ -216,30 +238,62 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                showButtons();
+                TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -2000,
+                        0, 0);
+                mAnimation1.setDuration(2500);
+                mAnimation1.setFillAfter(true);
+                ClothingFiveImageView.startAnimation(mAnimation1);
+
+            }
+        },4000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                TranslateAnimation mAnimation1 = new TranslateAnimation(1000, -2000,
+                        0, 0);
+                mAnimation1.setDuration(2500);
+                mAnimation1.setFillAfter(true);
+                ClothingSixImageView.startAnimation(mAnimation1);
+
             }
         },5000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showButtons();
+            }
+        },7000);
     }
 
     private void showButtons() {
         Animation fadeIn = AnimationUtils.loadAnimation(S2L19.this, R.anim.fadein);
-        if ((trackNumber ==  1) || (trackNumber == 2)) {
+        if ((trackNumber ==  1) || (trackNumber ==  3) || (trackNumber ==  6)) {
             Answer1.setImageResource(R.drawable.gloves);
             Answer2.setImageResource(R.drawable.panties);
             Answer3.setImageResource(R.drawable.hat);
-        } else if ((trackNumber ==  3) || (trackNumber == 4)) {
+            Answer4.setImageResource(R.drawable.shoe);
+        } else if ((trackNumber ==  2)) {
             Answer1.setImageResource(R.drawable.sock);
             Answer2.setImageResource(R.drawable.gloves);
             Answer3.setImageResource(R.drawable.bra);
-        } else if ((trackNumber ==  5) || (trackNumber == 6)) {
+            Answer4.setImageResource(R.drawable.hat);
+        } else if ((trackNumber ==  4)) {
             Answer1.setImageResource(R.drawable.shirt);
             Answer2.setImageResource(R.drawable.panties);
             Answer3.setImageResource(R.drawable.hat);
-        } else {
-            Answer1.setImageResource(R.drawable.sock);
-            Answer2.setImageResource(R.drawable.hat);
+            Answer4.setImageResource(R.drawable.pants);
+        } else if (trackNumber == 5) {
+            Answer1.setImageResource(R.drawable.panties);
+            Answer2.setImageResource(R.drawable.shoe);
             Answer3.setImageResource(R.drawable.pants);
+            Answer4.setImageResource(R.drawable.hat);
+        } else if (trackNumber == 7) {
+            Answer1.setImageResource(R.drawable.panties);
+            Answer2.setImageResource(R.drawable.sock);
+            Answer3.setImageResource(R.drawable.gloves);
+            Answer4.setImageResource(R.drawable.hat);
         }
+
         ButtonLayout.setVisibility(View.VISIBLE);
         ButtonLayout.startAnimation(fadeIn);
         askQuestion();
@@ -272,19 +326,25 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
         view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
         if (view == Answer1) {
-            if ((trackNumber == 1) || (trackNumber == 2) || (trackNumber == 7)) {
+            if (trackNumber == 5) {
                 onCorrectAnswerTap();
             } else {
                 onWrongAnswerTap();
             }
         }else if (view == Answer2) {
-            if ((trackNumber == 5) || (trackNumber == 6)) {
+            if ((trackNumber == 2) || (trackNumber == 7)) {
                 onCorrectAnswerTap();
             } else {
                 onWrongAnswerTap();
             }
         } else if (view == Answer3) {
-            if ((trackNumber == 3) || (trackNumber == 4)) {
+            if (trackNumber == 4) {
+                onCorrectAnswerTap();
+            } else {
+                onWrongAnswerTap();
+            }
+        } else if (view == Answer4) {
+            if ((trackNumber == 1) || (trackNumber == 3) || (trackNumber == 6)) {
                 onCorrectAnswerTap();
             } else {
                 onWrongAnswerTap();
@@ -304,12 +364,11 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-
     private void onCorrectAnswerTap() {
-        ClothingOneImageView.setEnabled(false);
-        ClothingTwoImageView.setEnabled(false);
-        ClothingThreeImageView.setEnabled(false);
-        ClothingFourImageView.setEnabled(false);
+        Answer1.setEnabled(false);
+        Answer2.setEnabled(false);
+        Answer3.setEnabled(false);
+        Answer4.setEnabled(false);
 
         String passed = "true";
         addClearToSharedPreference(passed);
@@ -317,10 +376,10 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void onWrongAnswerTap() {
-        ClothingOneImageView.setEnabled(false);
-        ClothingTwoImageView.setEnabled(false);
-        ClothingThreeImageView.setEnabled(false);
-        ClothingFourImageView.setEnabled(false);
+        Answer1.setEnabled(false);
+        Answer2.setEnabled(false);
+        Answer3.setEnabled(false);
+        Answer4.setEnabled(false);
         showFailText();
     }
 
@@ -366,7 +425,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
                 CheckXImageView.startAnimation(fade);
 
                 TranslateAnimation mAnimation1 = new TranslateAnimation(0, 0,
-                        -500, 1500);
+                        -200, 200);
                 mAnimation1.setDuration(1000);
                 mAnimation1.setFillAfter(true);
                 AnswerQuestionTextView.startAnimation(mAnimation1);
@@ -393,7 +452,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void addClearToSharedPreference(String passed) {
-        mEditor.putString(Constants.S1LEVEL19COMPLETE, passed).apply();
+        mEditor.putString(Constants.S2LEVEL39COMPLETE, passed).apply();
     }
 
     private void showCheckmarkAndContinue() {
@@ -433,7 +492,7 @@ public class S2L19 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 NumberOfLightbulbs.animate().scaleX(1.0f).scaleY(1.0f).setDuration(500).start();
-                Integer questionPoints = 10;
+                Integer questionPoints = 25;
                 addPointsToSharedPreference(questionPoints);
             }
         }, 1500);

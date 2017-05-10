@@ -116,6 +116,57 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp" />
 
+    <TableLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:stretchColumns="*"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TableRow
+            android:id="@+id/button_row"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/answer1"
+                android:src="@drawable/panties"
+                android:textColor="@color/colorBackground" />
+
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/gloves"
+                android:textColor="@color/colorBackground"
+                android:id="@+id/answer2" />
+
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/hat"
+                android:textColor="@color/colorBackground"
+                android:id="@+id/answer3" />
+
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/shirt"
+                android:textColor="@color/colorBackground"
+                android:id="@+id/answer4" />
+        </TableRow>
+    </TableLayout>
+
     <TextView
         android:text="@string/s1l19_question"
         android:layout_width="wrap_content"
@@ -124,17 +175,18 @@
         android:textSize="30dp"
         android:gravity="center"
         android:id="@+id/answerQuestionTextView"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/buttonLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:id="@+id/clothingRelativeLayout"
         android:visibility="invisible"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TableRow
             android:id="@+id/first_row"
@@ -147,9 +199,8 @@
             android:layout_alignParentStart="true">
 
             <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:id="@+id/colorOneImageView"
                 android:visibility="invisible" />
         </TableRow>
@@ -163,9 +214,8 @@
             android:layout_below="@id/first_row">
 
             <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:id="@+id/clothingTwoImageView"
                 android:visibility="invisible"
                 />
@@ -181,9 +231,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
             <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:id="@+id/clothingThreeImageView"
                 android:visibility="invisible"
                 />
@@ -198,52 +247,47 @@
             android:layout_below="@id/third_row">
 
             <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:id="@+id/clothingFourImageView"
                 android:visibility="invisible"
                 />
         </TableRow>
 
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:visibility="invisible"
-        android:id="@+id/buttonLayout">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/answer1"
-            android:src="@drawable/rainy"
-            android:layout_alignParentTop="true"
+        <TableRow
+            android:id="@+id/fifth_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_below="@+id/Fourth_row"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/sunny"
-            android:layout_alignTop="@+id/answer1"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/answer2" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/clothingFiveImageView"
+                android:visibility="invisible" />
+        </TableRow>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/thunderstorms"
-            android:id="@+id/answer3"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+        <TableRow
+            android:id="@+id/sixth_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/clothingSixImageView"
+                android:visibility="invisible" />
+        </TableRow>
 
     </RelativeLayout>
+
 </RelativeLayout>

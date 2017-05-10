@@ -307,21 +307,18 @@ public class S1L19 extends AppCompatActivity implements View.OnClickListener {
 
 
     private void onCorrectAnswerTap() {
-        ClothingOneImageView.setEnabled(false);
-        ClothingTwoImageView.setEnabled(false);
-        ClothingThreeImageView.setEnabled(false);
-        ClothingFourImageView.setEnabled(false);
-
+        Answer1.setEnabled(false);
+        Answer2.setEnabled(false);
+        Answer3.setEnabled(false);
         String passed = "true";
         addClearToSharedPreference(passed);
         showCheckmarkAndContinue();
     }
 
     private void onWrongAnswerTap() {
-        ClothingOneImageView.setEnabled(false);
-        ClothingTwoImageView.setEnabled(false);
-        ClothingThreeImageView.setEnabled(false);
-        ClothingFourImageView.setEnabled(false);
+        Answer1.setEnabled(false);
+        Answer2.setEnabled(false);
+        Answer3.setEnabled(false);
         showFailText();
     }
 
