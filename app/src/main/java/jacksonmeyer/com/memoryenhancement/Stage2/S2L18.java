@@ -16,6 +16,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -27,7 +28,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import jacksonmeyer.com.memoryenhancement.Constants;
 import jacksonmeyer.com.memoryenhancement.R;
-import jacksonmeyer.com.memoryenhancement.StageOneActivity;
 import jacksonmeyer.com.memoryenhancement.StageTwoActivity;
 
 public class S2L18 extends AppCompatActivity implements View.OnClickListener {
@@ -51,10 +51,12 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
     Button Button2;
     @Bind(R.id.answer3)
     Button Button3;
+    @Bind(R.id.answer4)
+    Button Button4;
 
 
     @Bind(R.id.buttonLayout)
-    android.widget.RelativeLayout ButtonLayout;
+    TableLayout ButtonLayout;
     @Bind(R.id.relativeLayout)
     RelativeLayout RelativeLayout;
     @Bind(R.id.lightBulbRelativeLayout)
@@ -77,6 +79,8 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
     private String ingredient2 = null;
     private String ingredient3 = null;
     private String ingredient4 = null;
+    private String ingredient5 = null;
+    private String ingredient6 = null;
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -107,6 +111,7 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
         Button3.setOnClickListener(this);
+        Button4.setOnClickListener(this);
         Next.setOnClickListener(this);
         Replay.setOnClickListener(this);
         BackArrow.setOnClickListener(this);
@@ -122,12 +127,15 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
         ingredients.add("olives" );
         ingredients.add("salami");
         ingredients.add("pineapple");
-        ingredients.add("canadian bacon");
+        ingredients.add("bacon");
+        ingredients.add("anchovies");
+        ingredients.add("artichokes");
+        ingredients.add("peppers");
 
         Map<Integer, String> actualIngredients = new HashMap<Integer, String>();
 
-        for(int i = 1; i < 5; i ++ ) {
-            Integer randomNum = (int)(Math.random() * ((6 - 1)));
+        for(int i = 1; i < 7; i ++ ) {
+            Integer randomNum = (int)(Math.random() * ((9 - 1)));
             actualIngredients.put(i, ingredients.get(randomNum));
         }
 
@@ -135,23 +143,32 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
         ingredient2 = actualIngredients.get(2);
         ingredient3 = actualIngredients.get(3);
         ingredient4 = actualIngredients.get(4);
+        ingredient5 = actualIngredients.get(5);
+        ingredient6 = actualIngredients.get(6);
 
 
         //accounting for using the same ingredient
         String more1 = "";
         String more2 = "";
         String more3 = "";
-        if (ingredient4.equals(ingredient3) || ingredient4.equals(ingredient2) || ingredient4.equals(ingredient1)) {
+        String more4 = "";
+        String more5 = "";
+        String more6 = "";
+        if (ingredient6.equals(ingredient5) || ingredient6.equals(ingredient4) || ingredient6.equals(ingredient3) || ingredient6.equals(ingredient2) || ingredient6.equals(ingredient1)) {
+            more5 = "more ";
+        } if (ingredient5.equals(ingredient4) || ingredient5.equals(ingredient3) || ingredient5.equals(ingredient2) || ingredient5.equals(ingredient1)) {
+            more4 = "more ";
+        } if (ingredient4.equals(ingredient3) || ingredient4.equals(ingredient2) || ingredient4.equals(ingredient1)) {
             more3 = "more ";
         } if (ingredient3.equals(ingredient2) || ingredient3.equals(ingredient1)) {
             more2 = "more ";
-        } if (ingredient2.equals(ingredient1)) {
+       } if (ingredient2.equals(ingredient1)) {
             more1 = "more ";
-        }
+    }
 
         QuestionTextView.setText("On Megan's homemade pizza she put on a base of marinera sauce, " +
                 "mozzeralla cheese, first added " + ingredient1 + ", then she added " + more1 + " " + ingredient2 +
-                ", added some " + more2 + " " + ingredient3 + ", and topped it with " + more3 + ingredient4 );
+                ", " + more2 + " " + ingredient3 + ", " + more3 + " " + ingredient4 + ", " + more4 + " " + ingredient5 + ", and topped it with " + more5 + ingredient6 );
 
         countDownTimer = new MyCountDownTimer(startTime, interval);
         final Handler handler1 = new Handler();
@@ -166,7 +183,7 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
-        if(view == Button1) {
+        if (view == Button1) {
             if (correctButton == 1) {
                 onCorrectAnswerTap();
             } else {
@@ -179,13 +196,15 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
                 onWrongAnswerTap();
             }
         } else if (view == Button3) {
-            if (correctButton == 3) {
+            onWrongAnswerTap();
+        } else if (view == Button4) {
+            if ((correctButton == 4) || (correctButton == 3)) {
                 onCorrectAnswerTap();
             } else {
                 onWrongAnswerTap();
             }
         } else if (view == BackArrow){
-            Intent intent = new Intent(S2L18.this, StageOneActivity.class);
+            Intent intent = new Intent(S2L18.this, StageTwoActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.pushrightin, R.anim.pushrightout);
         } else if (view == Replay){
@@ -202,6 +221,7 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
         Button1.setEnabled(false);
         Button2.setEnabled(false);
         Button3.setEnabled(false);
+        Button4.setEnabled(false);
         showFailText();
     }
 
@@ -255,6 +275,7 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
         Button1.setEnabled(false);
         Button2.setEnabled(false);
         Button3.setEnabled(false);
+        Button4.setEnabled(false);
         String passed = "true";
         addClearToSharedPreference(passed);
         showCheckmarkAndContinue();
@@ -271,7 +292,7 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void addClearToSharedPreference(String passed) {
-        mEditor.putString(Constants.S1LEVEL18COMPLETE, passed).apply();
+        mEditor.putString(Constants.S2LEVEL28COMPLETE, passed).apply();
     }
 
     private void showCheckmarkAndContinue() {
@@ -311,7 +332,7 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 NumberOfLightbulbs.animate().scaleX(1.0f).scaleY(1.0f).setDuration(500).start();
-                Integer questionPoints = 10;
+                Integer questionPoints = 25;
                 addPointsToSharedPreference(questionPoints);
             }
         }, 1500);
@@ -373,40 +394,49 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
         correctButton = randomCorrectButton;
 
         if (correctButton == 1) {
-            Button1.setText("peppers");
+            Button1.setText("mushrooms");
             if (!(ingredient4.equals(ingredient2))) {
                 Button2.setText(ingredient4);
                 Button3.setText(ingredient2);
+                Button4.setText(ingredient6);
             } else if(!(ingredient4.equals(ingredient3)))  {
                 Button2.setText(ingredient4);
                 Button3.setText(ingredient3);
+                Button4.setText(ingredient5);
             } else {
                 Button2.setText(ingredient4);
                 Button3.setText(ingredient1);
+                Button4.setText(ingredient6);
             }
         } else if (correctButton == 2) {
             Button2.setText("onions");
             if (!(ingredient1.equals(ingredient2))) {
                 Button1.setText(ingredient2);
                 Button3.setText(ingredient1);
+                Button4.setText(ingredient6);
             } else if(!(ingredient1.equals(ingredient3)))  {
                 Button1.setText(ingredient1);
                 Button3.setText(ingredient3);
+                Button4.setText(ingredient5);
             } else {
                 Button1.setText(ingredient1);
                 Button3.setText(ingredient4);
+                Button4.setText(ingredient6);
             }
         } else {
-            Button3.setText("onions");
-            if (!(ingredient1.equals(ingredient3))) {
+            Button4.setText("sausage");
+            if (!((ingredient1.equals(ingredient3)) || (ingredient1.equals(ingredient6)))) {
                 Button1.setText(ingredient1);
                 Button2.setText(ingredient3);
-            } else if(!(ingredient1.equals(ingredient2)))  {
-                Button1.setText(ingredient1);
-                Button2.setText(ingredient2);
-            } else {
+                Button3.setText(ingredient6);
+            } else if (!((ingredient1.equals(ingredient4)) || (ingredient1.equals(ingredient5)))) {
                 Button1.setText(ingredient1);
                 Button2.setText(ingredient4);
+                Button3.setText(ingredient5);
+            } else {
+                Button1.setText(ingredient1);
+                Button2.setText(ingredient2);
+                Button3.setText(ingredient5);
             }
         }
     }
