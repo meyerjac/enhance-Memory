@@ -26,6 +26,7 @@ import jacksonmeyer.com.memoryenhancement.Stage2.S2L17;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L18;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L19;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L2;
+import jacksonmeyer.com.memoryenhancement.Stage2.S2L20;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L3;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L4;
 import jacksonmeyer.com.memoryenhancement.Stage2.S2L5;
@@ -405,7 +406,7 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level20) {
-                Intent intent = new Intent(this, S2L10.class);
+                Intent intent = new Intent(this, S2L20.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         }

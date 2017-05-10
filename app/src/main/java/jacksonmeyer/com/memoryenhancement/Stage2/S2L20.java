@@ -14,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.answerQuestionTextView)
     TextView AnswerQuestionTextView;
     @Bind(R.id.buttonLayout)
-    android.widget.RelativeLayout ButtonLayout;
+    TableLayout ButtonLayout;
     @Bind(R.id.relativeLayout)
     android.widget.RelativeLayout RelativeLayout;
     @Bind(lightBulbRelativeLayout)
@@ -55,13 +56,15 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
     ImageView Answer2;
     @Bind(R.id.answer3)
     ImageView Answer3;
+    @Bind(R.id.answer4)
+    ImageView Answer4;
 
     @Bind(R.id.colorOneImageView)
     ImageView shownWeatherImageView;
 
 
     private CountDownTimer countDownTimer;
-    private final long startTime = 5 * 1000;
+    private final long startTime = 6 * 1000;
     private final long interval = 1000;
     private String TAG = "debug";
     private ArrayList assignedFacePattern = new ArrayList();
@@ -95,6 +98,7 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
         Answer1.setOnClickListener(this);
         Answer2.setOnClickListener(this);
         Answer3.setOnClickListener(this);
+        Answer4.setOnClickListener(this);
         Next.setOnClickListener(this);
         Replay.setOnClickListener(this);
         BackArrow.setOnClickListener(this);
@@ -106,14 +110,16 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void setSequence() {
-        for (int i = 0; i < 4; i++) {
-            Integer weather = 1 + (int) (Math.random() * ((4 - 1)));
-            if (weather == 1) {
+        for (int i = 0; i < 6; i++) {
+            Integer face = 1 + (int) (Math.random() * ((5 - 1)));
+            if (face == 1) {
                 assignedFacePattern.add("sad");
-            } else if (weather == 2) {
-                assignedFacePattern.add("happy");
-            } else {
+            } else if (face == 2) {
+                assignedFacePattern.add("smile");
+            } else if (face == 3) {
                 assignedFacePattern.add("silly");
+            } else {
+                assignedFacePattern.add("cry");
             }
         }
         Log.d(TAG, "setSequence: " + assignedFacePattern.toString());
@@ -144,8 +150,10 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
                 } else if (assignedFacePattern.get(0).equals("happy")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
-                } else {
+                } else if (assignedFacePattern.get(0).equals("silly")){
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
+                } else {
+                    shownWeatherImageView.setImageResource(R.drawable.cryface);
                 }
                 shownWeatherImageView.setVisibility(View.VISIBLE);
             }
@@ -159,10 +167,11 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
                 } else if (assignedFacePattern.get(1).equals("happy")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
-                } else {
+                } else if (assignedFacePattern.get(1).equals("silly")){
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
+                } else {
+                    shownWeatherImageView.setImageResource(R.drawable.cryface);
                 }
-
                 final Handler handler2 = new Handler();
                 handler2.postDelayed(new Runnable() {
                     @Override
@@ -180,8 +189,10 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
                 } else if (assignedFacePattern.get(2).equals("happy")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
-                } else {
+                } else if (assignedFacePattern.get(2).equals("silly")){
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
+                } else {
+                    shownWeatherImageView.setImageResource(R.drawable.cryface);
                 }
                 final Handler handler2 = new Handler();
                 handler2.postDelayed(new Runnable() {
@@ -200,8 +211,10 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
                 } else if (assignedFacePattern.get(3).equals("happy")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
-                } else {
+                } else if (assignedFacePattern.get(3).equals("silly")){
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
+                } else {
+                    shownWeatherImageView.setImageResource(R.drawable.cryface);
                 }
                 final Handler handler2 = new Handler();
                 handler2.postDelayed(new Runnable() {
@@ -216,9 +229,53 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 shownWeatherImageView.setVisibility(View.INVISIBLE);
-                showButtons();
+                if (assignedFacePattern.get(4).equals("sad")) {
+                    shownWeatherImageView.setImageResource(R.drawable.sadface);
+                } else if (assignedFacePattern.get(4).equals("happy")) {
+                    shownWeatherImageView.setImageResource(R.drawable.happyface);
+                } else if (assignedFacePattern.get(4).equals("silly")){
+                    shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
+                } else {
+                    shownWeatherImageView.setImageResource(R.drawable.cryface);
+                }
+                final Handler handler2 = new Handler();
+                handler2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        shownWeatherImageView.setVisibility(View.VISIBLE);
+                    }
+                },300);
             }
         },4000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                shownWeatherImageView.setVisibility(View.INVISIBLE);
+                if (assignedFacePattern.get(5).equals("sad")) {
+                    shownWeatherImageView.setImageResource(R.drawable.sadface);
+                } else if (assignedFacePattern.get(5).equals("happy")) {
+                    shownWeatherImageView.setImageResource(R.drawable.happyface);
+                } else if (assignedFacePattern.get(5).equals("silly")){
+                    shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
+                } else {
+                    shownWeatherImageView.setImageResource(R.drawable.cryface);
+                }
+                final Handler handler2 = new Handler();
+                handler2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        shownWeatherImageView.setVisibility(View.VISIBLE);
+                    }
+                },300);
+            }
+        },5000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                shownWeatherImageView.setVisibility(View.INVISIBLE);
+                showButtons();
+            }
+        },6000);
     }
 
     private void showButtons() {
@@ -231,6 +288,7 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void askQuestion() {
+        Log.d(TAG, "askQuestion: " + assignedFacePattern);
         ButtonLayout.setVisibility(View.VISIBLE);
         AnswerQuestionTextView.setVisibility(View.VISIBLE);
 
@@ -261,7 +319,10 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
         } else if (view == Answer3) {
             guessedFacePattern.add("smile");
             checkPatternLength();
-        } else if (view.equals(BackArrow)) {
+        } else if (view == Answer4) {
+            guessedFacePattern.add("cry");
+            checkPatternLength();
+        }else if (view.equals(BackArrow)) {
             Intent intent = new Intent(this, StageTwoActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
@@ -278,15 +339,18 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
 
     private void checkPatternLength() {
         Log.d(TAG, "setSequence: " + assignedFacePattern.toString() + guessedFacePattern.toString());
-        if (guessedFacePattern.size() == 4) {
+        if (guessedFacePattern.size() == 6) {
             Answer1.setEnabled(false);
             Answer2.setEnabled(false);
             Answer3.setEnabled(false);
+            Answer4.setEnabled(false);
 
             if ((guessedFacePattern.get(0).equals(assignedFacePattern.get(0))) &&
                     (guessedFacePattern.get(1).equals(assignedFacePattern.get(1))) &&
                     (guessedFacePattern.get(2).equals(assignedFacePattern.get(2))) &&
-                    (guessedFacePattern.get(3).equals(assignedFacePattern.get(3)))) {
+                    (guessedFacePattern.get(3).equals(assignedFacePattern.get(3))) &&
+                    (guessedFacePattern.get(4).equals(assignedFacePattern.get(4))) &&
+                    (guessedFacePattern.get(5).equals(assignedFacePattern.get(5)))) {
                 onCorrectAnswerTap();
             } else {
                 onWrongAnswerTap();
@@ -416,7 +480,7 @@ public class S2L20 extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void run() {
                 NumberOfLightbulbs.animate().scaleX(1.0f).scaleY(1.0f).setDuration(500).start();
-                Integer questionPoints = 10;
+                Integer questionPoints = 25;
                 addPointsToSharedPreference(questionPoints);
             }
         }, 1500);
