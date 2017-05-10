@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="jacksonmeyer.com.memoryenhancement.Stage2.S2L16">
+    tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L1">
 
     <RelativeLayout
         android:layout_width="100dp"
@@ -38,41 +38,60 @@
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
+    <TableLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:stretchColumns="*"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/buttonLayout">
+        android:layout_alignParentStart="true">
 
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:id="@+id/answer1"
-            android:src="@drawable/apple"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+        <TableRow
+            android:id="@+id/button_row"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
 
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:src="@drawable/apple"
-            android:id="@+id/answer2"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/answer1"
+                android:src="@drawable/rainy"
+                android:textColor="@color/colorBackground"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:src="@drawable/apple"
-            android:id="@+id/answer3"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/sunny"
+                android:textColor="@color/colorBackground"
+                android:layout_alignTop="@+id/answer1"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/answer2" />
 
-    </RelativeLayout>
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/thunderstorms"
+                android:textColor="@color/colorBackground"
+                android:id="@+id/answer3" />
+
+            <ImageView
+                android:text=""
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/partly_cloudy"
+                android:textColor="@color/colorBackground"
+                android:id="@+id/answer4" />
+        </TableRow>
+    </TableLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -141,7 +160,7 @@
         android:id="@+id/backArrow" />
 
     <TextView
-        android:text="@string/s1l16_question"
+        android:text="@string/s2l16_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorYellowish"
@@ -163,141 +182,135 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="11dp" />
 
-    <ImageView
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/sunny"
-            android:id="@+id/weatherImageView2"
-            />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/weatherLayout"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-    <TableLayout
-        android:id="@+id/dayOfTheWeekLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:stretchColumns="*"
-        android:layout_above="@+id/answerQuestionTextView"
-        android:layout_toRightOf="@+id/weatherImageView2"
-        android:layout_toEndOf="@+id/weatherImageView2"
-        android:layout_marginBottom="39dp">
-
-    <TableRow
-        android:id="@+id/button_row"
-        android:layout_width="0dip"
-        android:layout_height="25dp"
-        android:layout_weight="1"
-        >
-
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:id="@+id/weatherBar1">
 
         <TextView
             android:text="Mon."
             android:textColor="@color/colorYellowish"
-            android:textSize="17sp"
-            android:gravity="center"
+            android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:id="@+id/textView" />
 
         <TextView
             android:text="Tues."
             android:textColor="@color/colorYellowish"
-            android:textSize="17sp"
-            android:gravity="center"
+            android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:id="@+id/textView2" />
 
         <TextView
             android:text="Wed."
             android:textColor="@color/colorYellowish"
-            android:textSize="17sp"
-            android:gravity="center"
+            android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:id="@+id/textView3" />
 
-        <TextView
-            android:text="Thurs."
-            android:textColor="@color/colorYellowish"
-            android:textSize="17sp"
-            android:gravity="center"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/rainy"
+            android:id="@+id/weatherImageView1"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/cloudy"
+                android:id="@+id/weatherImageView3"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/sunny"
+                android:id="@+id/weatherImageView2"
+                android:layout_below="@+id/textView2"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4" />
+            android:layout_below="@id/weatherBar1">
 
-        </TableRow>
+            <TextView
+                android:text="Wed."
+                android:textColor="@color/colorYellowish"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView4" />
 
-        <TableRow
-            android:id="@+id/weather_row"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            <TextView
+                android:text="Thurs."
+                android:textColor="@color/colorYellowish"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/textView5" />
 
             <TextView
                 android:text="Fri."
                 android:textColor="@color/colorYellowish"
-                android:textSize="17sp"
-                android:gravity="center"
+                android:textSize="25sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView5" />
-
-            <TextView
-                android:text="Sat."
-                android:textColor="@color/colorYellowish"
-                android:textSize="17sp"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:id="@+id/textView6" />
 
-            <TextView
-                android:text="Sun."
-                android:textColor="@color/colorYellowish"
-                android:textSize="17sp"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView7" />
-        </TableRow>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/cloudy"
+                android:id="@+id/weatherImageView4"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
-        <TableRow
-            android:id="@+id/weather_row"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/thunderstorms"
+                android:id="@+id/weatherImageView6"
+                android:layout_below="@+id/textView6"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
-            <TextView
-                android:text="Fri."
-                android:textColor="@color/colorYellowish"
-                android:textSize="17sp"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView5" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/partly_cloudy"
+                android:id="@+id/weatherImageView5"
+                android:layout_below="@+id/textView5"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
 
-            <TextView
-                android:text="Sat."
-                android:textColor="@color/colorYellowish"
-                android:textSize="17sp"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView6" />
-
-            <TextView
-                android:text="Sun."
-                android:textColor="@color/colorYellowish"
-                android:textSize="17sp"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView7" />
-        </TableRow>
-    </TableLayout>
 </RelativeLayout>
-
-
