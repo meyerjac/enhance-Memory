@@ -292,7 +292,7 @@ public class S2L18 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void addClearToSharedPreference(String passed) {
-        mEditor.putString(Constants.S2LEVEL28COMPLETE, passed).apply();
+        mEditor.putString(Constants.S2LEVEL38COMPLETE, passed).apply();
     }
 
     private void showCheckmarkAndContinue() {
