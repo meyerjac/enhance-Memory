@@ -24,7 +24,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import jacksonmeyer.com.memoryenhancement.Constants;
 import jacksonmeyer.com.memoryenhancement.R;
-import jacksonmeyer.com.memoryenhancement.StageOneActivity;
 import jacksonmeyer.com.memoryenhancement.StageTwoActivity;
 
 import static jacksonmeyer.com.memoryenhancement.R.id.lightBulbRelativeLayout;
@@ -361,7 +360,7 @@ public class S2L13 extends AppCompatActivity implements View.OnClickListener {
                 }
             }
         } else if (view.equals(BackArrow)) {
-            Intent intent = new Intent(this, StageOneActivity.class);
+            Intent intent = new Intent(this, StageTwoActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
             Intent intent = new Intent(this, S2L14.class);

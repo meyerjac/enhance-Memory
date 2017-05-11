@@ -23,6 +23,7 @@ import butterknife.ButterKnife;
 import jacksonmeyer.com.memoryenhancement.Constants;
 import jacksonmeyer.com.memoryenhancement.R;
 import jacksonmeyer.com.memoryenhancement.StageOneActivity;
+import jacksonmeyer.com.memoryenhancement.StageTwoActivity;
 
 import static jacksonmeyer.com.memoryenhancement.R.id.lightBulbRelativeLayout;
 
@@ -110,7 +111,7 @@ public class S1L20 extends AppCompatActivity implements View.OnClickListener {
             if (weather == 1) {
                 assignedFacePattern.add("sad");
             } else if (weather == 2) {
-                assignedFacePattern.add("happy");
+                assignedFacePattern.add("smile");
             } else {
                 assignedFacePattern.add("silly");
             }
@@ -141,7 +142,7 @@ public class S1L20 extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 if (assignedFacePattern.get(0).equals("sad")) {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
-                } else if (assignedFacePattern.get(0).equals("happy")) {
+                } else if (assignedFacePattern.get(0).equals("smile")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
                 } else {
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
@@ -156,7 +157,7 @@ public class S1L20 extends AppCompatActivity implements View.OnClickListener {
 
                 if (assignedFacePattern.get(1).equals("sad")) {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
-                } else if (assignedFacePattern.get(1).equals("happy")) {
+                } else if (assignedFacePattern.get(1).equals("smile")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
                 } else {
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
@@ -177,7 +178,7 @@ public class S1L20 extends AppCompatActivity implements View.OnClickListener {
                 shownWeatherImageView.setVisibility(View.INVISIBLE);
                 if (assignedFacePattern.get(2).equals("sad")) {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
-                } else if (assignedFacePattern.get(2).equals("happy")) {
+                } else if (assignedFacePattern.get(2).equals("smile")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
                 } else {
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
@@ -197,7 +198,7 @@ public class S1L20 extends AppCompatActivity implements View.OnClickListener {
                 shownWeatherImageView.setVisibility(View.INVISIBLE);
                 if (assignedFacePattern.get(3).equals("sad")) {
                     shownWeatherImageView.setImageResource(R.drawable.sadface);
-                } else if (assignedFacePattern.get(3).equals("happy")) {
+                } else if (assignedFacePattern.get(3).equals("smile")) {
                     shownWeatherImageView.setImageResource(R.drawable.happyface);
                 } else {
                     shownWeatherImageView.setImageResource(R.drawable.tongueoutface);
@@ -264,7 +265,7 @@ public class S1L20 extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(this, StageOneActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
-            Intent intent = new Intent(this, StageOneActivity.class);
+            Intent intent = new Intent(this, StageTwoActivity.class);
             startActivity(intent);
         } else if (view.equals(Replay)) {
             Intent intent = new Intent(this, S1L20.class);

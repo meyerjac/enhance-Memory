@@ -6,7 +6,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -111,7 +110,7 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         String passed6 = mSharedPreferences.getString(Constants.S1LEVEL6COMPLETE, null);
         String passed7 = mSharedPreferences.getString(Constants.S1LEVEL7COMPLETE, null);
         String passed8 = mSharedPreferences.getString(Constants.S1LEVEL8COMPLETE, null);
-        String passed9= mSharedPreferences.getString(Constants.S1LEVEL9COMPLETE, null);
+        String passed9 = mSharedPreferences.getString(Constants.S1LEVEL9COMPLETE, null);
         String passed10 = mSharedPreferences.getString(Constants.S1LEVEL10COMPLETE, null);
         String passed11 = mSharedPreferences.getString(Constants.S1LEVEL11COMPLETE, null);
         String passed12 = mSharedPreferences.getString(Constants.S1LEVEL12COMPLETE, null);
@@ -138,161 +137,123 @@ public class StageOneActivity extends AppCompatActivity implements View.OnClickL
         Level17.setTypeface(Rubix); Level18.setTypeface(Rubix); Level19.setTypeface(Rubix); Level20.setTypeface(Rubix);
         
         if (passed1 == null) {
-        } else if (passed1.equals("true")) {
+        } else {
             Level1.setBackgroundResource(R.drawable.yellow_circle);
             Level1.setTextColor(getResources().getColor(R.color.colorYellowish));
         }
 
         if (passed2 == null) {
-        } else if (passed2.equals("true")) {
+        } else {
             Level2.setBackgroundResource(R.drawable.yellow_circle);
             Level2.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed3 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level3.setBackgroundResource(R.drawable.yellow_circle);
             Level3.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed4 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level4.setBackgroundResource(R.drawable.yellow_circle);
             Level4.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed5 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level5.setBackgroundResource(R.drawable.yellow_circle);
             Level5.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed6 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level6.setBackgroundResource(R.drawable.yellow_circle);
             Level6.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed7 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level7.setBackgroundResource(R.drawable.yellow_circle);
             Level7.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed8 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level8.setBackgroundResource(R.drawable.yellow_circle);
             Level8.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed9 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level9.setBackgroundResource(R.drawable.yellow_circle);
             Level9.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed10 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level10.setBackgroundResource(R.drawable.yellow_circle);
             Level10.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed11 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level11.setBackgroundResource(R.drawable.yellow_circle);
             Level11.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed12 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level12.setBackgroundResource(R.drawable.yellow_circle);
             Level12.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed13 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level13.setBackgroundResource(R.drawable.yellow_circle);
             Level13.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed14 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level14.setBackgroundResource(R.drawable.yellow_circle);
             Level14.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed15 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level15.setBackgroundResource(R.drawable.yellow_circle);
             Level15.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed16 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level16.setBackgroundResource(R.drawable.yellow_circle);
             Level16.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed17 == null) {
-        } else if (passed3.equals("true")) {
+        } else  {
             Level17.setBackgroundResource(R.drawable.yellow_circle);
             Level17.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed18 == null) {
-        } else if (passed3.equals("true")) {
+        } else  {
             Level18.setBackgroundResource(R.drawable.yellow_circle);
             Level18.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed19 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level19.setBackgroundResource(R.drawable.yellow_circle);
             Level19.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed20 == null) {
-        } else if (passed3.equals("true")) {
+        } else {
             Level20.setBackgroundResource(R.drawable.yellow_circle);
             Level20.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
 

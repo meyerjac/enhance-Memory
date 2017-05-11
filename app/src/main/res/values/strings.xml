@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">MemoryEnhancement</string>
+    <string name="app_name">Memory Master</string>
+    <string name="replay">Replay</string>
+    <string name="next">Next</string>
+    <string name="rate">Rate</string>
+    <string name="play">Play</string>
+    <string name="memory">Memory</string>
+    <string name="master">MASTER</string>
+
+
     <string name="s1l1_question">What color was Sarahs</string>
     <string name="s1l2_question">What animal wasnt shown?</string>
     <string name="s1l3_question">What Animal was in the </string>

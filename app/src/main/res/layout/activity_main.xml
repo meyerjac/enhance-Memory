@@ -15,41 +15,37 @@
         android:layout_height="150dp"
         android:gravity="center"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/relativeLayout">
 
         <TextView
-            android:text="Rate"
+            android:text="@string/rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
             android:background="@drawable/pink_background"
             android:paddingLeft="70dp"
             android:paddingRight="70dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="@color/colorWhite"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textAllCaps="true"
             android:id="@+id/nextButton"
             android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/playButton"
             android:layout_alignStart="@+id/playButton"
-            android:layout_marginBottom="33dp" />
+            android:layout_marginBottom="30dp" />
 
         <TextView
-            android:text="Play"
+            android:text="@string/play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
             android:background="@drawable/green_background"
             android:paddingLeft="70dp"
             android:paddingRight="70dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="@color/colorWhite"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textAllCaps="true"
             android:id="@+id/playButton"
             android:layout_alignParentTop="true"
@@ -63,7 +59,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/lightBulbRelativeLayout"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
         <TextView
@@ -72,9 +67,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/numberOfLightbulbs"
             android:textSize="15sp"
-            android:layout_marginRight="3dp"
+            android:layout_marginEnd="3dp"
             android:layout_alignTop="@+id/lightbulbImage"
-            android:layout_toLeftOf="@+id/lightbulbImage"
             android:layout_toStartOf="@+id/lightbulbImage" />
 
     <ImageView
@@ -84,18 +78,13 @@
         android:background="@android:color/transparent"
         android:id="@+id/lightbulbImage"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-
-
     </RelativeLayout>
 
     <TextView
-        android:text="10"
-        android:textSize="80dp"
+        android:text=""
+        android:textSize="60sp"
         android:textColor="@color/colorWhite"
-        android:rotation="60"
         android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,47 +93,64 @@
         android:layout_centerHorizontal="true" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="63dp"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/relativeLayout2">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp">
 
-
-        <ImageView
+        <TextView
+            android:text="@string/master"
+            android:gravity="center"
+            android:textColor="@color/colorGreenish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            app:srcCompat="@drawable/cart"
-            android:background="@drawable/blue_circle"
-            android:id="@+id/cartButton"
-            android:layout_alignParentTop="true"
+            android:textSize="40sp"
+            android:id="@+id/titleTextView2"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
-        <ImageView
+        <TextView
+            android:text="@string/memory"
+            android:gravity="center"
+            android:textColor="@color/colorPinkish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:textSize="40sp"
+            android:id="@+id/titleTextView"
+            android:layout_above="@+id/titleTextView2"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <TableLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <TableRow
+        android:id="@+id/button_row"
+        android:layout_width="fill_parent"
+      android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:srcCompat="@drawable/music"
             android:background="@drawable/gray_circle"
             android:padding="10dp"
             android:id="@+id/musicButton"
-            android:layout_toLeftOf="@+id/cartButton"
             android:layout_marginRight="30dp"
             android:layout_marginEnd="30dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/music"
-            android:foreground="@drawable/red_circle_and_line"
-            android:padding="10dp"
-            android:visibility="invisible"
-            android:id="@+id/noMusicButton"
-            android:layout_toLeftOf="@+id/cartButton"
-            android:layout_marginRight="30dp"
-            android:layout_marginEnd="30dp" />
 
         <TextView
             android:text="No
@@ -155,40 +161,7 @@ Ads"
             android:textStyle="bold"
             android:background="@drawable/green_circle"
             android:id="@+id/noAdsButton"
-            android:layout_toRightOf="@+id/cartButton"
-            android:layout_marginLeft="30dp"
             android:layout_marginStart="30dp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_above="@+id/relativeLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="41dp">
-
-        <TextView
-            android:text="MASTER"
-            android:gravity="center"
-            android:textColor="@color/colorGreenish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40dp"
-            android:id="@+id/titleTextView2"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:text="memory"
-            android:gravity="center"
-            android:textColor="@color/colorPinkish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:textSize="40dp"
-            android:id="@+id/titleTextView"
-            android:layout_above="@+id/titleTextView2"
-            android:layout_centerHorizontal="true" />
-
-    </RelativeLayout>
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>

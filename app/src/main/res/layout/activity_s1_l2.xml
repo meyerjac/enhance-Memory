@@ -22,9 +22,8 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:layout_height="wrap_content"
         android:id="@+id/numberOfLightbulbs"
         android:textSize="15sp"
-        android:layout_marginRight="3dp"
+        android:layout_marginEnd="3dp"
         android:layout_alignTop="@+id/lightbulbImage"
-        android:layout_toLeftOf="@+id/lightbulbImage"
         android:layout_toStartOf="@+id/lightbulbImage" />
 
     <ImageView
@@ -34,7 +33,6 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:background="@android:color/transparent"
         android:id="@+id/lightbulbImage"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
 
@@ -42,7 +40,6 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:layout_alignParentBottom="true"
-    android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
     android:id="@+id/buttonLayout">
 
@@ -54,7 +51,6 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:textColor="@color/colorBackground"
         android:background="@color/colorBlueish"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -74,7 +70,6 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:textColor="@color/colorBackground"
         android:background="@color/colorWhite"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/answer3" />
 
@@ -86,11 +81,10 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
     android:gravity="center"
     android:id="@+id/relativeLayout"
     android:layout_centerVertical="true"
-    android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true">
 
     <TextView
-        android:text="replay"
+        android:text="@string/replay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/green_background"
@@ -99,7 +93,7 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:textColor="@color/colorWhite"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textAllCaps="true"
         android:id="@+id/replay"
         android:layout_alignParentTop="true"
@@ -107,7 +101,7 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:text="Next"
+        android:text="@string/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/pink_background"
@@ -116,7 +110,7 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:textColor="@color/colorWhite"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textAllCaps="true"
         android:id="@+id/next"
         android:gravity="center"
@@ -126,11 +120,11 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
 </RelativeLayout>
 
 <TextView
-    android:text="16"
+    android:text=""
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/coundownTimerTextView"
-    android:textSize="60dp"
+    android:textSize="60sp"
     android:textColor="@color/colorYellowish"
     android:layout_below="@+id/lightBulbRelativeLayout"
     android:layout_centerHorizontal="true" />
@@ -141,7 +135,6 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
     android:padding="10dp"
     app:srcCompat="@drawable/arrow"
     android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
     android:id="@+id/backArrow" />
 
@@ -150,11 +143,10 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textColor="@color/colorYellowish"
-    android:textSize="40dp"
+    android:textSize="40sp"
     android:gravity="center"
     android:id="@+id/answerQuestionTextView"
     android:layout_above="@+id/buttonLayout"
-    android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
     android:layout_marginBottom="12dp" />
 
@@ -175,7 +167,6 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:visibility="invisible"
         android:id="@+id/image1"
         android:layout_below="@+id/coundownTimerTextView"
-        android:layout_alignRight="@+id/coundownTimerTextView"
         android:layout_alignEnd="@+id/coundownTimerTextView" />
 
     <ImageView
@@ -185,9 +176,7 @@ tools:context="jacksonmeyer.com.memoryenhancement.Stage1.S1L2">
         android:visibility="invisible"
         android:id="@+id/image2"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="42dp"
         android:layout_marginEnd="42dp" />
 
     <ImageView

@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/lightBulbRelativeLayout"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
         <TextView
@@ -22,7 +21,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/numberOfLightbulbs"
             android:textSize="15sp"
-            android:layout_marginRight="3dp"
+            android:layout_marginEnd="3dp"
             android:layout_alignTop="@+id/lightbulbImage"
             android:layout_toLeftOf="@+id/lightbulbImage"
             android:layout_toStartOf="@+id/lightbulbImage" />
@@ -51,14 +50,14 @@
             android:background="@color/colorWhite"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:id="@+id/answer1"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
         <Button
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:textColor="@color/colorBackground"
@@ -68,7 +67,7 @@
             android:id="@+id/answer2" />
 
         <Button
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:textColor="@color/colorBackground"
@@ -90,7 +89,7 @@
         android:layout_alignParentStart="true">
 
         <TextView
-            android:text="replay"
+            android:text="@string/replay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/green_background"
@@ -99,7 +98,7 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="@color/colorWhite"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textAllCaps="true"
             android:id="@+id/replay"
             android:layout_alignParentTop="true"
@@ -141,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorYellowish"
-        android:textSize="40dp"
+        android:textSize="30sp"
         android:gravity="center"
         android:id="@+id/answerQuestionTextView"
         android:layout_above="@+id/buttonLayout"

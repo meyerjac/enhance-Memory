@@ -26,7 +26,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import jacksonmeyer.com.memoryenhancement.Constants;
 import jacksonmeyer.com.memoryenhancement.R;
-import jacksonmeyer.com.memoryenhancement.StageOneActivity;
 import jacksonmeyer.com.memoryenhancement.StageTwoActivity;
 
 import static jacksonmeyer.com.memoryenhancement.R.id.answer3;
@@ -601,7 +600,7 @@ public class S2L11 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(S2L11.this, StageOneActivity.class);
+        Intent intent = new Intent(S2L11.this, StageTwoActivity.class);
         startActivity(intent);
     }
 }

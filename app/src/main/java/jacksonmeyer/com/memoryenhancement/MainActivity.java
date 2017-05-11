@@ -24,10 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView LightbulbImage;
     @Bind(R.id.musicButton)
     ImageView MusicButton;
-    @Bind(R.id.noMusicButton)
-    ImageView NoMusicButton;
-    @Bind(R.id.cartButton)
-    ImageView CartButton;
+//    @Bind(R.id.cartButton)
+//    ImageView CartButton;
 
     @Bind(R.id.titleTextView)
     TextView TitleTextView;
@@ -49,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SharedPreferences.Editor mEditor;
     private boolean mIsBound = false;
     private BackgroundSoundService mServ;
+    private String musicOn;
 
 
     @Override
@@ -56,13 +55,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
 
         String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
-        String musicOn = mSharedPreferences.getString(Constants.MUSIC_PLAYING, null);
-
+        musicOn = mSharedPreferences.getString(Constants.MUSIC_PLAYING, null);
 
         //GET THE LIGHTBULB COUNT
         if (oldTotal == null) {
@@ -83,8 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             music.setClass(this, BackgroundSoundService.class);
             startService(music);
         } else {
-            MusicButton.setVisibility(View.INVISIBLE);
-            NoMusicButton.setVisibility(View.VISIBLE);
+            MusicButton.setBackgroundResource(R.drawable.red_circle_and_line);
         }
 
         Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
@@ -97,9 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         PlayButton.setOnClickListener(this);
         NoAdsButton.setOnClickListener(this);
         RateButton.setOnClickListener(this);
-        CartButton.setOnClickListener(this);
         MusicButton.setOnClickListener(this);
-        NoMusicButton.setOnClickListener(this);
 
         final Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
@@ -119,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }, 250);
 
-        }
+    }
 
     @Override
     public void onResume() {
@@ -155,46 +149,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == MusicButton) {
+            musicOn = mSharedPreferences.getString(Constants.MUSIC_PLAYING, null);
+            {
+                MusicButton.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
+                if (musicOn.equals("on")) {
+                    //stop music service...stop music from playing
+                    MusicButton.setBackgroundResource(R.drawable.red_circle_and_line);
+                    Intent music = new Intent();
+                    music.setClass(this, BackgroundSoundService.class);
+                    stopService(music);
 
-            //stop music service...stop music from playing
-            MusicButton.setVisibility(View.INVISIBLE);
-            NoMusicButton.setVisibility(View.VISIBLE);
-            NoMusicButton.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
+                    mEditor.putString(Constants.MUSIC_PLAYING, "off").apply();
+                } else {
+                    MusicButton.setBackgroundResource(R.drawable.gray_circle);
 
-            //stop Background Music
-            Intent music = new Intent();
-            music.setClass(this, BackgroundSoundService.class);
-            stopService(music);
+                    //start music service...music playing again
+                    Intent music = new Intent();
+                    music.setClass(this, BackgroundSoundService.class);
+                    startService(music);
 
-            mEditor.putString(Constants.MUSIC_PLAYING, "off").apply();
-
-        } else if (view == NoMusicButton) {
-            //start music service...music playing again
-            Intent music = new Intent();
-            music.setClass(this, BackgroundSoundService.class);
-            startService(music);
-
-            NoMusicButton.setVisibility(View.INVISIBLE);
-            MusicButton.setVisibility(View.VISIBLE);
-            MusicButton.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
-
-            mEditor.putString(Constants.MUSIC_PLAYING, "on").apply();
+                    mEditor.putString(Constants.MUSIC_PLAYING, "on").apply();
+                }
+            }
         } else if (view == NoAdsButton) {
             if (NoAdsButton.getText().equals("No Ads")) {
                 NoAdsButton.setText("Ads");
                 NoAdsButton.setBackgroundResource(R.drawable.red_circle_and_line);
                 NoAdsButton.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
-            } else {
+            } else if (view == RateButton) {
+                view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
+
             }
-
-
-            
-        } else if (view == RateButton) {
-            view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
-
-        } else if (view == CartButton) {
-            view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
-
         }
     }
 }

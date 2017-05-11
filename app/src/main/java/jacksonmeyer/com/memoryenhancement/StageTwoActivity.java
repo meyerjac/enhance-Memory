@@ -6,11 +6,11 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -92,6 +92,34 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private String proUnlocked = "";
+    private String oldTotal;
+    private String passed1;
+    private String passed2;
+    private String passed3;
+    private String passed4;
+    private String passed5;
+    private String passed6;
+    private String passed7;
+    private String passed8;
+    private String passed9;
+    private String passed10;
+    private String passed11;
+    private String passed12;
+    private String passed13;
+    private String passed14;
+    private String passed15;
+    private String passed16;
+    private String passed17;
+    private String passed18;
+    private String passed19;
+    private String passed20;
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +128,26 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
         ButterKnife.bind(this);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(StageTwoActivity.this);
+        passed1 = mSharedPreferences.getString(Constants.S1LEVEL1COMPLETE, null);
+        passed2 = mSharedPreferences.getString(Constants.S1LEVEL2COMPLETE, null);
+        passed3 = mSharedPreferences.getString(Constants.S1LEVEL3COMPLETE, null);
+        passed4 = mSharedPreferences.getString(Constants.S1LEVEL4COMPLETE, null);
+        passed5 = mSharedPreferences.getString(Constants.S1LEVEL5COMPLETE, null);
+        passed6 = mSharedPreferences.getString(Constants.S1LEVEL6COMPLETE, null);
+        passed7 = mSharedPreferences.getString(Constants.S1LEVEL7COMPLETE, null);
+        passed8 = mSharedPreferences.getString(Constants.S1LEVEL8COMPLETE, null);
+        passed9 = mSharedPreferences.getString(Constants.S1LEVEL9COMPLETE, null);
+        passed10 = mSharedPreferences.getString(Constants.S1LEVEL10COMPLETE, null);
+        passed11 = mSharedPreferences.getString(Constants.S1LEVEL11COMPLETE, null);
+        passed12 = mSharedPreferences.getString(Constants.S1LEVEL12COMPLETE, null);
+        passed13 = mSharedPreferences.getString(Constants.S1LEVEL13COMPLETE, null);
+        passed14 = mSharedPreferences.getString(Constants.S1LEVEL14COMPLETE, null);
+        passed15 = mSharedPreferences.getString(Constants.S1LEVEL15COMPLETE, null);
+        passed16 = mSharedPreferences.getString(Constants.S1LEVEL16COMPLETE, null);
+        passed17 = mSharedPreferences.getString(Constants.S1LEVEL17COMPLETE, null);
+        passed18 = mSharedPreferences.getString(Constants.S1LEVEL18COMPLETE, null);
+        passed19 = mSharedPreferences.getString(Constants.S1LEVEL19COMPLETE, null);
+        passed20 = mSharedPreferences.getString(Constants.S1LEVEL20COMPLETE, null);
         String passed21 = mSharedPreferences.getString(Constants.S2LEVEL21COMPLETE, null);
         String passed22 = mSharedPreferences.getString(Constants.S2LEVEL22COMPLETE, null);
         String passed23 = mSharedPreferences.getString(Constants.S2LEVEL23COMPLETE, null);
@@ -121,7 +169,7 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
         String passed39 = mSharedPreferences.getString(Constants.S2LEVEL39COMPLETE, null);
         String passed40 = mSharedPreferences.getString(Constants.S2LEVEL40COMPLETE, null);
 
-        String oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
+        oldTotal = mSharedPreferences.getString(Constants.LIGHTBULB_INTEGER_COUNT, null);
         NumberOfLightbulbs.setText(oldTotal);
 
         Typeface Rubix = Typeface.createFromAsset(getAssets(), "fonts/Rubik-Regular.ttf");
@@ -143,155 +191,117 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
         }
 
         if (passed22 == null) {
-        } else if (passed22.equals("true")) {
+        } else {
             Level2.setBackgroundResource(R.drawable.yellow_circle);
             Level2.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed23 == null) {
-        } else if (passed23.equals("true")) {
+        } else {
             Level3.setBackgroundResource(R.drawable.yellow_circle);
             Level3.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed24 == null) {
-        } else if (passed24.equals("true")) {
+        } else {
             Level4.setBackgroundResource(R.drawable.yellow_circle);
             Level4.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed25 == null) {
-        } else if (passed25.equals("true")) {
+        } else {
             Level5.setBackgroundResource(R.drawable.yellow_circle);
             Level5.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed26 == null) {
-        } else if (passed26.equals("true")) {
+        } else {
             Level6.setBackgroundResource(R.drawable.yellow_circle);
             Level6.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed27 == null) {
-        } else if (passed27.equals("true")) {
+        } else {
             Level7.setBackgroundResource(R.drawable.yellow_circle);
             Level7.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed28 == null) {
-        } else if (passed28.equals("true")) {
+        } else {
             Level8.setBackgroundResource(R.drawable.yellow_circle);
             Level8.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed29 == null) {
-        } else if (passed29.equals("true")) {
+        } else {
             Level9.setBackgroundResource(R.drawable.yellow_circle);
             Level9.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed30 == null) {
-        } else if (passed30.equals("true")) {
+        } else {
             Level10.setBackgroundResource(R.drawable.yellow_circle);
             Level10.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed31 == null) {
-        } else if (passed31.equals("true")) {
+        } else {
             Level11.setBackgroundResource(R.drawable.yellow_circle);
             Level11.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed32 == null) {
-        } else if (passed32.equals("true")) {
+        } else {
             Level12.setBackgroundResource(R.drawable.yellow_circle);
             Level12.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed33 == null) {
-        } else if (passed33.equals("true")) {
+        } else {
             Level13.setBackgroundResource(R.drawable.yellow_circle);
             Level13.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed34 == null) {
-        } else if (passed34.equals("true")) {
+        } else {
             Level14.setBackgroundResource(R.drawable.yellow_circle);
             Level14.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed35 == null) {
-        } else if (passed35.equals("true")) {
+        } else {
             Level15.setBackgroundResource(R.drawable.yellow_circle);
             Level15.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed36 == null) {
-        } else if (passed36.equals("true")) {
+        } else {
             Level16.setBackgroundResource(R.drawable.yellow_circle);
             Level16.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed37 == null) {
-        } else if (passed37.equals("true")) {
+        } else {
             Level17.setBackgroundResource(R.drawable.yellow_circle);
             Level17.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed38 == null) {
-        } else if (passed38.equals("true")) {
+        } else {
             Level18.setBackgroundResource(R.drawable.yellow_circle);
             Level18.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed39 == null) {
-        } else if (passed39.equals("true")) {
+        } else  {
             Level19.setBackgroundResource(R.drawable.yellow_circle);
             Level19.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         if (passed40 == null) {
-        } else if (passed40.equals("true")) {
+        } else {
             Level20.setBackgroundResource(R.drawable.yellow_circle);
             Level20.setTextColor(getResources().getColor(R.color.colorYellowish));
-        } else {
-            Log.d("onCreate: ", "didn't make it");
         }
 
         Level1.setOnClickListener(this);
@@ -330,87 +340,188 @@ public class StageTwoActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
             overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
         } else if (view == Level1) {
-            Intent intent = new Intent(this, S2L1.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (hasEnoughPoints()) {
+                Intent intent = new Intent(this, S2L1.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
+
         } else if (view == Level2) {
-            Intent intent = new Intent(this, S2L2.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (hasEnoughPoints()) {
+                Intent intent = new Intent(this, S2L2.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level3) {
-            Intent intent = new Intent(this, S2L3.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (hasEnoughPoints()) {
+                Intent intent = new Intent(this, S2L3.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level4) {
-            Intent intent = new Intent(this, S2L4.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (hasEnoughPoints()) {
+                Intent intent = new Intent(this, S2L4.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level5) {
-            Intent intent = new Intent(this, S2L5.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            if (hasEnoughPoints()) {
+                Intent intent = new Intent(this, S2L5.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level6) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L6.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level7) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L7.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level8) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L8.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level9) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L9.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level10) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L10.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level11) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L11.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level12) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L12.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level13) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L13.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level14) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L14.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level15) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L15.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level16) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L16.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level17) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L17.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level18) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L18.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level19) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L19.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         } else if (view == Level20) {
+            if (hasEnoughPoints()) {
                 Intent intent = new Intent(this, S2L20.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pushleftin, R.anim.pushleftout);
+            } else {
+                Toast.makeText(this, "You need to pass all of Stage 1, or get 500 points", Toast.LENGTH_SHORT).show();
+            }
         }
     }
+
+    private boolean hasEnoughPoints() {
+        if (Integer.parseInt(oldTotal) >= 500) {
+            return true;
+        } else if ((passed1 != null) && (passed2 != null)
+                && (passed3 != null) && (passed4 != null)
+                && (passed5 != null) && (passed6 != null)
+                && (passed7 != null) && (passed8 != null)
+                && (passed9 != null) && (passed10 != null)
+                && (passed11 != null) && (passed12 != null)
+                && (passed13 != null) && (passed14 != null)
+                && (passed15 != null) && (passed16 != null)
+                && (passed17 != null) && (passed18 != null)
+                && (passed19 != null) && (passed20 != null)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
