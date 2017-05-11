@@ -199,10 +199,10 @@ public class S2L16 extends AppCompatActivity implements View.OnClickListener {
             Button3.setImageResource(R.drawable.partly_cloudy);
             Button4.setImageResource(R.drawable.snowing);
         } else if (trackNumber == 2) {
-            Button1.setImageResource(R.drawable.rainy);
-            Button2.setImageResource(R.drawable.cloudy);
-            Button3.setImageResource(R.drawable.snowing);
-            Button4.setImageResource(R.drawable.partly_cloudy);
+            Button1.setImageResource(R.drawable.partly_cloudy);
+            Button2.setImageResource(R.drawable.snowing);
+            Button3.setImageResource(R.drawable.thunderstorms);
+            Button4.setImageResource(R.drawable.cloudy);
         } else if (trackNumber == 3) {
             Button1.setImageResource(R.drawable.thunderstorms);
             Button2.setImageResource(R.drawable.snowing);
@@ -215,8 +215,8 @@ public class S2L16 extends AppCompatActivity implements View.OnClickListener {
             Button4.setImageResource(R.drawable.sunny);
         } else {
             Button1.setImageResource(R.drawable.snowing);
-            Button2.setImageResource(R.drawable.thunderstorms);
-            Button3.setImageResource(R.drawable.cloudy);
+            Button2.setImageResource(R.drawable.rainy);
+            Button3.setImageResource(R.drawable.thunderstorms);
             Button4.setImageResource(R.drawable.partly_cloudy);
         }
     }
