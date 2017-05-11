@@ -6,7 +6,9 @@
     <string name="play">Play</string>
     <string name="memory">Memory</string>
     <string name="master">MASTER</string>
-
+    <string name="bannerAd1">ca-app-pub-6644231159782645/9976615614</string>
+    <string name="bannerAd2">ca-app-pub-6644231159782645/6325145215</string>
+    <string name="bannerAd3">ca-app-pub-6644231159782645/7801878412</string>
 
     <string name="s1l1_question">What color was Sarahs</string>
     <string name="s1l2_question">What animal wasnt shown?</string>

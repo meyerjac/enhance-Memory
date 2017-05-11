@@ -14,6 +14,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -31,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView TitleTextView;
     @Bind(R.id.titleTextView2)
     TextView TitleTextView2;
-    @Bind(R.id.noAdsButton)
-    TextView NoAdsButton;
+//    @Bind(R.id.noAdsButton)
+//    TextView NoAdsButton;
     @Bind(R.id.nextButton)
     TextView RateButton;
     @Bind(R.id.playButton)
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView NumberOfLightbulbs;
     @Bind(R.id.animationTextView)
     TextView AnimationTextView;
+    @Bind(R.id.ad_view)
+    AdView Ad_view;
+
 
 
     private SharedPreferences mSharedPreferences;
@@ -55,6 +61,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice("A449F2C6C55C7DC233B43DA5E09FD24C")
+                .build();
+        Ad_view.loadAd(request);
+
+
+
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
 
@@ -87,11 +102,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TitleTextView.setTypeface(Rubix);
         RateButton.setTypeface(Rubix);
         PlayButton.setTypeface(Rubix);
-        NoAdsButton.setTypeface(Rubix);
         NumberOfLightbulbs.setTypeface(Rubix);
 
         PlayButton.setOnClickListener(this);
-        NoAdsButton.setOnClickListener(this);
         RateButton.setOnClickListener(this);
         MusicButton.setOnClickListener(this);
 
@@ -167,19 +180,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Intent music = new Intent();
                     music.setClass(this, BackgroundSoundService.class);
                     startService(music);
-
                     mEditor.putString(Constants.MUSIC_PLAYING, "on").apply();
                 }
             }
-        } else if (view == NoAdsButton) {
-            if (NoAdsButton.getText().equals("No Ads")) {
-                NoAdsButton.setText("Ads");
-                NoAdsButton.setBackgroundResource(R.drawable.red_circle_and_line);
-                NoAdsButton.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
-            } else if (view == RateButton) {
+        }
+//        else if (view == NoAdsButton) {
+//            if (NoAdsButton.getText().equals("No Ads")) {
+//                NoAdsButton.setText("Ads");
+//                NoAdsButton.setBackgroundResource(R.drawable.red_circle_and_line);
+//                NoAdsButton.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
+//            }
+            else if (view == RateButton) {
                 view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.image_click));
 
             }
         }
     }
-}

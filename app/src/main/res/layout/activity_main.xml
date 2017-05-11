@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -124,44 +125,23 @@
 
     </RelativeLayout>
 
-    <TableLayout
-        android:id="@+id/buttonLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-    <TableRow
-        android:id="@+id/button_row"
-        android:layout_width="fill_parent"
-      android:gravity="center"
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        >
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-6644231159782645/9976615614" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/music"
-            android:background="@drawable/gray_circle"
-            android:padding="10dp"
-            android:id="@+id/musicButton"
-            android:layout_marginRight="30dp"
-            android:layout_marginEnd="30dp" />
-
-
-        <TextView
-            android:text="No
-Ads"
-            android:layout_width="52dp"
-            android:gravity="center"
-            android:layout_height="52dp"
-            android:textStyle="bold"
-            android:background="@drawable/green_circle"
-            android:id="@+id/noAdsButton"
-            android:layout_marginStart="30dp" />
-        </TableRow>
-    </TableLayout>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/music"
+        android:background="@drawable/gray_circle"
+        android:padding="10dp"
+        android:id="@+id/musicButton"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

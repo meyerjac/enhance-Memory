@@ -18,6 +18,10 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +72,7 @@ public class S2L7 extends AppCompatActivity implements View.OnClickListener {
     private final long startTime = 4 * 1000;
     private final long interval = 1000;
     private String TAG = "debug";
+    private InterstitialAd mInterstitial;
 
     private String digit1 = "";
     private String digit2 = "";
@@ -86,6 +91,23 @@ public class S2L7 extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s2_l7);
         ButterKnife.bind(this);
+
+
+        //loadAd
+        mInterstitial = new InterstitialAd(this);
+        mInterstitial.setAdUnitId("ca-app-pub-6644231159782645/7023149215");
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice("A449F2C6C55C7DC233B43DA5E09FD24C")
+                .build();
+        mInterstitial.loadAd(request);
+
+        mInterstitial.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                Intent intent = new Intent(S2L7.this, S2L8.class);
+                startActivity(intent);
+            }
+        });
 
         //get shared preferences data, just the number of Lightbulbs earned and displayed
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(S2L7.this);
@@ -299,8 +321,12 @@ public class S2L7 extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(this, StageTwoActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
-            Intent intent = new Intent(this, S2L8.class);
-            startActivity(intent);
+            if(mInterstitial.isLoaded()) {
+                mInterstitial.show();
+            } else {
+                Intent intent = new Intent(this, S2L8.class);
+                startActivity(intent);
+            }
         } else if (view.equals(Replay)) {
             Intent intent = new Intent(this, S2L7.class);
             startActivity(intent);

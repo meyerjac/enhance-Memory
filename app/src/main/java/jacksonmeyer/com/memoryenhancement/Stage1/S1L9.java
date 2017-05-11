@@ -3,11 +3,11 @@ package jacksonmeyer.com.memoryenhancement.Stage1;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -15,6 +15,10 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -64,6 +68,7 @@ public class S1L9 extends AppCompatActivity implements View.OnClickListener {
     private final long startTime = 3 * 1000;
     private final long interval = 1000;
     private String TAG = "debug";
+    private InterstitialAd mInterstitial;
 
 
     private Integer trackNumber = 0;
@@ -77,6 +82,23 @@ public class S1L9 extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s1_l9);
         ButterKnife.bind(this);
+
+
+        //loadAd
+        mInterstitial = new InterstitialAd(this);
+        mInterstitial.setAdUnitId("ca-app-pub-6644231159782645/4069682810");
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice("A449F2C6C55C7DC233B43DA5E09FD24C")
+                .build();
+        mInterstitial.loadAd(request);
+
+        mInterstitial.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                Intent intent = new Intent(S1L9.this, S1L10.class);
+                startActivity(intent);
+            }
+        });
 
         //get shared preferences data, just the number of Lightbulbs earned and displayed
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(S1L9.this);
@@ -252,8 +274,12 @@ public class S1L9 extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(this, StageOneActivity.class);
             startActivity(intent);
         } else if (view.equals(Next)) {
-            Intent intent = new Intent(this, S1L10.class);
-            startActivity(intent);
+            if(mInterstitial.isLoaded()) {
+                mInterstitial.show();
+            } else {
+                Intent intent = new Intent(this, S1L10.class);
+                startActivity(intent);
+            }
         } else if (view.equals(Replay)) {
             Intent intent = new Intent(this, S1L9.class);
             startActivity(intent);

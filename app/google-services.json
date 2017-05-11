@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "825715158268",
+    "firebase_url": "https://memory-master-15d6c.firebaseio.com",
+    "project_id": "memory-master-15d6c",
+    "storage_bucket": "memory-master-15d6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825715158268:android:d0fcf355a7c59456",
+        "android_client_info": {
+          "package_name": "jacksonmeyer.com.memoryenhancement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825715158268-ea82qfhp0dmk5kesek892g7qtv9bu1r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1RjdOHITkUF-zXLOCGPU23Motj5DB2mg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
